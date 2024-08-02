@@ -939,6 +939,23 @@ video {
     stroke: white;
 }
 
+.inner-heading-secondary {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.3em;
+    letter-spacing: -1.5px;
+    color: rgb(58, 1, 71);
+}
+
+.head-highlight {
+    color: rgb(136, 52, 156);
+}
+
+.modern-heading {
+    width: 900px;
+    margin-left: 55px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
     .motion-safe\:hover\:scale-\[1\.01\]:hover {
         --tw-scale-x: 1.01;
