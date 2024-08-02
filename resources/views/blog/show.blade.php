@@ -2,11 +2,11 @@
 
 @section('title', $post->title)
 
-@section('content')
+@section('excerpt')
     <article>
         <h2>{{$post->title}}</h2>
         <p>
-            {{$post->content}}
+            {{$post->excerpt}}
         </p>
     </article>
 @endsection
