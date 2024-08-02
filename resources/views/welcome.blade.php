@@ -198,7 +198,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8">
                         <!-- Card 1 -->
                         <section class="list-card-wp bg-white shadow-md rounded-lg overflow-hidden">
-                            <img class="w-full object-cover" src="{{ asset('img/logo-wp.jpeg') }}" alt="WordPress">
+                            <img class="w-full h-48 object-cover" src="{{ asset('img/logo-wp.png') }}" alt="WordPress">
                             <div class="p-4">
                                 <h3 class="text-lg font-semibold mb-2">WordPress</h3>
                                 <p>Expert parlant de WordPress.</p>
