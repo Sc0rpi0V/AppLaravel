@@ -6,50 +6,72 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+    protected $projects = [
+        'tma-ifs' => [
+            'title' => 'TMA IFS',
+            'description' => 'Réalisation de la maintenance applicative du site...',
+            'category' => 'maintenance'
+        ],
+        'calf-mvp' => [
+            'title' => 'CALF MVP',
+            'description' => 'Réalisation de simulateur pour simulation sa consommation d\'énergie...',
+            'category' => 'simulateur'
+        ],
+        'edf-enr' => [
+            'title' => 'EDF-ENR',
+            'description' => 'Réalisation de Bloc React Gutenberg pour l\'ensemble du site...',
+            'category' => 'react'
+        ],
+        'engie' => [
+            'title' => 'ENGIE',
+            'description' => 'Réalisation de Bloc React Gutenberg et Gestion d\'une map...',
+            'category' => 'react'
+        ],
+        'thekdo' => [
+            'title' => 'THEKDO',
+            'description' => 'Gestion de la partie Woocommerce et préparation d\'extract...',
+            'category' => 'woocommerce'
+        ],
+        'theme-wordpress' => [
+            'title' => 'THEME WORDPRESS',
+            'description' => 'Création de thème WordPress',
+            'category' => 'wordpress'
+        ],
+        'plugins-wordpress' => [
+            'title' => 'PLUGINS WORDPRESS',
+            'description' => 'Création de plugins WordPress',
+            'category' => 'wordpress'
+        ],
+        'blocs-wordpress' => [
+            'title' => 'BLOCS WORDPRESS',
+            'description' => 'Réalisation de Bloc React Gutenberg / ACF Gutenberg',
+            'category' => 'wordpress'
+        ],
+    ];
+
     /**
      * Show the project page.
      *
+     * @param Request $request
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $projects = [
-            'tma-ifs' => [
-                'title' => 'TMA IFS',
-                'description' => 'Réalisation de la maintenance applicative du site...'
-            ],
-            'calf-mvp' => [
-                'title' => 'CALF MVP',
-                'description' => 'Réalisation de simulateur pour simulation sa consommation d\'énergie...'
-            ],
-            'edf-enr' => [
-                'title' => 'EDF-ENR',
-                'description' => 'Réalisation de Bloc React Gutenberg pour l\'ensemble du site...'
-            ],
-            'engie' => [
-                'title' => 'ENGIE',
-                'description' => 'Réalisation de Bloc React Gutenberg et Gestion d\'une map...'
-            ],
-            'thekdo' => [
-                'title' => 'THEKDO',
-                'description' => 'Gestion de la partie Woocommerce et préparation d\'extract...'
-            ],
-            'theme-wordpress' => [
-                'title' => 'THEME WORDPRESS',
-                'description' => 'Création de thème WordPress'
-            ],
-            'plugins-wordpress' => [
-                'title' => 'PLUGINS WORDPRESS',
-                'description' => 'Création de plugins WordPress'
-            ],
-            'blocs-wordpress' => [
-                'title' => 'BLOCS WORDPRESS',
-                'description' => 'Réalisation de Bloc React Gutenberg / ACF Gutenberg'
-            ],
-        ];
-    
-        return view('project.index', ['projects' => $projects]);
-    }      
+        $category = $request->input('category', 'all');
+        
+        $projects = $this->projects;
+        
+        if ($category !== 'all') {
+            $projects = array_filter($this->projects, function ($project) use ($category) {
+                return $project['category'] === $category;
+            });
+        }
+
+        return view('project.index', [
+            'projects' => $projects,
+            'category' => $category
+        ]);
+    }
 
     public function show($project)
     {

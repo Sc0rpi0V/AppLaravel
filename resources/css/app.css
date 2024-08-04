@@ -1015,7 +1015,6 @@ a {
 	display: block;
 }
 svg {
-	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 0;
