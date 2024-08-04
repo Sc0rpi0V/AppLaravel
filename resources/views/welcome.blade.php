@@ -231,6 +231,51 @@
                     </div>
                 </div>
 
+                <div class="mt-16">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                        <section class="modern-heading">
+                            <div class="inner">
+                                <h2 class="inner-heading-secondary">
+                                    <span class="head-before">Mes différents </span><span class="head-highlight">Projets</span>
+                                </h2></div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                    <section>
+                        <div class="void" id="void">
+                            <div class="crop">
+                                <ul id="card-list" style="--count: 8;">
+                                    <li class="list-card"><div class="card"><a href=""><span class="model-name">TMA IFS</span><span>Réalisation de maintenance applicative du site (Coeur WordPress, Thèmes, Plugins, Contributions)</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href=""><span class="model-name">CALF MVP</span><span>Réalisation de simulateur pour simulation sa consommation d'énergie (Particulier / Professionnel)</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href=""><span class="model-name">EDF-ENR</span><span>Réalisation de Bloc React Gutenberg pour l'ensemble du site (Refonte Complète)</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href=""><span class="model-name">ENGIE</span><span>Réalisation de Bloc React Gutenberg et Gestion d'une map pour borne de recharge voiture électrique</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href=""><span class="model-name">THEKDO</span><span>Gestion de la partie Woocommerce et préparation d'extract de commande avec requête SQL</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href=""><span class="model-name">THEME WORDPRESS</span><span>Création de thème WordPress</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href=""><span class="model-name">PLUGINS WORDPRESS</span><span>Création de plugins WordPress</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href=""><span class="model-name">BLOCS WORDPRESS</span><span>Réalisation de Bloc React Gutenberg / ACF Gutenberg</span></a></div></li>
+                                </ul>
+                                <div class="last-circle"></div>
+                                <div class="second-circle"></div>
+                            </div>
+                            <div class="mask"></div>
+                            <div class="center-circle"></div>
+                        <div>
+        </section>
+                </div>
+
+                <div class="mt-16">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                        <section class="modern-heading">
+                            <div class="inner">
+                                <h2 class="inner-heading-secondary">
+                                    <span class="head-before">Mes récents </span><span class="head-highlight">articles</span>
+                                </h2></div>
+                        </section>
+                    </div>
+                </div>
+
             </div>
         </div>
     </body>

@@ -84,3 +84,6 @@ Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit'
 
 // Route pour mettre à jour le post
 Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
+
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('projects.show');

@@ -9,9 +9,10 @@
         <div>
             <h4>Liens rapides</h4>
             <ul style="list-style-type: none; padding: 0;">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">À propos</a></li>
+                <li><a href="{{ url('/about') }}">À propos</a></li>
                 <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="{{ url('/blog') }}">Blog</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
@@ -31,10 +32,9 @@
         <div>
             <h4>Contact</h4>
             <address>
-                123 Rue Exemple<br>
-                75000 Paris, France<br>
-                Tél : +33 1 23 45 67 89<br>
-                Email : <a href="mailto:info@example.com">info@example.com</a>
+                59223 Roncq, France<br>
+                Tél : +33 7 72 26 60 18<br>
+                Email : <a href="valentinc.boury@gmail.com">valentinc.boury@gmail.com</a>
             </address>
         </div>
 
@@ -49,6 +49,6 @@
         </div>
     </div>
     <div style="text-align: center; padding: 10px 0; border-top: 1px solid #ddd; margin-top: 20px;">
-        <p>&copy; {{ date('Y') }} Votre Nom ou Entreprise. Tous droits réservés.</p>
+        <p>&copy; {{ date('Y') }} WebCrea. Tous droits réservés.</p>
     </div>
 </footer>
