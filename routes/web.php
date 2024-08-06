@@ -8,6 +8,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AvatarController;
 use App\Http\Controllers\CreationController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,11 @@ Route::prefix('/about')->name('about.')->controller(AboutController::class)->gro
 });
 
 Route::prefix('/creation')->name('creation.')->controller(CreationController::class)->group(function() {
+    // Route pour aboutMe
+    Route::get('/', 'index')->name('index');
+});
+
+Route::prefix('/service')->name('service.')->controller(ServiceController::class)->group(function() {
     // Route pour aboutMe
     Route::get('/', 'index')->name('index');
 });
