@@ -53,6 +53,52 @@
     white-space: nowrap;
 }
 
+ol {
+    margin-left: 50px;
+}
+
+.heading-primary-info {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 3.75em;
+    letter-spacing: -.4px;
+    color: rgb(136, 52, 156);
+    margin: 0;
+    text-align: center;
+}
+
+.widget-container,
+.inner {
+    text-align: center;
+    margin-left: 80px;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+.button {
+    text-align: center;
+}
+
+.text-before {
+    display: inline-block;
+    margin-top: 20px; 
+    padding: 10px 20px; 
+    background-color: #6a0dad;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px; 
+    text-align: center;
+    transition: background-color 0.3s ease; 
+}
+
+.text-before:hover {
+    background-color: #8a2be2;
+}
+
 @media(min-width: 768px) {
     .services {
         grid-template-columns: 1fr 1fr;

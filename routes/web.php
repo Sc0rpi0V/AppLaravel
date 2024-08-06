@@ -75,7 +75,7 @@ Route::prefix('/creation')->name('creation.')->controller(CreationController::cl
     Route::get('/', 'index')->name('index');
 });
 
-Route::prefix('/service')->name('service.')->controller(ServiceController::class)->group(function() {
+Route::prefix('/services')->name('services.')->controller(ServiceController::class)->group(function() {
     // Route pour aboutMe
     Route::get('/', 'index')->name('index');
 });
