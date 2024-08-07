@@ -13,7 +13,7 @@
                 <li><a href="{{ url('/services') }}">Services</a></li>
                 <li><a href="{{ url('/project') }}">Portfolio</a></li>
                 <li><a href="{{ url('/blog') }}">Blog</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{ url('/contact') }}">Contact</a></li>
             </ul>
         </div>
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\{
     AboutController,
     ArticleController,
     AvatarController,
+    ContactController,
     CreationController,
     ProjectController,
     ServiceController
@@ -79,10 +80,8 @@ Route::prefix('blog')->name('blog.')->controller(BlogController::class)->group(f
 //Article routes
 Route::prefix('articles')->name('articles.')->controller(ArticleController::class)->group(function () {
     Route::get('/', 'index')->name('index');
-    Route::get('/{slug}-{id}', 'show')->where(['id' => '[0-9]+', 'slug' => '[a-z0-9\-]+'])->name('show');
-    Route::get('/{id}/edit', 'edit')->name('edit');
-    Route::put('/{id}', 'update')->name('update');
 });
+Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
 // About routes
 Route::prefix('about')->name('about.')->controller(AboutController::class)->group(function() {
@@ -98,6 +97,12 @@ Route::prefix('creation')->name('creation.')->controller(CreationController::cla
 Route::prefix('services')->name('services.')->controller(ServiceController::class)->group(function() {
     Route::get('/', 'index')->name('index');
 });
+
+Route::prefix('contact')->name('contact.')->controller(ContactController::class)->group(function() {
+    Route::get('/', 'index')->name('index');
+});
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
 // Projects routes
 Route::prefix('project')->name('project.')->controller(ProjectController::class)->group(function() {
