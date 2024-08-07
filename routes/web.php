@@ -1,14 +1,17 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\{
+    ProfileController,
+    BlogController,
+    AddressController,
+    AboutController,
+    ArticleController,
+    AvatarController,
+    CreationController,
+    ProjectController,
+    ServiceController
+};
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\AddressController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\AvatarController;
-use App\Http\Controllers\CreationController;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,77 +22,86 @@ use App\Http\Controllers\ServiceController;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
+Route pour les pages de blog     
+$request -> path() : renvoie le chemin de l'URL actuelle     
+$request -> url() : renvoie l'URL complète actuelle     
+$request -> all() : renvoie toutes les données de la requête     
+$request -> input() : renvoie la valeur d'un champ spécifique de la requête 
 */
 
+// Home route
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+// Dashboard route
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Formations route
 Route::get('/formations', function () {
     return view('formations');
 })->middleware(['auth', 'verified'])->name('formations');
 
+// Authenticated routes group
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/address', [AddressController::class, 'edit'])->name('address.edit');
-    Route::patch('/address', [AddressController::class, 'update'])->name('address.update');
-    Route::get('/avatar', [AvatarController::class, 'edit'])->name('avatar.edit');
-    Route::patch('/avatar', [AvatarController::class, 'update'])->name('avatar.update');
+    // Profile routes
+    Route::prefix('profile')->name('profile.')->group(function () {
+        Route::get('/', [ProfileController::class, 'edit'])->name('edit');
+        Route::patch('/', [ProfileController::class, 'update'])->name('update');
+        Route::delete('/', [ProfileController::class, 'destroy'])->name('destroy');
+    });
+
+    // Address routes
+    Route::prefix('address')->name('address.')->group(function () {
+        Route::get('/', [AddressController::class, 'edit'])->name('edit');
+        Route::patch('/', [AddressController::class, 'update'])->name('update');
+    });
+
+    // Avatar routes
+    Route::prefix('avatar')->name('avatar.')->group(function () {
+        Route::get('/', [AvatarController::class, 'edit'])->name('edit');
+        Route::patch('/', [AvatarController::class, 'update'])->name('update');
+    });
 });
 
 require __DIR__.'/auth.php';
 
-/* 
-Route pour les pages de blog
-    $request -> path() : renvoie le chemin de l'URL actuelle
-    $request -> url() : renvoie l'URL complète actuelle
-    $request -> all() : renvoie toutes les données de la requête
-    $request -> input() : renvoie la valeur d'un champ spécifique de la requête
-*/
-Route::prefix('/blog')->name('blog.')->controller(BlogController::class)->group(function () {
-    // Route pour liste projets
-    Route::get('/', 'index')->name('index'); 
-
-    /* 
-    Route pour afficher un article de blog spécifique avec un slug et un ID
-    */
-    Route::get('/{slug}-{id}', 'show')-> where([
-        'id' => '[0-9]+', 
-        'slug' => '[a-z0-9\-]+', 
-    ])->name('show'); 
+// Blog routes
+Route::prefix('blog')->name('blog.')->controller(BlogController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{slug}-{id}', 'show')->where(['id' => '[0-9]+', 'slug' => '[a-z0-9\-]+'])->name('show');
+    Route::get('/{id}/edit', 'edit')->name('edit');
+    Route::put('/{id}', 'update')->name('update');
 });
 
-Route::prefix('/about')->name('about.')->controller(AboutController::class)->group(function() {
-    // Route pour aboutMe
+//Article routes
+Route::prefix('articles')->name('articles.')->controller(ArticleController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{slug}-{id}', 'show')->where(['id' => '[0-9]+', 'slug' => '[a-z0-9\-]+'])->name('show');
+    Route::get('/{id}/edit', 'edit')->name('edit');
+    Route::put('/{id}', 'update')->name('update');
+});
+
+// About routes
+Route::prefix('about')->name('about.')->controller(AboutController::class)->group(function() {
     Route::get('/', 'index')->name('index');
 });
 
-Route::prefix('/creation')->name('creation.')->controller(CreationController::class)->group(function() {
-    // Route pour aboutMe
+// Creation routes
+Route::prefix('creation')->name('creation.')->controller(CreationController::class)->group(function() {
     Route::get('/', 'index')->name('index');
 });
 
-Route::prefix('/services')->name('services.')->controller(ServiceController::class)->group(function() {
-    // Route pour aboutMe
+// Services routes
+Route::prefix('services')->name('services.')->controller(ServiceController::class)->group(function() {
     Route::get('/', 'index')->name('index');
 });
 
-Route::prefix('/project')->name('project.')->controller(ProjectController::class)->group(function() {
-    // Route pour aboutMe
+// Projects routes
+Route::prefix('project')->name('project.')->controller(ProjectController::class)->group(function() {
     Route::get('/', 'index')->name('index');
 });
-
-// Route pour afficher le formulaire d'édition
-Route::get('/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
-
-// Route pour mettre à jour le post
-Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
-
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('projects.show');

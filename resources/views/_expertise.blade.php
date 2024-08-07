@@ -2,7 +2,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
         <section class="modern-heading">
             <div class="inner">
-                <h2 class="inner-heading-secondary">
+                <h2 class="heading-secondary-expertise">
                     <span class="head-before">Mon expertise en </span><span class="head-highlight">développement web</span>
                 </h2></div>
         </section>

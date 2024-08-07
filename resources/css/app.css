@@ -868,6 +868,19 @@ video {
 	margin-right: auto!important;
 }
 
+.heading-secondary-project,
+.heading-secondary-article {
+	font-size: 45px;
+	max-width: 650px;
+	font-weight: 700;
+	line-height: 1.1em;
+	letter-spacing: -2.25px;
+	color: rgb(58, 1, 71);
+	margin: 0 0 20px;
+	padding: 0;
+	text-align: center;
+}
+
 .heading-highlight {
 	color : rgb(136, 52, 156);
 }
@@ -939,12 +952,19 @@ video {
     stroke: white;
 }
 
-.inner-heading-secondary {
-    font-size: 50px;
-    font-weight: 800;
-    line-height: 1.3em;
-    letter-spacing: -1.5px;
+.heading-secondary-expertise {
+    font-size: 45px;
+    max-width: 700px;
+    font-weight: 700;
+    line-height: 1.1em;
+    letter-spacing: -2.25px;
     color: rgb(58, 1, 71);
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: center;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    white-space: nowrap;
 }
 
 .head-highlight {

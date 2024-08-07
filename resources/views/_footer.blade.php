@@ -10,8 +10,8 @@
             <h4>Liens rapides</h4>
             <ul style="list-style-type: none; padding: 0;">
                 <li><a href="{{ url('/about') }}">À propos</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
+                <li><a href="{{ url('/services') }}">Services</a></li>
+                <li><a href="{{ url('/project') }}">Portfolio</a></li>
                 <li><a href="{{ url('/blog') }}">Blog</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -19,7 +19,7 @@
 
         <!-- 3ème partie : Service -->
         <div>
-            <h4>Service</h4>
+            <h4>Services</h4>
             <ul style="list-style-type: none; padding: 0;">
                 <li><a href="#">Consultation</a></li>
                 <li><a href="#">Support</a></li>

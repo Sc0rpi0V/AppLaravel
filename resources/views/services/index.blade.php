@@ -107,7 +107,7 @@
                                 <span class="head-after">?</span>
                             </h2>
                             <div class="heading-description">
-                                <div class="impact__content cms --dark">Contactez-nous via notre formulaire de contact et nous reviendrons vers vous en 
+                                <div class="impact__content cms --dark">Contactez-nous via notre formulaire de contact et je reviendrais vers vous en 
                                     <span style="color: #e1a1f1"><strong>le plus&nbsp;rapidement possible.</strong></span>
                                 </div>
                             </div>
