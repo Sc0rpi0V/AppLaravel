@@ -21,7 +21,7 @@
                     <div class="filter-buttons">
                         <a href="{{ route('articles.index', ['category' => 'all']) }}" class="btn {{ $category === 'all' ? 'active' : '' }}">All</a>
                         <a href="{{ route('articles.index', ['category' => 'seo']) }}" class="btn {{ $category === 'seo' ? 'active' : '' }}">SEO</a>
-                        <a href="{{ route('articles.index', ['category' => 'customisation']) }}" class="btn {{ $category === 'customisation' ? 'active' : '' }}">Customisation</a>
+                        <a href="{{ route('articles.index', ['category' => 'customization']) }}" class="btn {{ $category === 'customization' ? 'active' : '' }}">Customisation</a>
                         <a href="{{ route('articles.index', ['category' => 'plugins']) }}" class="btn {{ $category === 'plugins' ? 'active' : '' }}">Plugins</a>
                     </div>
 

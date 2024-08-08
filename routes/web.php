@@ -95,7 +95,11 @@ Route::prefix('creation')->name('creation.')->controller(CreationController::cla
 
 // Services routes
 Route::prefix('services')->name('services.')->controller(ServiceController::class)->group(function() {
-    Route::get('/', 'index')->name('index');
+    Route::get('/', 'index')->name('index'); // Page principale des services
+    Route::get('/consultation', 'consultation')->name('consultation'); // Route pour la Consultation
+    Route::get('/support', 'support')->name('support'); // Route pour le Support
+    Route::get('/formation', 'formation')->name('formation'); // Route pour la Formation
+    Route::get('/developpement', 'developpement')->name('developpement'); // Route pour le Développement
 });
 
 Route::prefix('contact')->name('contact.')->controller(ContactController::class)->group(function() {

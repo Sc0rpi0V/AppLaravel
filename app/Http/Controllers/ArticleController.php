@@ -34,7 +34,7 @@ class ArticleController extends Controller
     /**
      * Affiche la liste des articles.
      */
-    public function index(Request $request): View {
+    public function index(Request $request) {
 
         $category = $request->input('category', 'all');
 
