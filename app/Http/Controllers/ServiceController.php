@@ -35,4 +35,10 @@ class ServiceController extends Controller
     {
         return view('services.developpement');
     }
+
+    // Page pour le service de Conception
+    public function conceptio()
+    {
+        return view('services.conception');
+    }
 }

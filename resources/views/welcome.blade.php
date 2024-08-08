@@ -27,8 +27,8 @@
                                 <div class="heading-description">
                                     <p>
                                     WebCrea vous aide à booster votre visibilité en ligne avec des sites WordPress performants et personnalisés. 
-                                    Que ce soit pour <a href="https://creawp.net/services/conception-de-site-web/"><span style="color: #88349c"><strong>un nouveau site web</strong></span></a>&nbsp;
-                                    ou <a href="https://creawp.net/services/refonte-de-site-web/"><strong><span style="color: #88349c">la refonte d'un site web existant</span></strong></a>, 
+                                    Que ce soit pour <a href="#"><span style="color: #88349c"><strong>un nouveau site web</strong></span></a>&nbsp;
+                                    ou <a href="#"><strong><span style="color: #88349c">la refonte d'un site web existant</span></strong></a>, 
                                     nous sommes là pour vous aider à attirer plus de clients !</p>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                     <div class="button-container">
                         <section class="section-button">
                             <div class="button">
-                                <a class="aux-modern-button aux-black aux-modern-button-md aux-modern-button-normal aux-modern-button-default aux-icon-right" href="https://creawp.net/contact/">
+                                <a class="aux-modern-button aux-black aux-modern-button-md aux-modern-button-normal aux-modern-button-default aux-icon-right" href="#">
                                     <div class="aux-overlay"></div>
                                     <div class="aux-icon">
                                         <div class="aux-text">
@@ -49,11 +49,11 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width:15px;"><path d="M64 464c-8.8 0-16-7.2-16-16L48 64c0-8.8 7.2-16 16-16l160 0 0 80c0 17.7 14.3 32 32 32l80 0 0 288c0 8.8-7.2 16-16 16L64 464zM64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-293.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0L64 0zm56 256c-13.3 0-24 10.7-24 24s10.7 24 24 24l144 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-144 0zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24l144 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-144 0z"/></svg>
                                     </div>
                                 </a>
-                                <a class="aux-modern-button aux-black aux-modern-button-md aux-modern-button-normal aux-modern-button-default aux-icon-right" href="https://creawp.net/contact/">
+                                <a class="aux-modern-button aux-black aux-modern-button-md aux-modern-button-normal aux-modern-button-default aux-icon-right" href="{{ url('/services') }}">
                                     <div class="aux-overlay"></div>
                                     <div class="aux-icon">
                                         <div class="aux-text">
-                                            <span class="aux-text-before">Nos Services</span>
+                                            <span class="aux-text-before">Mes Services</span>
                                         </div>
                                     </div>
                                 </a>

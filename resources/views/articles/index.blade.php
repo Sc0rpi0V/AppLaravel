@@ -23,6 +23,10 @@
                         <a href="{{ route('articles.index', ['category' => 'seo']) }}" class="btn {{ $category === 'seo' ? 'active' : '' }}">SEO</a>
                         <a href="{{ route('articles.index', ['category' => 'customization']) }}" class="btn {{ $category === 'customization' ? 'active' : '' }}">Customisation</a>
                         <a href="{{ route('articles.index', ['category' => 'plugins']) }}" class="btn {{ $category === 'plugins' ? 'active' : '' }}">Plugins</a>
+                        <a href="{{ route('articles.index', ['category' => 'security']) }}" class="btn {{ $category === 'security' ? 'active' : '' }}">Sécurité</a>
+                        <a href="{{ route('articles.index', ['category' => 'backup']) }}" class="btn {{ $category === 'backup' ? 'active' : '' }}">Backup</a>
+                        <a href="{{ route('articles.index', ['category' => 'performance']) }}" class="btn {{ $category === 'performance' ? 'active' : '' }}">Performance</a>
+                        <a href="{{ route('articles.index', ['category' => 'ecommerce']) }}" class="btn {{ $category === 'ecommerce' ? 'active' : '' }}">E-commerce</a>
                     </div>
 
                     <div class="projects-grid">

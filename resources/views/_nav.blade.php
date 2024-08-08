@@ -40,6 +40,7 @@
                         <li><a href="{{ url('/services/support') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Support</a></li>
                         <li><a href="{{ url('/services/formation') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Formation</a></li>
                         <li><a href="{{ url('/services/developpement') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Développement</a></li>
+                        <li><a href="{{ url('/services/conception') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600">Conception</a></li>
                     </ul>
                 </li>
                 <li>

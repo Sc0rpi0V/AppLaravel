@@ -25,6 +25,7 @@
                 <li><a href="{{ url('/services/support') }}" class="text-gray-600 hover:text-gray-900">Support</a></li>
                 <li><a href="{{ url('/services/formation') }}" class="text-gray-600 hover:text-gray-900">Formation</a></li>
                 <li><a href="{{ url('/services/developpement') }}" class="text-gray-600 hover:text-gray-900">Développement</a></li>
+                <li><a href="{{ url('/services/conception') }}" class="text-gray-600 hover:text-gray-900">Conception</a></li>
             </ul>
         </div>
 
