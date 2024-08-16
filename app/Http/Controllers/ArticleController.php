@@ -174,7 +174,7 @@ class ArticleController extends Controller
                     ],
                 ],
                 'category' => 'introduction',
-                'image' => asset('img/roles.jpeg'),
+                'image' => asset('img/role.webp'),
             ],
             'personnalisation' => [
                 'name' => 'Personnalisation de thèmes WordPress',
@@ -205,7 +205,7 @@ class ArticleController extends Controller
                     ],
                 ],
                 'category' => 'customisation',
-                'image' => asset('img/customisation.jpeg'),
+                'image' => asset('img/customisation.png'),
             ],
             'customizer_avance' => [
                 'name' => 'Personnalisation avancée avec le Customizer',
@@ -231,7 +231,7 @@ class ArticleController extends Controller
                     ],
                 ],
                 'category' => 'customization',
-                'image' => asset('img/customizer_avance.jpeg'),
+                'image' => asset('img/customizer.jpeg'),
             ],
             'seo' => [
                 'name' => 'SEO pour WordPress',
@@ -262,8 +262,39 @@ class ArticleController extends Controller
                     ],
                 ],
                 'category' => 'seo',
-                'image' => asset('img/seo.png'),
+                'image' => asset('img/seo.webp'),
             ],
+            'balises_html_seo' => [
+                'name' => 'Optimisation des balises HTML pour le SEO',
+                'subtitle' => 'Maximisez votre visibilité en ligne',
+                'presentation' => 'Maximisez la visibilité de votre site WordPress en optimisant les balises HTML essentielles pour le SEO.',
+                'desc-list' => [
+                    'Importance des balises HTML pour le SEO.',
+                    'Utilisation des balises titres (H1, H2, H3, etc.).',
+                    'Optimisation des balises meta (title, description).',
+                    'Utilisation des balises ALT pour les images.',
+                ],
+                'liste' => [
+                    [
+                        'title' => 'Importance des balises HTML pour le SEO',
+                        'details' => 'Les balises HTML jouent un rôle crucial dans le référencement en aidant les moteurs de recherche à comprendre la structure et le contenu de vos pages. Une utilisation appropriée des balises peut améliorer considérablement votre positionnement dans les résultats de recherche.'
+                    ],
+                    [
+                        'title' => 'Utilisation des balises titres (H1, H2, H3, etc.)',
+                        'details' => 'Les balises de titre (H1, H2, H3, etc.) aident à structurer votre contenu de manière hiérarchique. Il est important d\'utiliser une seule balise H1 par page et de structurer le contenu avec des H2 et H3 pour une meilleure lisibilité et un meilleur SEO.'
+                    ],
+                    [
+                        'title' => 'Optimisation des balises meta (title, description)',
+                        'details' => 'Les balises meta, notamment la balise title et la meta description, sont essentielles pour le SEO. Elles doivent être optimisées avec des mots-clés pertinents et une description concise pour attirer les clics des utilisateurs sur les moteurs de recherche.'
+                    ],
+                    [
+                        'title' => 'Utilisation des balises ALT pour les images',
+                        'details' => 'Les balises ALT décrivent le contenu des images et sont importantes non seulement pour l\'accessibilité, mais aussi pour le SEO. Elles permettent aux moteurs de recherche de comprendre ce que représente l\'image, ce qui peut améliorer le référencement de votre site.'
+                    ],
+                ],
+                'category' => 'seo',
+                'image' => asset('img/balises_seo.jpeg'),
+            ],            
             'plugins' => [
                 'name' => 'Plugins essentiels pour WordPress',
                 'subtitle' => 'Découvrez les plugins indispensables pour votre site WordPress',
@@ -295,6 +326,37 @@ class ArticleController extends Controller
                 'category' => 'plugins',
                 'image' => asset('img/plugins.jpeg'),
             ],
+            'securite_donnees_plugins' => [
+                'name' => 'Plugins de sécurité pour protéger les données utilisateurs',
+                'subtitle' => 'Assurez la sécurité des données de vos utilisateurs',
+                'presentation' => 'Découvrez les plugins qui vous aideront à sécuriser les données sensibles de vos utilisateurs sur WordPress.',
+                'desc-list' => [
+                    'Importance de la sécurité des données.',
+                    'Plugins pour la protection des données utilisateurs.',
+                    'Gestion des permissions d\'accès.',
+                    'Surveillance des activités sur le site.',
+                ],
+                'liste' => [
+                    [
+                        'title' => 'Importance de la sécurité des données',
+                        'details' => 'La protection des données utilisateurs est cruciale pour maintenir la confiance et la conformité aux lois de protection des données. Des mesures de sécurité solides aident à prévenir les violations de données et les accès non autorisés.'
+                    ],
+                    [
+                        'title' => 'Plugins pour la protection des données utilisateurs',
+                        'details' => 'Des plugins comme Wordfence et iThemes Security offrent des fonctionnalités pour protéger les données sensibles, telles que les pare-feux, le chiffrement et les outils de détection des intrusions.'
+                    ],
+                    [
+                        'title' => 'Gestion des permissions d\'accès',
+                        'details' => 'Il est essentiel de gérer correctement les permissions d\'accès pour s\'assurer que seules les personnes autorisées peuvent accéder aux données sensibles. Les plugins de gestion des utilisateurs permettent de contrôler et de restreindre ces accès.'
+                    ],
+                    [
+                        'title' => 'Surveillance des activités sur le site',
+                        'details' => 'La surveillance continue des activités sur votre site aide à détecter rapidement les comportements suspects ou les tentatives de piratage. Des plugins spécialisés offrent des fonctionnalités de journalisation et d\'alerte en temps réel.'
+                    ],
+                ],
+                'category' => 'plugins',
+                'image' => asset('img/securite_donnees_plugins.jpeg'),
+            ],            
             'security' => [
                 'name' => 'Sécuriser son site WordPress',
                 'subtitle' => 'Protégez votre site des menaces en ligne',
@@ -326,6 +388,37 @@ class ArticleController extends Controller
                 'category' => 'security',
                 'image' => asset('img/security.jpeg'),
             ],
+            'protection_spam' => [
+                'name' => 'Protection contre le spam sur WordPress',
+                'subtitle' => 'Gardez votre site à l\'abri des spams',
+                'presentation' => 'Apprenez à protéger votre site WordPress contre le spam grâce à des plugins et des réglages de sécurité efficaces.',
+                'desc-list' => [
+                    'Pourquoi le spam est un problème.',
+                    'Plugins pour filtrer le spam.',
+                    'Configurer les commentaires pour éviter le spam.',
+                    'Gestion des utilisateurs pour prévenir le spam.',
+                ],
+                'liste' => [
+                    [
+                        'title' => 'Pourquoi le spam est un problème',
+                        'details' => 'Le spam peut nuire à la crédibilité de votre site, ralentir ses performances et compromettre la sécurité. Il est crucial de mettre en place des mesures pour filtrer et bloquer le spam dès le départ.'
+                    ],
+                    [
+                        'title' => 'Plugins pour filtrer le spam',
+                        'details' => 'Des plugins comme Akismet et Antispam Bee sont efficaces pour filtrer les spams dans les commentaires, les formulaires de contact, et les inscriptions sur votre site WordPress.'
+                    ],
+                    [
+                        'title' => 'Configurer les commentaires pour éviter le spam',
+                        'details' => 'Limiter les commentaires anonymes, activer la modération et utiliser des captchas sont des méthodes efficaces pour réduire le spam dans les commentaires de votre site.'
+                    ],
+                    [
+                        'title' => 'Gestion des utilisateurs pour prévenir le spam',
+                        'details' => 'Restreindre les inscriptions automatisées et surveiller les activités des utilisateurs peuvent aider à prévenir le spam sur les sites avec des fonctionnalités d\'inscription et d\'interaction utilisateur.'
+                    ],
+                ],
+                'category' => 'security',
+                'image' => asset('img/protection_spam.jpeg'),
+            ],            
             'backup' => [
                 'name' => 'Sauvegarde de votre site WordPress',
                 'subtitle' => 'Protégez vos données',
@@ -357,6 +450,37 @@ class ArticleController extends Controller
                 'category' => 'backup',
                 'image' => asset('img/backup.jpeg'),
             ],
+            'backup_cloud' => [
+                'name' => 'Sauvegarder WordPress sur le Cloud',
+                'subtitle' => 'Sécurisez vos données dans le cloud',
+                'presentation' => 'Assurez la sécurité de votre site en apprenant à configurer des sauvegardes automatiques vers le Cloud avec WordPress.',
+                'desc-list' => [
+                    'Avantages des sauvegardes cloud.',
+                    'Choisir un service de stockage cloud.',
+                    'Configurer un plugin de sauvegarde cloud.',
+                    'Restaurer votre site depuis le Cloud.',
+                ],
+                'liste' => [
+                    [
+                        'title' => 'Avantages des sauvegardes cloud',
+                        'details' => 'Les sauvegardes cloud offrent une solution fiable pour stocker vos données en toute sécurité hors site, avec la possibilité d\'accéder à vos sauvegardes à tout moment et de les restaurer facilement.'
+                    ],
+                    [
+                        'title' => 'Choisir un service de stockage cloud',
+                        'details' => 'Choisissez un service de stockage cloud fiable comme Google Drive, Dropbox, ou Amazon S3 pour sauvegarder vos fichiers WordPress. Chacun de ces services offre des fonctionnalités et des prix différents.'
+                    ],
+                    [
+                        'title' => 'Configurer un plugin de sauvegarde cloud',
+                        'details' => 'Des plugins comme UpdraftPlus ou BackupBuddy permettent de configurer facilement des sauvegardes automatiques vers le cloud. Vous pouvez définir la fréquence des sauvegardes et sélectionner les fichiers à inclure.'
+                    ],
+                    [
+                        'title' => 'Restaurer votre site depuis le Cloud',
+                        'details' => 'En cas de problème, vous pouvez restaurer votre site directement depuis une sauvegarde cloud. La plupart des plugins de sauvegarde offrent une option de restauration simple et rapide pour minimiser les temps d\'arrêt.'
+                    ],
+                ],
+                'category' => 'backup',
+                'image' => asset('img/backup_cloud.jpeg'),
+            ],            
             'performance' => [
                 'name' => 'Améliorer la performance de votre site WordPress',
                 'subtitle' => 'Optimisez la vitesse et la réactivité',
@@ -388,6 +512,37 @@ class ArticleController extends Controller
                 'category' => 'performance',
                 'image' => asset('img/performance.jpeg'),
             ],
+            'optimisation_bdd' => [
+                'name' => 'Optimisation de la base de données WordPress',
+                'subtitle' => 'Boostez la performance de votre site',
+                'presentation' => 'Améliorez la performance de votre site en nettoyant et optimisant régulièrement la base de données WordPress.',
+                'desc-list' => [
+                    'Pourquoi optimiser la base de données.',
+                    'Plugins pour l\'optimisation de la base de données.',
+                    'Nettoyage des révisions et des brouillons.',
+                    'Planification de l\'optimisation automatique.',
+                ],
+                'liste' => [
+                    [
+                        'title' => 'Pourquoi optimiser la base de données',
+                        'details' => 'Une base de données encombrée peut ralentir votre site. L\'optimisation régulière permet de supprimer les données inutiles et de maintenir la base de données légère et performante.'
+                    ],
+                    [
+                        'title' => 'Plugins pour l\'optimisation de la base de données',
+                        'details' => 'Des plugins comme WP-Optimize et Advanced Database Cleaner facilitent le nettoyage et l\'optimisation de votre base de données WordPress en quelques clics.'
+                    ],
+                    [
+                        'title' => 'Nettoyage des révisions et des brouillons',
+                        'details' => 'Les révisions et les brouillons non utilisés peuvent rapidement encombrer votre base de données. Il est recommandé de les supprimer régulièrement pour libérer de l\'espace.'
+                    ],
+                    [
+                        'title' => 'Planification de l\'optimisation automatique',
+                        'details' => 'Les plugins d\'optimisation permettent également de planifier des optimisations automatiques à intervalles réguliers, garantissant ainsi que votre base de données reste toujours en bon état.'
+                    ],
+                ],
+                'category' => 'performance',
+                'image' => asset('img/optimisation_bdd.png'),
+            ],            
             'ecommerce' => [
                 'name' => 'Créer une boutique en ligne avec WordPress',
                 'subtitle' => 'Lancez votre e-commerce facilement',
@@ -417,8 +572,39 @@ class ArticleController extends Controller
                     ],
                 ],
                 'category' => 'ecommerce',
-                'image' => asset('img/ecommerce.jpeg'),
+                'image' => asset('img/ecommerce.webp'),
             ],
+            'produits_numeriques' => [
+                'name' => 'Gestion des produits numériques avec WooCommerce',
+                'subtitle' => 'Vendez facilement vos produits numériques',
+                'presentation' => 'Apprenez à configurer et gérer la vente de produits numériques sur votre site WordPress avec WooCommerce.',
+                'desc-list' => [
+                    'Configuration des produits numériques.',
+                    'Options de livraison pour les produits numériques.',
+                    'Protection contre le piratage.',
+                    'Gestion des licences et des téléchargements.',
+                ],
+                'liste' => [
+                    [
+                        'title' => 'Configuration des produits numériques',
+                        'details' => 'Avec WooCommerce, vous pouvez configurer facilement des produits numériques à vendre, tels que des ebooks, des logiciels, ou des fichiers multimédia. Il est important de définir correctement les options de téléchargement et d\'accès.'
+                    ],
+                    [
+                        'title' => 'Options de livraison pour les produits numériques',
+                        'details' => 'La livraison des produits numériques est instantanée via des liens de téléchargement après l\'achat. Assurez-vous que les paramètres de téléchargement sont configurés pour offrir une expérience utilisateur fluide.'
+                    ],
+                    [
+                        'title' => 'Protection contre le piratage',
+                        'details' => 'Protégez vos produits numériques en limitant le nombre de téléchargements par achat, en utilisant des liens de téléchargement expirable, et en intégrant des outils de gestion des droits numériques (DRM).'
+                    ],
+                    [
+                        'title' => 'Gestion des licences et des téléchargements',
+                        'details' => 'WooCommerce permet de gérer les licences et les clés de produit pour les logiciels et autres produits nécessitant une activation. Vous pouvez également suivre les téléchargements pour vous assurer qu\'ils sont utilisés de manière légitime.'
+                    ],
+                ],
+                'category' => 'ecommerce',
+                'image' => asset('img/produits_numeriques.jpeg'),
+            ],            
         ];
 
         if (!array_key_exists($article, $articles)) {

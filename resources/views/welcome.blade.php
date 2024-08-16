@@ -27,8 +27,8 @@
                                 <div class="heading-description">
                                     <p>
                                     WebCrea vous aide à booster votre visibilité en ligne avec des sites WordPress performants et personnalisés. 
-                                    Que ce soit pour <a href="#"><span style="color: #88349c"><strong>un nouveau site web</strong></span></a>&nbsp;
-                                    ou <a href="#"><strong><span style="color: #88349c">la refonte d'un site web existant</span></strong></a>, 
+                                    Que ce soit pour <a href="{{ url('/services/conception') }}"><span style="color: #88349c"><strong>un nouveau site web</strong></span></a>&nbsp;
+                                    ou <a href="{{ url('/services/developpement') }}"><strong><span style="color: #88349c">la refonte d'un site web existant</span></strong></a>, 
                                     nous sommes là pour vous aider à attirer plus de clients !</p>
                                 </div>
                             </div>
@@ -82,14 +82,14 @@
                         <div class="void" id="void">
                             <div class="crop">
                                 <ul id="card-list" style="--count: 8;">
-                                    <li class="list-card"><div class="card"><a href="{{ route('projects.index', ['title' => 'TMA IFS']) }}"><span class="model-name">TMA IFS</span><span>Réalisation de maintenance applicative du site (Coeur WordPress, Thèmes, Plugins, Contributions)</span></a></div></li>
-                                    <li class="list-card"><div class="card"><a href="{{ route('projects.index', ['title' => 'CALF MVP']) }}"><span class="model-name">CALF MVP</span><span>Réalisation de simulateur pour simulation sa consommation d'énergie (Particulier / Professionnel)</span></a></div></li>
-                                    <li class="list-card"><div class="card"><a href="{{ route('projects.index', ['title' => 'EDF-ENR']) }}"><span class="model-name">EDF-ENR</span><span>Réalisation de Bloc React Gutenberg pour l'ensemble du site (Refonte Complète)</span></a></div></li>
-                                    <li class="list-card"><div class="card"><a href="{{ route('projects.index', ['title' => 'ENGIE']) }}"><span class="model-name">ENGIE</span><span>Réalisation de Bloc React Gutenberg et Gestion d'une map pour borne de recharge voiture électrique</span></a></div></li>
-                                    <li class="list-card"><div class="card"><a href="{{ route('projects.index', ['title' => 'THEKDO']) }}"><span class="model-name">THEKDO</span><span>Gestion de la partie Woocommerce et préparation d'extract de commande avec requête SQL</span></a></div></li>
-                                    <li class="list-card"><div class="card"><a href="{{ route('projects.index', ['title' => 'THEME WORDPRESS']) }}"><span class="model-name">THEME WORDPRESS</span><span>Création de thème WordPress</span></a></div></li>
-                                    <li class="list-card"><div class="card"><a href="{{ route('projects.index', ['title' => 'PLUGINS WORDPRESS']) }}"><span class="model-name">PLUGINS WORDPRESS</span><span>Création de plugins WordPress</span></a></div></li>
-                                    <li class="list-card"><div class="card"><a href="{{ route('projects.index', ['title' => 'BLOCS WORDPRESS']) }}"><span class="model-name">BLOCS WORDPRESS</span><span>Réalisation de Bloc React Gutenberg / ACF Gutenberg</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href="{{ route('projects.show', 'tma-ifs') }}"><span class="model-name">TMA IFS</span><span>Réalisation de maintenance applicative du site (Coeur WordPress, Thèmes, Plugins, Contributions)</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href="{{ route('projects.show', 'calf-mvp') }}"><span class="model-name">CALF MVP</span><span>Réalisation de simulateur pour simulation sa consommation d'énergie (Particulier / Professionnel)</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href="{{ route('projects.show', 'edf-enr') }}"><span class="model-name">EDF-ENR</span><span>Réalisation de Bloc React Gutenberg pour l'ensemble du site (Refonte Complète)</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href="{{ route('projects.show', 'engie') }}"><span class="model-name">ENGIE</span><span>Réalisation de Bloc React Gutenberg et Gestion d'une map pour borne de recharge voiture électrique</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href="{{ route('projects.show', 'thekdo') }}"><span class="model-name">THEKDO</span><span>Gestion de la partie Woocommerce et préparation d'extract de commande avec requête SQL</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href="{{ route('projects.show', 'theme-wordpress') }}"><span class="model-name">THEME WORDPRESS</span><span>Création de thème WordPress</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href="{{ route('projects.show', 'plugins-wordpress') }}"><span class="model-name">PLUGINS WORDPRESS</span><span>Création de plugins WordPress</span></a></div></li>
+                                    <li class="list-card"><div class="card"><a href="{{ route('projects.show', 'blocs-wordpress') }}"><span class="model-name">BLOCS WORDPRESS</span><span>Réalisation de Bloc React Gutenberg / ACF Gutenberg</span></a></div></li>
                                 </ul>
                                 <div class="last-circle"></div>
                                 <div class="second-circle"></div>

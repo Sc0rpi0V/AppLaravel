@@ -2,7 +2,7 @@
     <div class="flex flex-wrap justify-around items-start mx-6">
         <!-- 1ère partie : Logo -->
         <div class="mb-6">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="WebCrea Logo">
+            <img src="{{ asset('img/scorp-logo.png') }}" class="h-8" alt="ScorpWPCrea Logo">
         </div>
 
         <!-- 2ème partie : Liens rapides -->

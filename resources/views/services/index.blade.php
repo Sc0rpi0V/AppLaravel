@@ -20,22 +20,28 @@
                 
                 <section class="services mt-10">
                     <div class="service-item">
-                        <h2 class="service-title">Conception de site web</h2>
-                        <p class="service-description">
-                            Je conçois des sites web sur mesure adaptés à vos besoins spécifiques. Du design à l'ergonomie, chaque détail est pensé pour offrir une expérience utilisateur optimale.
-                        </p>
+                        <a href="{{ url('/services/conception') }}">
+                            <h2 class="service-title">Conception de site web</h2>
+                            <p class="service-description">
+                                Je conçois des sites web sur mesure adaptés à vos besoins spécifiques. Du design à l'ergonomie, chaque détail est pensé pour offrir une expérience utilisateur optimale.
+                            </p>
+                        </a>
                     </div>
                     <div class="service-item">
-                        <h2 class="service-title">Refonte de site web</h2>
-                        <p class="service-description">
-                            Votre site a besoin d'un coup de jeune ? Je réalise la refonte complète de votre site pour le rendre plus moderne, performant et adapté aux dernières tendances.
-                        </p>
+                        <a href="{{ url('/services/developpement') }}">
+                            <h2 class="service-title">Refonte de site web</h2>
+                            <p class="service-description">
+                                Votre site a besoin d'un coup de jeune ? Je réalise la refonte complète de votre site pour le rendre plus moderne, performant et adapté aux dernières tendances.
+                            </p>
+                        </a>
                     </div>
                     <div class="service-item">
-                        <h2 class="service-title">Maintenance de site web</h2>
-                        <p class="service-description">
-                            Pour assurer le bon fonctionnement et la sécurité de votre site, je propose des services de maintenance régulière incluant les mises à jour, les sauvegardes et le support technique.
-                        </p>
+                        <a href="{{ url('/services/support') }}">
+                            <h2 class="service-title">Maintenance de site web</h2>
+                            <p class="service-description">
+                                Pour assurer le bon fonctionnement et la sécurité de votre site, je propose des services de maintenance régulière incluant les mises à jour, les sauvegardes et le support technique.
+                            </p>
+                        </a>
                     </div>
                     <div class="service-item">
                         <h2 class="service-title">Hébergement web</h2>
@@ -44,16 +50,20 @@
                         </p>
                     </div>
                     <div class="service-item">
-                        <h2 class="service-title">Référencement naturel SEO</h2>
-                        <p class="service-description">
-                            Pour améliorer la visibilité de votre site sur les moteurs de recherche, je mets en place des stratégies de référencement naturel (SEO) efficaces et durables.
-                        </p>
+                        <a href="{{ url('/services/consultation') }}">
+                            <h2 class="service-title">Référencement naturel SEO</h2>
+                            <p class="service-description">
+                                Pour améliorer la visibilité de votre site sur les moteurs de recherche, je mets en place des stratégies de référencement naturel (SEO) efficaces et durables.
+                            </p>
+                        </a>
                     </div>
                     <div class="service-item">
-                        <h2 class="service-title">Accompagnement</h2>
-                        <p class="service-description">
-                            Je vous accompagne dans la définition et la mise en œuvre de votre stratégie digitale, en vous fournissant des conseils personnalisés et en vous aidant à atteindre vos objectifs.
-                        </p>
+                        <a href="{{ url('/services/formation') }}">
+                            <h2 class="service-title">Accompagnement</h2>
+                            <p class="service-description">
+                                Je vous accompagne dans la définition et la mise en œuvre de votre stratégie digitale, en vous fournissant des conseils personnalisés et en vous aidant à atteindre vos objectifs.
+                            </p>
+                        </a>
                     </div>
                 </section>
 
