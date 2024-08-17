@@ -26,10 +26,12 @@
 
             <div class="border-t border-gray-200">
                 <dl>
-                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">Vos Échanges</dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ auth()->user()->address }}</dd>
-                    </div>
+                    @foreach(auth()->user()->messages as $message)
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">Message {{ $loop->iteration }}</dt>  <!-- Utilisation de $loop->iteration -->
+                            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ $message->message }}</dd>
+                        </div>
+                    @endforeach
                 </dl>
             </div>
         </div>

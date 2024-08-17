@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Message;
 
 class ContactController extends Controller
 {
@@ -26,13 +27,12 @@ class ContactController extends Controller
             'message' => 'required|string',
         ]);
 
-        $contactDetails = $request->only('name', 'email', 'message');
-
-        // Envoi de l'email (ou autre traitement nécessaire)
-        Mail::send('emails.contact', $contactDetails, function($message) use ($contactDetails) {
-            $message->to('valentinc.boury@gmail.com')
-                    ->subject('Nouveau message de contact');
-        });
+        Message::create([
+            'user_id' => auth()->user()->id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
+        ]);
 
         return redirect()->route('contact.index')->with('success', 'Votre message a été envoyé avec succès !');
     }
