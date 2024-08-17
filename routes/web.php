@@ -45,6 +45,11 @@ Route::get('/formations', function () {
     return view('formations');
 })->middleware(['auth', 'verified'])->name('formations');
 
+// Messages route
+Route::get('/messages', function () {
+    return view('messages');
+})->middleware(['auth', 'verified'])->name('messages');
+
 // Authenticated routes group
 Route::middleware('auth')->group(function () {
     // Profile routes

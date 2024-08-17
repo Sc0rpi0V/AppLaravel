@@ -18,16 +18,16 @@
     </div>
 
     <div class="p-6">
-        <h2 class="text-2xl font-semibold mb-4">Informations du compte</h2>
+        <h2 class="text-2xl font-semibold mb-4">Informations des Messages</h2>
         <div class="bg-white shadow overflow-hidden sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6">
-                <h3 class="text-lg font-medium leading-6 text-gray-900">Formations Sélectionnées</h3>
+                <h3 class="text-lg font-medium leading-6 text-gray-900">Vos Messages</h3>
             </div>
 
             <div class="border-t border-gray-200">
                 <dl>
                     <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">Vos Formations</dt>
+                        <dt class="text-sm font-medium text-gray-500">Vos Échanges</dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ auth()->user()->address }}</dd>
                     </div>
                 </dl>
