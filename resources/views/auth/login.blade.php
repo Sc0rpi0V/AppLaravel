@@ -1,5 +1,7 @@
 @vite('resources/css/login.css')
+@vite('resources/css/app.css')
 
+@include('_nav')
 <div class="container">
     <div class="screen">
         <div class="screen__content">
@@ -35,3 +37,5 @@
         </div>        
     </div>
 </div>
+@include('_footer')
+@include('_sponsor')

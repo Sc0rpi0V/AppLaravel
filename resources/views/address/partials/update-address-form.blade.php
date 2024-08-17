@@ -24,9 +24,9 @@
         </div>
 
         <div>
-            <x-input-label for="address_2" :value="__('Complement Address')" />
-            <x-text-input id="address_2" name="address_2" type="text" class="mt-1 block w-full" :value="old('address_2', $user->address_2)" required autofocus autocomplete="address_2" />
-            <x-input-error class="mt-2" :messages="$errors->get('address_2')" />
+            <x-input-label for="address2" :value="__('Complement Address')" />
+            <x-text-input id="address2" name="address2" type="text" class="mt-1 block w-full" :value="old('address2', $user->address2)" required autofocus autocomplete="address2" />
+            <x-input-error class="mt-2" :messages="$errors->get('address2')" />
         </div>
 
         <div>
@@ -36,9 +36,9 @@
         </div>
 
         <div>
-            <x-input-label for="postal_code" :value="__('Postal Code')" />
-            <x-text-input id="postal_code" name="postal_code" type="text" class="mt-1 block w-full" :value="old('postal_code', $user->postal_code)" required autofocus autocomplete="postal_code" />
-            <x-input-error class="mt-2" :messages="$errors->get('postal_code')" />
+            <x-input-label for="postalcode" :value="__('Postal Code')" />
+            <x-text-input id="postalcode" name="postalcode" type="text" class="mt-1 block w-full" :value="old('postalcode', $user->postalcode)" required autofocus autocomplete="postalcode" />
+            <x-input-error class="mt-2" :messages="$errors->get('postalcode')" />
         </div>
 
         <div>

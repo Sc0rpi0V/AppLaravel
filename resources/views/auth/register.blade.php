@@ -1,3 +1,4 @@
+@include('_nav')
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -50,3 +51,5 @@
         </div>
     </form>
 </x-guest-layout>
+@include('_footer')
+@include('_sponsor')
