@@ -11,28 +11,24 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     Vous êtes sur votre Dashboard.
-                    Vous allez pouvoir retrouver les messages que vous avez envoyés via notre plateforme de contact.
+                    Vous allez pouvoir retrouver vos sites que vous avez ajouter afin d'avoir une expertise de celui-ci.
                 </div>
             </div>
         </div>
     </div>
 
     <div class="p-6">
-        <h2 class="text-2xl font-semibold mb-4">Informations des Messages</h2>
+        <button id="addInfoBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
+            Ajouter des informations
+        </button>
+        <h2 class="text-2xl font-semibold mb-4">Informations concernant votre site</h2>
         <div class="bg-white shadow overflow-hidden sm:rounded-lg">
             <div class="px-4 py-5 sm:px-6">
-                <h3 class="text-lg font-medium leading-6 text-gray-900">Vos Messages</h3>
+                <h3 class="text-lg font-medium leading-6 text-gray-900">Votre Site</h3>
             </div>
 
             <div class="border-t border-gray-200">
-                <dl>
-                    @foreach(auth()->user()->messages as $message)
-                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium text-gray-500">Message {{ $loop->iteration }}</dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ $message->message }}</dd>
-                        </div>
-                    @endforeach
-                </dl>
+            
             </div>
         </div>
     </div>

@@ -44,10 +44,12 @@
                         </a>
                     </div>
                     <div class="service-item">
-                        <h2 class="service-title">Hébergement web</h2>
-                        <p class="service-description">
-                            Je vous offre des solutions d'hébergement fiables et sécurisées pour que votre site soit toujours accessible avec des temps de chargement optimaux.
-                        </p>
+                        <a href="{{ url('/services/hebergement') }}">
+                            <h2 class="service-title">Hébergement web</h2>
+                            <p class="service-description">
+                                Je vous offre des solutions d'hébergement fiables et sécurisées pour que votre site soit toujours accessible avec des temps de chargement optimaux.
+                            </p>
+                        </a>
                     </div>
                     <div class="service-item">
                         <a href="{{ url('/services/consultation') }}">
@@ -124,7 +126,7 @@
                         </div>
                     </section> 
                     <div class="button-wrapper button-align-center">
-                        <a class="button black button-md button-normal button-default icon-" href="#">
+                        <a class="button black button-md button-normal button-default icon-" href="{{ url('/devis') }}">
                             <div class="text">
                                 <span class="text-before">Demander un devis</span>
                             </div>

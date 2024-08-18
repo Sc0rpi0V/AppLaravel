@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>WebCrea</title>
+        <title>ScorpWPCrea</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -26,7 +26,7 @@
                                 <h1 class="heading-secondary"><span class="heading-before">Attirez plus de clients avec </span><span class="heading-highlight">un site web </span><span class="aux-head-after">qui vous ressemble</span></h1>
                                 <div class="heading-description">
                                     <p>
-                                    WebCrea vous aide à booster votre visibilité en ligne avec des sites WordPress performants et personnalisés. 
+                                    ScorpWPCrea vous aide à booster votre visibilité en ligne avec des sites WordPress performants et personnalisés. 
                                     Que ce soit pour <a href="{{ url('/services/conception') }}"><span style="color: #88349c"><strong>un nouveau site web</strong></span></a>&nbsp;
                                     ou <a href="{{ url('/services/developpement') }}"><strong><span style="color: #88349c">la refonte d'un site web existant</span></strong></a>, 
                                     nous sommes là pour vous aider à attirer plus de clients !</p>
@@ -40,7 +40,7 @@
                     <div class="button-container">
                         <section class="section-button">
                             <div class="button">
-                                <a class="aux-modern-button aux-black aux-modern-button-md aux-modern-button-normal aux-modern-button-default aux-icon-right" href="#">
+                                <a class="aux-modern-button aux-black aux-modern-button-md aux-modern-button-normal aux-modern-button-default aux-icon-right" href="{{ url('/devis') }}">
                                     <div class="aux-overlay"></div>
                                     <div class="aux-icon">
                                         <div class="aux-text">

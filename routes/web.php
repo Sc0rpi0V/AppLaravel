@@ -10,7 +10,8 @@ use App\Http\Controllers\{
     ContactController,
     CreationController,
     ProjectController,
-    ServiceController
+    ServiceController,
+    QuoteController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,19 @@ Route::get('/formations', function () {
 Route::get('/messages', function () {
     return view('messages');
 })->middleware(['auth', 'verified'])->name('messages');
+
+// WebSite route
+Route::get('/website', function () {
+    return view('website');
+})->middleware(['auth', 'verified'])->name('website');
+
+// Devis route
+Route::get('/devis', function () {
+    return view('quoteform');
+})->middleware(['auth', 'verified'])->name('quoteform');
+
+// Validation formulaire devis
+Route::post('/devis', [QuoteController::class, 'submitQuote'])->name('submit.quote');
 
 // Authenticated routes group
 Route::middleware('auth')->group(function () {
@@ -106,6 +120,7 @@ Route::prefix('services')->name('services.')->controller(ServiceController::clas
     Route::get('/formation', 'formation')->name('formation');
     Route::get('/developpement', 'developpement')->name('developpement'); 
     Route::get('/conception', 'conception')->name('conception');
+    Route::get('/hebergement', 'hebergement')->name('hebergement'); 
 });
 
 Route::prefix('contact')->name('contact.')->controller(ContactController::class)->group(function() {

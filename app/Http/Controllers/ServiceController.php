@@ -41,4 +41,10 @@ class ServiceController extends Controller
     {
         return view('services.conception');
     }
+
+    // Page pour le service de Hebergement
+    public function hebergement()
+    {
+        return view('services.hebergement');
+    }
 }

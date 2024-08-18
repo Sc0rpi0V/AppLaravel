@@ -24,6 +24,10 @@
     margin-left: 100px;
 }
 
+.home-btn {
+    background-color: rgb(136, 52, 156);
+}
+
 .screen {		
 	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
 	position: relative;	

@@ -14,22 +14,20 @@
                         <p>Bienvenue sur la page dédiée aux blogs !</p>
                     </div>
 
-                    <div class="mt-8">
+                    <div class="projects-grid">
                         @if ($posts->count())
-                            <ul>
-                                @foreach ($posts as $post)
-                                    <li class="mb-4">
+                            @foreach ($posts as $post)
+                                <div class="project-card">
+                                    <a class="project-link" href="{{ route('blog.show', ['slug' => $post->slug, 'id' => $post->id]) }}">
                                         <h2 class="text-xl font-bold">
-                                            <a href="{{ route('blog.show', ['slug' => $post->slug, 'id' => $post->id]) }}">
                                                 {{ $post->title }}
-                                            </a>
                                         </h2>
                                         <p class="text-gray-600">
                                             {{ $post->excerpt }}
                                         </p>
-                                    </li>
-                                @endforeach
-                            </ul>
+                                    </a>
+                                </div>
+                            @endforeach
 
                             <div class="mt-4">
                                 {{ $posts->links() }}
