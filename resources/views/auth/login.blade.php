@@ -9,19 +9,21 @@
                 @csrf
                 <div class="login__field">
                     <i class="login__icon fas fa-user"></i>
-                    <input type="text" name="email" class="login__input" placeholder="User name / Email" required autofocus>
+                    <label>Adresse Mail</label>
+                    <input type="text" name="email" class="login__input" placeholder="Email" required autofocus>
                 </div>
                 <div class="login__field">
                     <i class="login__icon fas fa-lock"></i>
-                    <input type="password" name="password" class="login__input" placeholder="Password" required>
+                    <label>Mot de passe</label>
+                    <input type="password" name="password" class="login__input" placeholder="Mot de passe" required>
                 </div>
                 <button type="submit" class="button login__submit">
-                    <span class="button__text">Log In Now</span>
+                    <span class="button__text">S'inscrire</span>
                     <i class="button__icon fas fa-chevron-right"></i>
                 </button>
             </form>
             <div class="social-login">
-                <h3>Log in via</h3>
+                <h3>Se connecter via</h3>
                 <div class="social-icons">
                     <a href="#" class="social-login__icon fab fa-instagram"></a>
                     <a href="#" class="social-login__icon fab fa-facebook"></a>
