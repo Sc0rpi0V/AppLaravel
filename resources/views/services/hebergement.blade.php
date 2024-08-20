@@ -103,5 +103,5 @@
     </div>
 
     @include('_footer')
-    @include('_sponsor')
+    
 </body>

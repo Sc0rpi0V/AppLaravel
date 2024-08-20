@@ -56,6 +56,11 @@ Route::get('/website', function () {
     return view('website');
 })->middleware(['auth', 'verified'])->name('website');
 
+// Newsletter route
+Route::get('/newsletter', function () {
+    return view('newsletter');
+})->middleware(['auth', 'verified'])->name('newsletter');
+
 // Devis route
 Route::get('/devis', function () {
     return view('quoteform');

@@ -48,4 +48,3 @@
 </body>
 
 @include('_footer')
-@include('_sponsor')

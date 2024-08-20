@@ -24,6 +24,9 @@
                     <x-nav-link :href="route('website')" :active="request()->routeIs('website')">
                         {{ __('Website') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('newsletter')" :active="request()->routeIs('newsletter')">
+                        {{ __('Newsletter') }}
+                    </x-nav-link>
                 </div>
             </div>
 

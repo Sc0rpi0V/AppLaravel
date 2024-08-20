@@ -40,4 +40,3 @@
     </div>
 </div>
 @include('_footer')
-@include('_sponsor')

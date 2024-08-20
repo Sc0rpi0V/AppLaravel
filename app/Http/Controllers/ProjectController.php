@@ -219,7 +219,7 @@ class ProjectController extends Controller
                     'Gestion et réécriture des Query sur les thèmes',
                     'Gestion des taxonomies et category'
                 ],
-                'image' => asset('img/ifs.jpeg'), 
+                'image' => asset('img/themes.webp'), 
                 'category' => 'Maintenance' ,
             ],
             'plugins-wordpress' => [
@@ -236,7 +236,7 @@ class ProjectController extends Controller
                 ],
                 'role' => 'Développeur FullStack',
                 'liste' => [],
-                'image' => asset('img/ifs.jpeg'), 
+                'image' => asset('img/plugins.webp'), 
                 'category' => 'Maintenance' ,
             ],
             'blocs-wordpress' => [
@@ -246,14 +246,22 @@ class ProjectController extends Controller
                 'desc-list' => [
                     'Mise en place de différents blocs',
                     'Répondre aux différents besoins',
-                    'Blocs pour animation, mise en avant',
+                    'Blocs pour animation, mise en avant de contenu',
                     'Clean Code',
-                    'Gestion propre du backoffice',
                     'Améliorer l\'expérience utilisateur',
                 ],
                 'role' => 'Développeur FullStack',
-                'liste' => [],
-                'image' => asset('img/ifs.jpeg'), 
+                'liste' => [
+                    'Réalisation de de Bloc ACF',
+                    'Permet la gestion de contenu de manière dynamique',
+                    'Réalisation de Bloc React Gutenberg',
+                    'Pré-visualisation du bloc sur la backOffice',
+                    'Customisation du bloc comme on le souhaite',
+                    'Permet d\'afficher des photos, vidéos, liens externes, mise en avant de contenu',
+                    'Rendre le site Wordpress 100% custom',
+                    'Améliorer l\'expérience utilisateur',
+                ],
+                'image' => asset('img/bloc-gutenberg.webp'), 
                 'category' => 'Maintenance' ,
             ],
             'tma-eldvarm' => [
@@ -284,7 +292,7 @@ class ProjectController extends Controller
                     'Vérification des modifications pour assurer la compatibilité avec le reste du site et éviter toute régression.'
                 ],
                 'category' => 'Maintenance' ,
-                'image' => asset('img/ifs.jpeg'),        
+                'image' => asset('img/eldvarm.webp'),        
             ],
         ];
 

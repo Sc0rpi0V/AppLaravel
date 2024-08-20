@@ -50,6 +50,6 @@
         </div>
     </div>
     <div class="text-center py-4 border-t border-gray-300 mt-6">
-        <p>&copy; {{ date('Y') }} WebCrea. Tous droits réservés.</p>
+        <p>&copy; {{ date('Y') }} WebCrea. Tous droits réservés. BOURY VALENTIN</p>
     </div>
 </footer>
