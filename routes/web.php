@@ -12,6 +12,8 @@ use App\Http\Controllers\{
     ProjectController,
     ServiceController,
     QuoteController,
+    NewsletterController,
+    NewsletterSubscriptionController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -56,10 +58,11 @@ Route::get('/website', function () {
     return view('website');
 })->middleware(['auth', 'verified'])->name('website');
 
-// Newsletter route
-Route::get('/newsletter', function () {
-    return view('newsletter');
-})->middleware(['auth', 'verified'])->name('newsletter');
+// Route pour afficher la page de newsletter avec les données
+Route::get('/newsletter', [NewsletterController::class, 'index'])->middleware(['auth', 'verified'])->name('newsletter');
+
+// Route pour l'inscription à la newsletter
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 
 // Devis route
 Route::get('/devis', function () {

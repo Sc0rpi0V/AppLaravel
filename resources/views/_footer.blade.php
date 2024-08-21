@@ -42,10 +42,10 @@
         <!-- 5ème partie : Newsletter -->
         <div class="mb-6">
             <h4 class="font-semibold text-lg mb-2">Newsletter</h4>
-            {{-- <form action="{{ route('newsletter.subscribe') }}" method="POST"> --}}
+            <form action="{{ route('newsletter.subscribe') }}" method="POST">
                 @csrf
-                <input type="email" name="email" placeholder="Votre email" required class="mb-2 p-2 border border-gray-300 rounded">
-                <button type="submit" class="p-2 bg-purple-600 text-white rounded hover:bg-purple-700">S'inscrire</button>
+                <input type="email" name="email" placeholder="Votre email" required class="mb-2 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <button type="submit" class="p-2 bg-purple-600 text-white rounded hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500">S'inscrire</button>
             </form>
         </div>
     </div>

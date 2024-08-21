@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Newsletter') }}
         </h2>
-        Bonjour Mr. {{ auth()->user()->name}}
+        Bonjour Mr. {{ auth()->user()->name }}
     </x-slot>
 
     <div class="py-12">
@@ -27,11 +27,20 @@
             <div class="border-t border-gray-200">
                 <dl>
                     <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">Vos Newsletters</dt>
+                        <dt class="text-sm font-medium text-gray-500">Date de Soumission</dt>
+                        <dd class="mt-1 text-sm text-gray-900">
+                            {{ $latestSubmission && $latestSubmission->submitted_at ? $latestSubmission->submitted_at->format('d/m/Y H:i') : 'Aucune soumission' }}
+                        </dd>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Première Newsletter</dt>
+                        <dd class="mt-1 text-sm text-gray-900">
+                            <strong>{{ $firstNewsletter['title'] }}</strong><br>
+                            {{ $firstNewsletter['subtitle'] }}
+                        </dd>
                     </div>
                 </dl>
             </div>
         </div>
     </div>
-    
 </x-app-layout>
