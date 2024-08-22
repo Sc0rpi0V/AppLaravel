@@ -14,6 +14,7 @@ use App\Http\Controllers\{
     QuoteController,
     NewsletterController,
     NewsletterSubscriptionController,
+    SiteInfoController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -57,6 +58,7 @@ Route::get('/messages', function () {
 Route::get('/website', function () {
     return view('website');
 })->middleware(['auth', 'verified'])->name('website');
+Route::post('/add-site-info', [SiteInfoController::class, 'store']);
 
 // Route pour afficher la page de newsletter avec les données
 Route::get('/newsletter', [NewsletterController::class, 'index'])->middleware(['auth', 'verified'])->name('newsletter');

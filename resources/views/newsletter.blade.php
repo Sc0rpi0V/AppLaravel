@@ -38,6 +38,9 @@
                             <strong>{{ $firstNewsletter['title'] }}</strong><br>
                             {{ $firstNewsletter['subtitle'] }}
                         </dd>
+                        <button id="dlnewsletter" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
+                            Télécharger la newsletter
+                        </button>
                     </div>
                 </dl>
             </div>
