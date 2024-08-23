@@ -58,6 +58,10 @@
                             {{ __('Avatar') }}
                         </x-dropdown-link>
 
+                        <x-dropdown-link :href="route('phone.edit')">
+                            {{ __('Phone Number') }}
+                        </x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

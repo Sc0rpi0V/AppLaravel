@@ -13,8 +13,10 @@ use App\Http\Controllers\{
     ServiceController,
     QuoteController,
     NewsletterController,
-    NewsletterSubscriptionController,
     SiteInfoController,
+    CartController,
+    CheckoutController,
+    PhoneController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -94,6 +96,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/', [AvatarController::class, 'edit'])->name('edit');
         Route::patch('/', [AvatarController::class, 'update'])->name('update');
     });
+
+    // Phone routes
+    Route::prefix('phone')->name('phone.')->group(function () {
+        Route::get('/', [PhoneController::class, 'edit'])->name('edit');
+        Route::patch('/', [PhoneController::class, 'update'])->name('update');
+    });
 });
 
 require __DIR__.'/auth.php';
@@ -132,6 +140,16 @@ Route::prefix('services')->name('services.')->controller(ServiceController::clas
     Route::get('/conception', 'conception')->name('conception');
     Route::get('/hebergement', 'hebergement')->name('hebergement'); 
 });
+
+// Cart Routes
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
+Route::post('/cart/updateQuantity', [CartController::class, 'updateQuantity'])->name('cart.updateQuantity');
+
+// Checkout Routes
+Route::get('/checkout', [CheckoutController::class, 'showForm'])->name('checkout');
+Route::post('/checkout/submit', [CheckoutController::class, 'handleForm'])->name('checkout.submit');
+Route::get('/order/complete', [CheckoutController::class, 'orderComplete'])->name('checkout.complete');
 
 Route::prefix('contact')->name('contact.')->controller(ContactController::class)->group(function() {
     Route::get('/', 'index')->name('index');
