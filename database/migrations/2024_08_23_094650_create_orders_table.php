@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('firstname');
             $table->string('email');
             $table->string('address');
+            $table->string('address2');
             $table->string('city');
             $table->string('postal_code');
             $table->string('phone');

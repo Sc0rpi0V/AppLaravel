@@ -20,8 +20,10 @@ class CheckoutController extends Controller
         // Validation des données du formulaire
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
+            'firstname' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'address' => 'required|string|max:255',
+            'address2' => 'required|string|max:255',
             'city' => 'required|string|max:255',
             'postal_code' => 'required|string|max:10',
             'phone' => 'required|string|max:20',
@@ -34,18 +36,20 @@ class CheckoutController extends Controller
         // Enregistrement des informations de la commande
         $order = Order::create([
             'name' => $validatedData['name'],
+            'firstname' => $validatedData['firstname'],
             'email' => $validatedData['email'],
             'address' => $validatedData['address'],
+            'address2' => $validatedData['address2'],
             'city' => $validatedData['city'],
             'postal_code' => $validatedData['postal_code'],
             'phone' => $validatedData['phone'],
             'total' => $total,
         ]);
 
-        // Vider le panier après la commande
+        // Vide le panier après la commande
         session()->forget('cart');
 
-        // Rediriger vers la page de confirmation
+        // Redirige vers la page de confirmation
         return redirect()->route('checkout.complete')->with('success', 'Votre commande a été passée avec succès!');
     }
 

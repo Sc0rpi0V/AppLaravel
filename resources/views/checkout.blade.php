@@ -48,28 +48,68 @@
                     <form action="{{ route('checkout.submit') }}" method="POST">
                         @csrf
                         <div class="mb-4">
-                            <label for="name" class="block text-sm font-medium text-gray-700">Nom complet</label>
-                            <input type="text" id="name" name="name" required class="mt-1 block w-full p-2 border rounded">
+                            <label for="name" class="block text-sm font-medium text-gray-700">Nom</label>
+                            @if(auth()->user())
+                                <input type="text" id="name" name="name" value="{{ auth()->user()->name }}" required class="mt-1 block w-full p-2 border rounded">
+                            @else 
+                                <input type="text" id="name" name="name" required class="mt-1 block w-full p-2 border rounded">
+                            @endif
+                        </div>
+                        <div class="mb-4">
+                            <label for="firstname" class="block text-sm font-medium text-gray-700">Prénom</label>
+                            @if(auth()->user()) 
+                                <input type="text" id="first" name="firstname" value="{{ auth()->user()->firstname }}" required class="mt-1 block w-full p-2 border rounded">
+                            @else
+                                <input type="text" id="firstname" name="firstname" required class="mt-1 block w-full p-2 border rounded">
+                            @endif
                         </div>
                         <div class="mb-4">
                             <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                            <input type="email" id="email" name="email" required class="mt-1 block w-full p-2 border rounded">
+                            @if(auth()->user())
+                                <input type="email" id="email" name="email" value="{{ auth()->user()->email }}" required class="mt-1 block w-full p-2 border rounded">
+                            @else
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full p-2 border rounded">
+                            @endif
                         </div>
                         <div class="mb-4">
                             <label for="address" class="block text-sm font-medium text-gray-700">Adresse</label>
-                            <input type="text" id="address" name="address" required class="mt-1 block w-full p-2 border rounded">
+                            @if(auth()->user())
+                                <input type="text" id="address" name="address" value="{{ auth()->user()->address }}" required class="mt-1 block w-full p-2 border rounded">
+                            @else
+                                <input type="text" id="address" name="address" required class="mt-1 block w-full p-2 border rounded">
+                            @endif
+                        </div>
+                        <div class="mb-4">
+                            <label for="address2" class="block text-sm font-medium text-gray-700">Complément d'adresse</label>
+                            @if(auth()->user())
+                                <input type="text" id="address2" name="address2" value="{{ auth()->user()->address2 }}" required class="mt-1 block w-full p-2 border rounded">
+                            @else
+                                <input type="text" id="address2" name="address2" required class="mt-1 block w-full p-2 border rounded">
+                            @endif
                         </div>
                         <div class="mb-4">
                             <label for="city" class="block text-sm font-medium text-gray-700">Ville</label>
-                            <input type="text" id="city" name="city" required class="mt-1 block w-full p-2 border rounded">
+                            @if(auth()->user())
+                                <input type="text" id="city" name="city" value="{{ auth()->user()->city }}" required class="mt-1 block w-full p-2 border rounded">
+                            @else
+                                <input type="text" id="city" name="city" required class="mt-1 block w-full p-2 border rounded">
+                            @endif
                         </div>
                         <div class="mb-4">
                             <label for="postal_code" class="block text-sm font-medium text-gray-700">Code postal</label>
-                            <input type="text" id="postal_code" name="postal_code" required class="mt-1 block w-full p-2 border rounded">
+                            @if(auth()->user())
+                                <input type="text" id="postal_code" name="postal_code" value="{{ auth()->user()->postalcode }}" required class="mt-1 block w-full p-2 border rounded">
+                            @else
+                                <input type="text" id="postal_code" name="postal_code" required class="mt-1 block w-full p-2 border rounded">
+                            @endif
                         </div>
                         <div class="mb-4">
                             <label for="phone" class="block text-sm font-medium text-gray-700">Téléphone</label>
-                            <input type="text" id="phone" name="phone" required class="mt-1 block w-full p-2 border rounded">
+                            @if(auth()->user())
+                                <input type="text" id="phone" name="phone" value="{{ auth()->user()->phone }}" required class="mt-1 block w-full p-2 border rounded">
+                            @else
+                                <input type="text" id="phone" name="phone" required class="mt-1 block w-full p-2 border rounded">
+                            @endif
                         </div>
                         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Valider la commande
