@@ -41,6 +41,19 @@
                             </tbody>
                         </table>
                     @endif
+                    <br><br>
+                    @auth
+                        @if (auth()->user())
+                            <p>
+                                Les informations clients sur le formulaire seront remplis avec les informations que vous avez saisies.
+                                Si celles-ci ne sont pas correctes, vous pouvez les modifier dans le formlaire.
+                            <p>
+                        @else
+                            <a href="{{ route('login') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Se connecter
+                            </a>
+                        @endif
+                    @endauth
                 </div>
 
                 <div class="w-1/2 pl-6">

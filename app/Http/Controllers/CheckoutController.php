@@ -46,11 +46,8 @@ class CheckoutController extends Controller
             'total' => $total,
         ]);
 
-        // Vide le panier après la commande
-        session()->forget('cart');
-
         // Redirige vers la page de confirmation
-        return redirect()->route('checkout.complete')->with('success', 'Votre commande a été passée avec succès!');
+        return redirect()->route('paiement.view');
     }
 
     public function orderComplete()

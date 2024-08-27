@@ -17,6 +17,7 @@ use App\Http\Controllers\{
     CartController,
     CheckoutController,
     PhoneController,
+    PaiementController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -149,6 +150,12 @@ Route::post('/cart/updateQuantity', [CartController::class, 'updateQuantity'])->
 // Checkout Routes
 Route::get('/checkout', [CheckoutController::class, 'showForm'])->name('checkout');
 Route::post('/checkout/submit', [CheckoutController::class, 'handleForm'])->name('checkout.submit');
+
+// Payment Routes
+Route::get('/paiement', [PaiementController::class, 'showForm'])->name('paiement.view');
+Route::post('/paiement/submit', [PaiementController::class, 'handleFormPaiement'])->name('paiement.submit');
+
+// Order completion route
 Route::get('/order/complete', [CheckoutController::class, 'orderComplete'])->name('checkout.complete');
 
 Route::prefix('contact')->name('contact.')->controller(ContactController::class)->group(function() {
