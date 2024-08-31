@@ -373,7 +373,7 @@ class NewsletterController extends Controller
             'email' => 'required|email',
         ]);
 
-        // Enregistrer la soumission
+        // Enregistre la soumission
         NewsletterSubmission::create([
             'email' => $request->input('email'),
             'submitted_at' => now(),
@@ -386,7 +386,6 @@ class NewsletterController extends Controller
     {
         $latestSubmission = NewsletterSubmission::latest('submitted_at')->first();
 
-        // Assurez-vous que `submitted_at` est un objet `Carbon`
         if ($latestSubmission && !$latestSubmission->submitted_at instanceof \Carbon\Carbon) {
             $latestSubmission->submitted_at = \Carbon\Carbon::parse($latestSubmission->submitted_at);
         }

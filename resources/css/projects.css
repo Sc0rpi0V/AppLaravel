@@ -67,6 +67,11 @@ p {
     color: #555;
 }
 
+.project-image {
+    width: 1000px;
+    height: 500px;
+}
+
 /* Filter */
 
 .filter-buttons {

@@ -23,8 +23,10 @@
                         <a href="{{ route('projects.index', ['category' => 'maintenance']) }}" class="btn {{ $category === 'maintenance' ? 'active' : '' }}">Maintenance</a>
                         <a href="{{ route('projects.index', ['category' => 'simulateur']) }}" class="btn {{ $category === 'simulateur' ? 'active' : '' }}">Simulateur</a>
                         <a href="{{ route('projects.index', ['category' => 'react']) }}" class="btn {{ $category === 'react' ? 'active' : '' }}">React</a>
-                        <a href="{{ route('projects.index', ['category' => 'woocommerce']) }}" class="btn {{ $category === 'woocommerce' ? 'active' : '' }}">Woocommerce</a>
+                        <a href="{{ route('projects.index', ['category' => 'ecommerce']) }}" class="btn {{ $category === 'ecommerce' ? 'active' : '' }}">Ecommerce</a>
                         <a href="{{ route('projects.index', ['category' => 'wordpress']) }}" class="btn {{ $category === 'wordpress' ? 'active' : '' }}">WordPress</a>
+                        <a href="{{ route('projects.index', ['category' => 'refonte']) }}" class="btn {{ $category === 'refonte' ? 'active' : '' }}">Refonte</a>
+                        <a href="{{ route('projects.index', ['category' => 'salesforce']) }}" class="btn {{ $category === 'salesforce' ? 'active' : '' }}">Salesforce</a>
                     </div>
 
                     <div class="projects-grid">

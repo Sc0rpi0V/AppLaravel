@@ -8,7 +8,9 @@
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <div class="mt-16">
                 <section>
-                    <h5 class="heading-primary-portfolio">{{ $project['category'] }}</h5>
+                    <h5 class="heading-primary-portfolio">
+                        {{ is_array($project['category']) ? implode(', ', $project['category']) : $project['category'] }}
+                    </h5>
                     <h1 class="heading-secondary">{{ $project['subtitle'] }}</h1>
                     @if(isset($project['image']))
                         <img src="{{ asset($project['image']) }}" alt="{{ $project['name'] }}" class="project-image">

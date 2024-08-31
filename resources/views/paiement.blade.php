@@ -60,12 +60,18 @@
                             <input type="text" id="addressBank" name="addressBank" required class="mt-1 block w-full p-2 border rounded">
                         </div>
                         <div class="mb-4">
-                            <label for="bic" class="block text-sm font-medium text-gray-700">BIC</label>
-                            <input type="text" id="bic" name="bic" required class="mt-1 block w-full p-2 border rounded">
+                            <label for="iban" class="block text-sm font-medium text-gray-700">IBAN</label>
+                            <input type="text" id="iban" name="iban" required class="mt-1 block w-full p-2 border rounded @error('iban') border-red-500 @enderror" value="{{ old('iban') }}">
+                            @error('iban')
+                                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="mb-4">
-                            <label for="iban" class="block text-sm font-medium text-gray-700">IBAN</label>
-                            <input type="text" id="iban" name="iban" required class="mt-1 block w-full p-2 border rounded">
+                            <label for="bic" class="block text-sm font-medium text-gray-700">BIC</label>
+                            <input type="text" id="bic" name="bic" required class="mt-1 block w-full p-2 border rounded @error('bic') border-red-500 @enderror" value="{{ old('bic') }}">
+                            @error('bic')
+                                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
                         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Valider votre paiement

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Paiement;
 use Illuminate\Http\Request;
+use App\Rules\ValidIban;
+use App\Rules\ValidBic;
 
 class PaiementController extends Controller
 {
@@ -21,8 +23,8 @@ class PaiementController extends Controller
             'titulaire' => 'required|string|max:255',
             'nameBank' => 'required|string|max:255',
             'addressBank' => 'required|string|max:255',
-            'bic' => 'required|string|max:11',
-            'iban' => 'required|string|max:34',
+            'bic' => ['required', 'string', 'max:11', new ValidBic],
+            'iban' => ['required', 'string', 'max:34', new ValidIban],
         ]);
 
         // Calcul du total du panier

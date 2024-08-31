@@ -13,24 +13,29 @@ class ProjectController extends Controller
             'category' => 'maintenance'
         ],
         'calf-mvp' => [
-            'title' => 'CALF MVP',
+            'title' => 'CALF',
             'description' => 'Réalisation de simulateur pour simulation sa consommation d\'énergie...',
             'category' => 'simulateur'
+        ],
+        'calf' => [
+            'title' => 'CALF',
+            'description' => 'Refonte du site du Crédit Agricole et Ajout des simulateurs',
+            'category' => 'refonte'
         ],
         'edf-enr' => [
             'title' => 'EDF-ENR',
             'description' => 'Réalisation de Bloc React Gutenberg pour l\'ensemble du site...',
-            'category' => 'react'
+            'category' => ['refonte', 'react']
         ],
         'engie' => [
             'title' => 'ENGIE',
             'description' => 'Réalisation de Bloc React Gutenberg et Gestion d\'une map...',
-            'category' => 'react'
+            'category' => ['refonte', 'react']
         ],
         'thekdo' => [
             'title' => 'THEKDO',
             'description' => 'Gestion de la partie Woocommerce et préparation d\'extract...',
-            'category' => 'woocommerce'
+            'category' => 'ecommerce'
         ],
         'theme-wordpress' => [
             'title' => 'THEME WORDPRESS',
@@ -52,6 +57,51 @@ class ProjectController extends Controller
             'description' => 'Réalisation de la maintenance applicative du site...',
             'category' => 'maintenance'
         ],
+        'cis-btp' => [
+            'title' => 'CIS BTP',
+            'description' => 'Réalisation de formulaire Salesforce...',
+            'category' => 'salesforce'
+        ],
+        'cos-59' => [
+            'title' => 'COS59',
+            'description' => 'Réalisation de gestion ecommerce et TMA...',
+            'category' => ['maintenance', 'ecommerce']
+        ],
+        'verbaere' => [
+            'title' => 'VERBAERE',
+            'description' => 'Réalisation de gestion ecommerce et TMA...',
+            'category' => ['maintenance', 'ecommerce']
+        ],
+        'mercier' => [
+            'title' => 'MERCIER (Auction, Auto, Art)',
+            'description' => 'Réalisation de gestion ecommerce et TMA...',
+            'category' => ['maintenance', 'ecommerce']
+        ],
+        'la-coupole' => [
+            'title' => 'LACOUPOLE',
+            'description' => 'Réalisation de gestion ecommerce et TMA...',
+            'category' => ['maintenance', 'ecommerce']
+        ],
+        'terres-et-territoires' => [
+            'title' => 'TERRES ET TERRITOIRES',
+            'description' => 'Refonte du tunnel d\'achat et ecommerce',
+            'category' => ['refonte', 'ecommerce'],
+        ],
+        'irts' => [
+            'title' => 'IRTS HDF',
+            'description' => 'Modification de leurs articles et mise en avant de contenu',
+            'category' => ['maintenance', 'wordpress'],
+        ],
+        'lille-art-up' => [
+            'title' => 'LILLE ART UP',
+            'description' => 'Réalisation de maintenance et modification du site avec ACF',
+            'category' => ['maintenance', 'wordpress'],
+        ],
+        'grenoble-art-up' => [
+            'title' => 'GRENOBLE ART UP',
+            'description' => 'Réalisation de maintenance et modification du site avec ACF',
+            'category' => ['maintenance', 'wordpress'],
+        ],
     ];
 
     /**
@@ -62,21 +112,24 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
-        $category = $request->input('category', 'all');
-        
+        $categories = $request->input('category', 'all');
         $projects = $this->projects;
-        
-        if ($category !== 'all') {
-            $projects = array_filter($this->projects, function ($project) use ($category) {
-                return $project['category'] === $category;
+    
+        if ($categories !== 'all') {
+            $categoriesArray = is_array($categories) ? $categories : explode(',', $categories);
+    
+            $projects = array_filter($this->projects, function ($project) use ($categoriesArray) {
+                $projectCategories = is_array($project['category']) ? $project['category'] : [$project['category']];
+                
+                return !array_diff($categoriesArray, $projectCategories);
             });
         }
-
+    
         return view('project.index', [
             'projects' => $projects,
-            'category' => $category
+            'category' => $categories
         ]);
-    }
+    }    
 
     public function show($project)
     {
@@ -112,7 +165,7 @@ class ProjectController extends Controller
                 'image' => asset('img/ifs.jpeg'),        
             ],
             'calf-mvp' => [
-                'name' => 'CALF MVP',
+                'name' => 'CALF',
                 'subtitle' => 'Crédit Agricole Leasing & Factoring (Simulateurs Autoconsommation Solaire)',
                 'description' => 'Réalisation de simulateur pour simulation sa consommation d\'énergie (Particulier / Professionnel)',
                 'desc-list' => [
@@ -130,6 +183,24 @@ class ProjectController extends Controller
                     'Gestion des enregistrement des informations sur les simulateurs',
                     'Liaison et envoie des informations sur le site principal',
                     'Mise à jour des données pour les conseillers clients et transitions énergétique'
+                ],
+                'image' => asset('img/calf.webp'), 
+                'category' => 'Maintenance' ,
+            ],
+            'calf' => [
+                'name' => 'CALF',
+                'subtitle' => 'Crédit Agricole Leasing & Factoring (Refonte global du site)',
+                'description' => 'Refonte du site principal et ajout des simulateurs sur le site',
+                'desc-list' => [
+                    'Comprendre les enheux de la transition énergétique',
+                    'Mise en place de données claires et sécurisées pour le monde bancaire',
+                    'Liaison des informations clients et des différents conseillers',
+                    'Mise en place de méthode de calcul pour être au normes Françaises et Européennes',
+                    'Gestion et connexion entre site principal et sous-site (simulateurs)'
+                ],
+                'role' => 'Développeur Back-End',
+                'liste' => [
+
                 ],
                 'image' => asset('img/calf.webp'), 
                 'category' => 'Maintenance' ,
@@ -293,6 +364,128 @@ class ProjectController extends Controller
                 ],
                 'category' => 'Maintenance' ,
                 'image' => asset('img/eldvarm.webp'),        
+            ],
+            'cis-btp' => [
+                'name' => 'CIS BTP',
+                'subtitle' => 'CIS BTP',
+                'description' => 'Réalisation de formulaire pour gestion avec salesforce',
+                'desc-list' => [
+                ],
+                'role'  => 'Développeur FullStack',
+                'liste' => [
+
+                ],
+                'category' => 'salesforce' ,
+                'image' => asset('img/cis-btp.jpeg'),        
+            ],
+            'cos-59' => [
+                'name' => 'COS 59',
+                'subtitle' => 'COS 59',
+                'description' => 'Réalisation de gestion ecommerce et TMA',
+                'desc-list' => [
+                ],
+                'role'  => 'Développeur FullStack',
+                'liste' => [
+
+                ],
+                'category' => ['Maintenance', 'ecommerce'] ,
+                'image' => asset('img/cos59.png'),        
+            ],
+            'verbaere' => [
+                'name' => 'VERBAERE',
+                'subtitle' => 'VERBAERE Multisite',
+                'description' => 'Réalisation de gestion ecommerce et TMA',
+                'desc-list' => [
+                    'Gestion des différents sites pour le client',
+                    'Mise à jour du contenu',
+                    'Gestion des ventes des véhicules',
+                    'Mise à jour de data pour ecommerce',
+                    'Maintenance Applicative',
+                ],
+                'role'  => 'Développeur FullStack',
+                'liste' => [
+                    'Mise à niveau des contenus des différents sites Verbaere',
+                    'Gestion du E-commerce pour la vente des véhichules',
+                    'Utilisation de template VueJs pour les listes de véhicules',
+                    'Mise en place de connexion API pour récupèrer les informations des véhciules mis en vente',
+                    'Maintenance Applicative de tous les sites pour (Thèmes, Plugins, Contributions, etc.)',
+                ],
+                'category' => ['Maintenance', 'ecommerce'] ,
+                'image' => asset('img/verbaere.jpeg'),        
+            ],
+            'mercier' => [
+                'name' => 'MERCIER (Auction, Auto, Art)',
+                'subtitle' => 'Multi-sites sur concernant la vente de biens.',
+                'description' => 'Réalisation de gestion ecommerce et TMA',
+                'desc-list' => [
+
+                ],
+                'role'  => 'Développeur FullStack',
+                'liste' => [
+
+                ],
+                'category' => ['Maintenance', 'ecommerce'] ,
+                'image' => asset('img/mercier.webp'),        
+            ],
+            'la-coupole' => [
+                'name' => 'LA COUPOLE',
+                'subtitle' => 'Site de présentation du monument historique',
+                'description' => '',
+                'desc-list' => [
+                
+                ],
+                'role' => 'Développeur FullStack',
+                'liste' => [],
+                'category' => ['maintence', 'wordpress'],
+                'image' => asset('img/la-coupole.jpeg'),
+            ],
+            'terres-et-territoires' => [
+                'name' => 'TERRES ET TERRITOIRES',
+                'subtitle' => 'Site de presse agricole',
+                'description' => '',
+                'desc-list' => [
+                
+                ],
+                'role' => 'Développeur FullStack',
+                'liste' => [],
+                'category' => ['refonte', 'ecommerce'],
+                'image' => asset('img/terres-et-territoires.jpeg'),
+            ],
+            'irts' => [
+                'name' => 'IRTS HDF',
+                'subtitle' => 'Site de formation spécialisé dans le secteur du travail social',
+                'description' => '',
+                'desc-list' => [
+                
+                ],
+                'role' => 'Développeur FullStack',
+                'liste' => [],
+                'category' => ['refonte', 'ecommerce'],
+                'image' => asset('img/irts.webp'),
+            ],
+            'lille-art-up' => [
+                'name' => 'IRTS HDF',
+                'subtitle' => 'Site de présentation d\'art contemporain',
+                'description' => '',
+                'desc-list' => [
+                
+                ],
+                'role' => 'Développeur FullStack',
+                'liste' => [],
+                'category' => ['refonte', 'ecommerce'],
+                'image' => '',
+            ],
+            'grenbole-art-up' => [
+                'name' => 'IRTS HDF',
+                'subtitle' => 'Site de présentation d\'art contemporain',
+                'description' => '',
+                'desc-list' => [
+                
+                ],
+                'role' => 'Développeur FullStack',
+                'liste' => [],
+                'category' => ['refonte', 'ecommerce'],
+                'image' => '',
             ],
         ];
 
