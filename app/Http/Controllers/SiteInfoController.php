@@ -18,19 +18,26 @@ class SiteInfoController extends Controller
             'siteTheme' => 'required|string|max:255',
             'siteEditor' => 'required|string|max:255',
         ]);
-
-        // Sauvegarde les données dans la base de données 
-        SiteInfo::create($validatedData);
-
-        return response()->json([
-            'success' => true,
-            'siteName' => $validatedData['siteName'],
-            'siteDescription' => $validatedData['siteDescription'],
-            'siteUrlName' => $validatedData['siteUrlName'],
-            'siteListPlugins' => $validatedData['siteListPlugins'],
-            'siteType' => $validatedData['siteType'],
-            'siteTheme' => $validatedData['siteTheme'],
-            'siteEditor' => $validatedData['siteEditor'],
-        ]);
-    }
+    
+        try {
+            // Sauvegarde les données dans la base de données 
+            SiteInfo::create($validatedData);
+    
+            return response()->json([
+                'success' => true,
+                'siteName' => $validatedData['siteName'],
+                'siteDescription' => $validatedData['siteDescription'],
+                'siteUrlName' => $validatedData['siteUrlName'],
+                'siteListPlugins' => $validatedData['siteListPlugins'],
+                'siteType' => $validatedData['siteType'],
+                'siteTheme' => $validatedData['siteTheme'],
+                'siteEditor' => $validatedData['siteEditor'],
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'error' => $e->getMessage(),
+            ], 500);
+        }
+    }    
 }

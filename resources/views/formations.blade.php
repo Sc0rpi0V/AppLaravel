@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Formations') }}
         </h2>
-        Bonjour Mr. {{ auth()->user()->name}}
+        Bonjour {{ auth()->user()->gender }} . {{ auth()->user()->name}}
     </x-slot>
 
     <div class="py-12">

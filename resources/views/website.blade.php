@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Website') }}
         </h2>
-        Bonjour Mr. {{ auth()->user()->name}}
+        Bonjour {{ auth()->user()->gender }} . {{ auth()->user()->name}}
     </x-slot>
 
     <div class="py-12">
@@ -59,6 +59,7 @@
                                 <label for="siteName" class="block text-sm font-medium text-gray-700">Nom du site</label>
                                 <input type="text" id="siteName" name="siteName" x-model="siteName" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
+                            <br>
                             <div>
                                 <label for="siteUrlName" class="block text-sm font-medium text-gray-700">Url du site</label>
                                 <input type="text" id="siteUrlName" name="siteUrlName" x-model="siteUrlName" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
@@ -71,14 +72,17 @@
                                 <label for="siteListPlugins" class="block text-sm font-medium text-gray-700">Liste des plugins</label>
                                 <textarea id="siteListPlugins" name="siteListPlugins" x-model="siteListPlugins" rows="3" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
                             </div>
+                            <br>
                             <div>
                                 <label for="siteType" class="block text-sm font-medium text-gray-700">Type de site</label>
                                 <input type="text" id="siteType" name="siteType" x-model="siteType" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
+                            <br>
                             <div>
                                 <label for="siteTheme" class="block text-sm font-medium text-gray-700">Thème du site</label>
                                 <input type="text" id="siteTheme" name="siteTheme" x-model="siteTheme" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
+                            <br>
                             <div>
                                 <label for="siteEditor" class="block text-sm font-medium text-gray-700">Éditeur sur votre site</label>
                                 <input type="text" id="siteEditor" name="siteEditor" x-model="siteEditor" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">

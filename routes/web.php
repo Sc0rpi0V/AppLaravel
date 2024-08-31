@@ -16,6 +16,7 @@ use App\Http\Controllers\{
     SiteInfoController,
     CartController,
     CheckoutController,
+    GenderController,
     PhoneController,
     PaiementController,
 };
@@ -102,6 +103,12 @@ Route::middleware('auth')->group(function () {
     Route::prefix('phone')->name('phone.')->group(function () {
         Route::get('/', [PhoneController::class, 'edit'])->name('edit');
         Route::patch('/', [PhoneController::class, 'update'])->name('update');
+    });
+
+    // Gender routes
+    Route::prefix('gender')->name('gender.')->group(function () {
+        Route::get('/', [GenderController::class, 'edit'])->name('edit');
+        Route::patch('/', [GenderController::class, 'update'])->name('update');
     });
 });
 

@@ -3,11 +3,38 @@
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
+        <!-- Sexe -->
+        <div class="mt-4">
+            <x-input-label for="gender" :value="__('Sexe')" />
+            <div class="flex mt-2">
+                <label class="inline-flex items-center">
+                    <input type="radio" name="gender" value="Mr" class="form-radio" required>
+                    <span class="ml-2">{{ __('Monsieur') }}</span>
+                </label>
+                <label class="inline-flex items-center ml-6">
+                    <input type="radio" name="gender" value="Mme" class="form-radio" required>
+                    <span class="ml-2">{{ __('Madame') }}</span>
+                </label>
+                <label class="inline-flex items-center ml-6">
+                    <input type="radio" name="gender" value="Mlle" class="form-radio" required>
+                    <span class="ml-2">{{ __('Mademoiselle') }}</span>
+                </label>
+            </div>
+            <x-input-error :messages="$errors->get('gender')" class="mt-2" />
+        </div>
+
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Nom')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        </div>
+
+        <!--FirstName -->
+        <div class="mt-4">
+            <x-input-label for="firstname" :value="__('Prénom')" />
+            <x-text-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="firstname" />
+            <x-input-error :messages="$errors->get('firstname')" class="mt-2" />
         </div>
 
         <!-- Email Address -->

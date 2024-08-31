@@ -344,7 +344,8 @@ class ProjectController extends Controller
                     'Coeur WordPress : Mise à jour et maintenance de la version principale de WordPress pour assurer la sécurité et la stabilité du site.',
                     'Thèmes : Gestion, mise à jour et personnalisation des thèmes WordPress pour répondre aux besoins esthétiques et fonctionnels du site.',
                     'Plugins : Installation, mise à jour et configuration des plugins WordPress pour ajouter des fonctionnalités au site.',
-                    'Contributions : Participation à la création et à la gestion de contenu sur les pages et les articles du site.'],
+                    'Contributions : Participation à la création et à la gestion de contenu sur les pages et les articles du site.'
+                ],
                 'role'  => 'Développeur FullStack',
                 'liste' => [
                     'Contribution sur les pages et articles WordPress.',
@@ -386,7 +387,20 @@ class ProjectController extends Controller
                 ],
                 'role'  => 'Développeur FullStack',
                 'liste' => [
-
+                    'Contribution sur les pages et articles WordPress.',
+                    'Rédaction, édition et mise en forme du contenu des différentes pages et articles du site.',
+                    'Ajout d\'éléments multimédia (images, vidéos) et liens pour enrichir le contenu.',
+                    'Optimisation SEO (Search Engine Optimization) des pages et articles pour améliorer leur visibilité sur les moteurs de recherche.',
+                    'Identification des plugins nécessitant une mise à jour.',
+                    'Réalisation des mises à jour en suivant les procédures appropriées pour éviter toute interruption de service.',
+                    'Rédaction d\'un listing complet et détaillé des plugins mis à jour, incluant les versions et les dates de mise à jour.',
+                    'Tests post-mise à jour pour s\'assurer que les plugins fonctionnent correctement et qu\'il n\'y a pas de conflits.',
+                    'Mise à jour des thèmes utilisés par le site pour bénéficier des nouvelles fonctionnalités et corrections de sécurité.',
+                    'Adaptation des thèmes après mise à jour pour maintenir la cohérence visuelle et fonctionnelle du site.',
+                    'Tests pour vérifier que les modifications apportées par les mises à jour sont bien intégrées sans provoquer d\'erreurs.',
+                    'Identification et diagnostic des erreurs dans les fichiers PHP des thèmes.',
+                    'Correction des erreurs pour améliorer la fonctionnalité et la performance du site.',
+                    'Vérification des modifications pour assurer la compatibilité avec le reste du site et éviter toute régression.'
                 ],
                 'category' => ['Maintenance', 'ecommerce'] ,
                 'image' => asset('img/cos59.png'),        
@@ -432,10 +446,29 @@ class ProjectController extends Controller
                 'subtitle' => 'Site de présentation du monument historique',
                 'description' => '',
                 'desc-list' => [
-                
+                    'Comprend l\'ensemble des activités de gestion et de maintenance continue d\'un site web basé sur WordPress.',
+                    'Coeur WordPress : Mise à jour et maintenance de la version principale de WordPress pour assurer la sécurité et la stabilité du site.',
+                    'Thèmes : Gestion, mise à jour et personnalisation des thèmes WordPress pour répondre aux besoins esthétiques et fonctionnels du site.',
+                    'Plugins : Installation, mise à jour et configuration des plugins WordPress pour ajouter des fonctionnalités au site.',
+                    'Contributions : Participation à la création et à la gestion de contenu sur les pages et les articles du site.'
                 ],
                 'role' => 'Développeur FullStack',
-                'liste' => [],
+                'liste' => [
+                    'Contribution sur les pages et articles WordPress.',
+                    'Rédaction, édition et mise en forme du contenu des différentes pages et articles du site.',
+                    'Ajout d\'éléments multimédia (images, vidéos) et liens pour enrichir le contenu.',
+                    'Optimisation SEO (Search Engine Optimization) des pages et articles pour améliorer leur visibilité sur les moteurs de recherche.',
+                    'Identification des plugins nécessitant une mise à jour.',
+                    'Réalisation des mises à jour en suivant les procédures appropriées pour éviter toute interruption de service.',
+                    'Rédaction d\'un listing complet et détaillé des plugins mis à jour, incluant les versions et les dates de mise à jour.',
+                    'Tests post-mise à jour pour s\'assurer que les plugins fonctionnent correctement et qu\'il n\'y a pas de conflits.',
+                    'Mise à jour des thèmes utilisés par le site pour bénéficier des nouvelles fonctionnalités et corrections de sécurité.',
+                    'Adaptation des thèmes après mise à jour pour maintenir la cohérence visuelle et fonctionnelle du site.',
+                    'Tests pour vérifier que les modifications apportées par les mises à jour sont bien intégrées sans provoquer d\'erreurs.',
+                    'Identification et diagnostic des erreurs dans les fichiers PHP des thèmes.',
+                    'Correction des erreurs pour améliorer la fonctionnalité et la performance du site.',
+                    'Vérification des modifications pour assurer la compatibilité avec le reste du site et éviter toute régression.'
+                ],
                 'category' => ['maintence', 'wordpress'],
                 'image' => asset('img/la-coupole.jpeg'),
             ],
@@ -444,10 +477,29 @@ class ProjectController extends Controller
                 'subtitle' => 'Site de presse agricole',
                 'description' => '',
                 'desc-list' => [
-                
+                    'Améliorer le confort utilisateur',
+                    'Changement de système de Ecommerce',
+                    'Refonte du tunnel de commande',
+                    'Refonte de la gestion de compte utilisateur',
+                    'Amélioration gestion site'
                 ],
                 'role' => 'Développeur FullStack',
-                'liste' => [],
+                'liste' => [
+                    'Retrait de l\'ancienne gestion de Ecommerce',
+                    'Passage sous Woocommerce pour gérer les produits',
+                    'Retouche complète du tunnel d\'achat',
+                    'Changement des produits à afficher',
+                    'Utilisation de Woocommerce Subscription pour gérer les abonnements de manière automatique',
+                    'Gestion des différents modes de paiement (RIB / SEPA / Carte Bancaire)',
+                    'Utilisation du moyen de paiement via Crédit Agricole',
+                    'Gestion des modes d\'abonnements pour les revues de presses',
+                    'Gestion de cookies et rgpd lors de l\'inscription',
+                    'Gestion API pour récupèrer et mettre à jour les données utilisateurs et abonnements',
+                    'Mise en place de daemon pour mettre à jour les infos via API',
+                    'Transfert des comptes utilisateurs de l\'ancien système vers le nouveau',
+                    'Mise en place de newsletter',
+                    'Amélioration des performances du site concernant l\'évolution sur la refonte',
+                ],
                 'category' => ['refonte', 'ecommerce'],
                 'image' => asset('img/terres-et-territoires.jpeg'),
             ],
@@ -459,33 +511,73 @@ class ProjectController extends Controller
                 
                 ],
                 'role' => 'Développeur FullStack',
-                'liste' => [],
+                'liste' => [
+
+                ],
                 'category' => ['refonte', 'ecommerce'],
                 'image' => asset('img/irts.webp'),
             ],
             'lille-art-up' => [
-                'name' => 'IRTS HDF',
+                'name' => 'LILLE ART UP',
                 'subtitle' => 'Site de présentation d\'art contemporain',
                 'description' => '',
                 'desc-list' => [
-                
+                    'Comprend l\'ensemble des activités de gestion et de maintenance continue d\'un site web basé sur WordPress.',
+                    'Coeur WordPress : Mise à jour et maintenance de la version principale de WordPress pour assurer la sécurité et la stabilité du site.',
+                    'Thèmes : Gestion, mise à jour et personnalisation des thèmes WordPress pour répondre aux besoins esthétiques et fonctionnels du site.',
+                    'Plugins : Installation, mise à jour et configuration des plugins WordPress pour ajouter des fonctionnalités au site.',
+                    'Contributions : Participation à la création et à la gestion de contenu sur les pages et les articles du site.'
                 ],
                 'role' => 'Développeur FullStack',
-                'liste' => [],
-                'category' => ['refonte', 'ecommerce'],
-                'image' => '',
+                'liste' => [
+                    'Contribution sur les pages et articles WordPress.',
+                    'Rédaction, édition et mise en forme du contenu des différentes pages et articles du site.',
+                    'Ajout d\'éléments multimédia (images, vidéos) et liens pour enrichir le contenu.',
+                    'Optimisation SEO (Search Engine Optimization) des pages et articles pour améliorer leur visibilité sur les moteurs de recherche.',
+                    'Identification des plugins nécessitant une mise à jour.',
+                    'Réalisation des mises à jour en suivant les procédures appropriées pour éviter toute interruption de service.',
+                    'Rédaction d\'un listing complet et détaillé des plugins mis à jour, incluant les versions et les dates de mise à jour.',
+                    'Tests post-mise à jour pour s\'assurer que les plugins fonctionnent correctement et qu\'il n\'y a pas de conflits.',
+                    'Mise à jour des thèmes utilisés par le site pour bénéficier des nouvelles fonctionnalités et corrections de sécurité.',
+                    'Adaptation des thèmes après mise à jour pour maintenir la cohérence visuelle et fonctionnelle du site.',
+                    'Tests pour vérifier que les modifications apportées par les mises à jour sont bien intégrées sans provoquer d\'erreurs.',
+                    'Identification et diagnostic des erreurs dans les fichiers PHP des thèmes.',
+                    'Correction des erreurs pour améliorer la fonctionnalité et la performance du site.',
+                    'Vérification des modifications pour assurer la compatibilité avec le reste du site et éviter toute régression.'
+                ],
+                'category' => ['maintenance', 'wordpress'],
+                'image' => asset('img/lille-art-up.jpeg'),
             ],
-            'grenbole-art-up' => [
-                'name' => 'IRTS HDF',
+            'grenoble-art-up' => [
+                'name' => 'GRENOBLE ART UP',
                 'subtitle' => 'Site de présentation d\'art contemporain',
                 'description' => '',
                 'desc-list' => [
-                
+                    'Comprend l\'ensemble des activités de gestion et de maintenance continue d\'un site web basé sur WordPress.',
+                    'Coeur WordPress : Mise à jour et maintenance de la version principale de WordPress pour assurer la sécurité et la stabilité du site.',
+                    'Thèmes : Gestion, mise à jour et personnalisation des thèmes WordPress pour répondre aux besoins esthétiques et fonctionnels du site.',
+                    'Plugins : Installation, mise à jour et configuration des plugins WordPress pour ajouter des fonctionnalités au site.',
+                    'Contributions : Participation à la création et à la gestion de contenu sur les pages et les articles du site.'
                 ],
                 'role' => 'Développeur FullStack',
-                'liste' => [],
-                'category' => ['refonte', 'ecommerce'],
-                'image' => '',
+                'liste' => [
+                    'Contribution sur les pages et articles WordPress.',
+                    'Rédaction, édition et mise en forme du contenu des différentes pages et articles du site.',
+                    'Ajout d\'éléments multimédia (images, vidéos) et liens pour enrichir le contenu.',
+                    'Optimisation SEO (Search Engine Optimization) des pages et articles pour améliorer leur visibilité sur les moteurs de recherche.',
+                    'Identification des plugins nécessitant une mise à jour.',
+                    'Réalisation des mises à jour en suivant les procédures appropriées pour éviter toute interruption de service.',
+                    'Rédaction d\'un listing complet et détaillé des plugins mis à jour, incluant les versions et les dates de mise à jour.',
+                    'Tests post-mise à jour pour s\'assurer que les plugins fonctionnent correctement et qu\'il n\'y a pas de conflits.',
+                    'Mise à jour des thèmes utilisés par le site pour bénéficier des nouvelles fonctionnalités et corrections de sécurité.',
+                    'Adaptation des thèmes après mise à jour pour maintenir la cohérence visuelle et fonctionnelle du site.',
+                    'Tests pour vérifier que les modifications apportées par les mises à jour sont bien intégrées sans provoquer d\'erreurs.',
+                    'Identification et diagnostic des erreurs dans les fichiers PHP des thèmes.',
+                    'Correction des erreurs pour améliorer la fonctionnalité et la performance du site.',
+                    'Vérification des modifications pour assurer la compatibilité avec le reste du site et éviter toute régression.'
+                ],
+                'category' => ['maintenance', 'wordpress'],
+                'image' => asset('img/grenoble-art-up.jpeg'),
             ],
         ];
 

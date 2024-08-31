@@ -62,6 +62,10 @@
                             {{ __('Phone Number') }}
                         </x-dropdown-link>
 
+                        <x-dropdown-link :href="route('gender.edit')">
+                            {{ __('Gender') }}
+                        </x-dropdown-link>
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
