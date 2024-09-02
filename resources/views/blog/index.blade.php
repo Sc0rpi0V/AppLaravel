@@ -12,30 +12,30 @@
                     <h1 class="heading-secondary"><span class="heading-before">Des blogs </span><span class="heading-highlight">à votre disposition </span></h1>
                     <div class="heading-description">
                         <p>Bienvenue sur la page dédiée aux blogs !</p>
+
+                        <p>N'hésitez pas à explorer chaque blog pour mieux comprendre WordPress et la manière de le rendre plus fluide et optimale.</p>
+                    </div>
+
+                    <div class="filter-buttons">
+                        <a href="{{ route('blog.index', ['category' => 'all']) }}" class="btn {{ $category === 'all' ? 'active' : '' }}">All</a>
+                        <a href= "{{ route('blog.index', ['category' => 'seo'])}}" class="btn {{ $category === 'seo' ? 'active' : '' }}">SEO</a>
+                        <a href= "{{ route('blog.index', ['category' => 'backup'])}}" class="btn {{ $category === 'backup' ? 'active' : '' }}">Sauvegarde</a>
+                        <a href= "{{ route('blog.index', ['category' => 'custom-fields'])}}" class="btn {{ $category === 'custom-fields' ? 'active' : '' }}">Custom Fields</a>
+                        <a href= "{{ route('blog.index', ['category' => 'optimisation'])}}" class="btn {{ $category === 'optimisation' ? 'active' : '' }}">Optimisation</a>
+                        <a href= "{{ route('blog.index', ['category' => 'management'])}}" class="btn {{ $category === 'management' ? 'active' : '' }}">Management</a>
                     </div>
 
                     <div class="projects-grid">
-                        @if ($posts->count())
-                            @foreach ($posts as $post)
-                                <div class="project-card">
-                                    <a class="project-link" href="{{ route('blog.show', ['slug' => $post->slug, 'id' => $post->id]) }}">
-                                        <h2 class="text-xl font-bold">
-                                                {{ $post->title }}
-                                        </h2>
-                                        <p class="text-gray-600">
-                                            {{ $post->excerpt }}
-                                        </p>
-                                    </a>
-                                </div>
-                            @endforeach
-
-                            <div class="mt-4">
-                                {{ $posts->links() }}
+                        @foreach ($blogs as $slug => $blog)
+                            <div class="project-card">
+                                <a href="{{ route('blog.show', $slug) }}" class="project-link">
+                                    <h2>{{ $blog['title'] }}</h2>
+                                    <p>{{ $blog['description'] }}</p>
+                                </a>
                             </div>
-                        @else
-                            <p>Aucun article de blog trouvé.</p>
-                        @endif
+                        @endforeach
                     </div>
+
                 </section>
             </div>
         </div>

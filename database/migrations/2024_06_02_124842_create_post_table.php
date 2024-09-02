@@ -16,11 +16,8 @@ return new class extends Migration
     {
         // Crée la table 'posts' dans la base de données
         Schema::create('posts', function (Blueprint $table) {
-            $table->id(); // Colonne 'id' auto-incrémentée (clé primaire)
-            $table->string('title'); // Colonne 'title' de type string
-            $table->string('slug')->unique(); // Colonne 'slug' de type string, avec contrainte d'unicité
-            $table->longText('excerpt'); // Colonne 'excerpt' de type longText
-            $table->timestamps(); // Colonnes 'created_at' et 'updated_at' pour les timestamps
+            $table->id();
+            $table->timestamps();
         });
     }
 

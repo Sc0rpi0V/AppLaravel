@@ -115,12 +115,11 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 // Blog routes
-Route::prefix('blog')->name('blog.')->controller(BlogController::class)->group(function () {
+Route::prefix('blog')->name('blog.')->controller(BlogController::class)->group(function() {
     Route::get('/', 'index')->name('index');
-    Route::get('/{slug}-{id}', 'show')->where(['id' => '[0-9]+', 'slug' => '[a-z0-9\-]+'])->name('show');
-    Route::get('/{id}/edit', 'edit')->name('edit');
-    Route::put('/{id}', 'update')->name('update');
 });
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{blogs}', [BlogController::class, 'show'])->name('blog.show');
 
 //Article routes
 Route::prefix('articles')->name('articles.')->controller(ArticleController::class)->group(function () {
