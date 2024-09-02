@@ -371,10 +371,18 @@ class ProjectController extends Controller
                 'subtitle' => 'CIS BTP',
                 'description' => 'Réalisation de formulaire pour gestion avec salesforce',
                 'desc-list' => [
+                    'Gestion des informations avec salesforce',
+                    'Ajout des formulaires sur le site',
+                    'Mise en place des données pour salesforce'
                 ],
                 'role'  => 'Développeur FullStack',
                 'liste' => [
-
+                    'Mettre en place les formulaires prévus sur le site',
+                    'Prévoir un système d\'enregisgrement des données des formulaires sur le site avant envoie vers salesforce',
+                    'Envoie des données à salesforce avec les valeurs et indiction prévues',
+                    'Accès au backoffice salesforce pour vérification des données à envoyer',
+                    'Mise à jour du thème et plugins sur le site',
+                    'Gestion des performances sur le site'
                 ],
                 'category' => 'salesforce' ,
                 'image' => asset('img/cis-btp.jpeg'),        
@@ -432,11 +440,23 @@ class ProjectController extends Controller
                 'subtitle' => 'Multi-sites sur concernant la vente de biens.',
                 'description' => 'Réalisation de gestion ecommerce et TMA',
                 'desc-list' => [
-
+                    'Gestion des 4 sites pour l\'entreprise Mercier',
+                    'Mercier.com, Mercierauction.com, Mercier-Art.com, Mercier-Auto.com',
+                    'Un site vitrine et 3 sites de ventes d\'enchères en ligne',
+                    'Communication avec API'
                 ],
                 'role'  => 'Développeur FullStack',
                 'liste' => [
-
+                    'Gestion d\'affichage des nouveautés sur la vitrine et les différents sites',
+                    'Communication avec API pour récupération des oeuvres à mettre aux enchères',
+                    'Gestion d\'extraction des ventes',
+                    'Gestion de remplissage automatique des ventes à afficher via API',
+                    'Gestion de script pour réalisation d\'extract via AJAX',
+                    'Mise en place de sytème de stockage des extracts',
+                    'Gestion via excel des extracts concernant les articles aux enchères',
+                    'Maintenance du site pour gestion des ressources',
+                    'Mise en place de système de compilation et reconverion de photos',
+                    'Script pour gérer la performance du site lors de l\'import des données pour préparation à la vente',
                 ],
                 'category' => ['Maintenance', 'ecommerce'] ,
                 'image' => asset('img/mercier.webp'),        
@@ -508,13 +528,19 @@ class ProjectController extends Controller
                 'subtitle' => 'Site de formation spécialisé dans le secteur du travail social',
                 'description' => '',
                 'desc-list' => [
-                
+                    'Modification des différentes offres',
+                    'Ajout de spécifité concernant la partie gestion des paiements',
+                    'Maintenabilité du site pour avoir une meilleure performance'
                 ],
                 'role' => 'Développeur FullStack',
                 'liste' => [
-
+                    'Présentation des offres pour salariés et étudiants',
+                    'Mise en place de limite sur les inscriptions',
+                    'Gestion des moyens de paiements pour les différents offres',
+                    'Mise en place de réduction pour les étuidants',
+                    'Extract des données de commandes pour les offres afin de visualiser le nombre d\'inscrits',
                 ],
-                'category' => ['refonte', 'ecommerce'],
+                'category' => ['maintenance', 'ecommerce'],
                 'image' => asset('img/irts.webp'),
             ],
             'lille-art-up' => [
