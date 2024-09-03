@@ -47,32 +47,60 @@
                     <h2 class="text-2xl font-semibold mb-4">Renseignement de votre moyen de paiement</h2>
                     <form action="{{ route('paiement.submit') }}" method="POST">
                         @csrf
+                        
+                        <!-- Choix du mode de paiement -->
                         <div class="mb-4">
-                            <label for="titulaire" class="block text-sm font-medium text-gray-700">Titulaire</label>
-                            <input type="text" id="titulaire" name="titulaire" required class="mt-1 block w-full p-2 border rounded">
+                            <label for="payment_method" class="block text-sm font-medium text-gray-700">Mode de paiement</label>
+                            <select id="payment_method" name="payment_method" required class="mt-1 block w-full p-2 border rounded" onchange="togglePaymentMethod()">
+                                <option value="rib">RIB (IBAN/BIC)</option>
+                                <option value="card">Carte Bleue</option>
+                            </select>
                         </div>
-                        <div class="mb-4">
-                            <label for="nameBank" class="block text-sm font-medium text-gray-700">Nom</label>
-                            <input type="text" id="nameBank" name="nameBank" required class="mt-1 block w-full p-2 border rounded">
+
+                        <!-- Formulaire RIB -->
+                        <div id="rib_form" class="payment-form">
+                            <div class="mb-4">
+                                <label for="titulaire" class="block text-sm font-medium text-gray-700">Titulaire</label>
+                                <input type="text" id="titulaire" name="titulaire" class="mt-1 block w-full p-2 border rounded">
+                            </div>
+                            <div class="mb-4">
+                                <label for="nameBank" class="block text-sm font-medium text-gray-700">Nom</label>
+                                <input type="text" id="nameBank" name="nameBank" class="mt-1 block w-full p-2 border rounded">
+                            </div>
+                            <div class="mb-4">
+                                <label for="addressBank" class="block text-sm font-medium text-gray-700">Adresse</label>
+                                <input type="text" id="addressBank" name="addressBank" class="mt-1 block w-full p-2 border rounded">
+                            </div>
+                            <div class="mb-4">
+                                <label for="iban" class="block text-sm font-medium text-gray-700">IBAN</label>
+                                <input type="text" id="iban" name="iban" class="mt-1 block w-full p-2 border rounded">
+                            </div>
+                            <div class="mb-4">
+                                <label for="bic" class="block text-sm font-medium text-gray-700">BIC</label>
+                                <input type="text" id="bic" name="bic" class="mt-1 block w-full p-2 border rounded">
+                            </div>
                         </div>
-                        <div class="mb-4">
-                            <label for="addressBank" class="block text-sm font-medium text-gray-700">Adresse</label>
-                            <input type="text" id="addressBank" name="addressBank" required class="mt-1 block w-full p-2 border rounded">
+
+                        <!-- Formulaire Carte Bleue -->
+                        <div id="card_form" class="payment-form hidden">
+                            <div class="mb-4">
+                                <label for="card_number" class="block text-sm font-medium text-gray-700">Numéro de carte</label>
+                                <input type="text" id="card_number" name="card_number" class="mt-1 block w-full p-2 border rounded">
+                            </div>
+                            <div class="mb-4">
+                                <label for="card_holder" class="block text-sm font-medium text-gray-700">Titulaire de la carte</label>
+                                <input type="text" id="card_holder" name="card_holder" class="mt-1 block w-full p-2 border rounded">
+                            </div>
+                            <div class="mb-4">
+                                <label for="expiry_date" class="block text-sm font-medium text-gray-700">Date d'expiration</label>
+                                <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/AA" class="mt-1 block w-full p-2 border rounded">
+                            </div>
+                            <div class="mb-4">
+                                <label for="cvc" class="block text-sm font-medium text-gray-700">CVC</label>
+                                <input type="text" id="cvc" name="cvc" class="mt-1 block w-full p-2 border rounded">
+                            </div>
                         </div>
-                        <div class="mb-4">
-                            <label for="iban" class="block text-sm font-medium text-gray-700">IBAN</label>
-                            <input type="text" id="iban" name="iban" required class="mt-1 block w-full p-2 border rounded @error('iban') border-red-500 @enderror" value="{{ old('iban') }}">
-                            @error('iban')
-                                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="mb-4">
-                            <label for="bic" class="block text-sm font-medium text-gray-700">BIC</label>
-                            <input type="text" id="bic" name="bic" required class="mt-1 block w-full p-2 border rounded @error('bic') border-red-500 @enderror" value="{{ old('bic') }}">
-                            @error('bic')
-                                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
+
                         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Valider votre paiement
                         </button>
@@ -83,4 +111,12 @@
     </div>
     
     @include('_footer')
+
+    <script>
+        function togglePaymentMethod() {
+            const method = document.getElementById('payment_method').value;
+            document.getElementById('rib_form').classList.toggle('hidden', method !== 'rib');
+            document.getElementById('card_form').classList.toggle('hidden', method !== 'card');
+        }
+    </script>
 </body>

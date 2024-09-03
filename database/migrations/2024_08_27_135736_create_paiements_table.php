@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('paiements', function (Blueprint $table) {
             $table->id();
-            $table->string('titulaire');
-            $table->string('nameBank');
-            $table->string('addressBank');
-            $table->string('bic');
-            $table->string('iban');
+            $table->string('titulaire')->nullable();
+            $table->string('nameBank')->nullable();
+            $table->string('addressBank')->nullable();
+            $table->string('bic')->nullable();
+            $table->string('iban')->nullable();
             $table->timestamps();
         });
     }

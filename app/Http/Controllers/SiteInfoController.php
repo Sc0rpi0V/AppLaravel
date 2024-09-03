@@ -40,4 +40,13 @@ class SiteInfoController extends Controller
             ], 500);
         }
     }    
+
+    public function deleteSiteInfo(Request $request)
+    {
+        $siteName = $request->input('siteName');
+        
+        SiteInfo::where('name', $siteName)->delete();
+
+        return response()->json(['success' => true]);
+    }
 }

@@ -63,6 +63,7 @@ Route::get('/website', function () {
     return view('website');
 })->middleware(['auth', 'verified'])->name('website');
 Route::post('/add-site-info', [SiteInfoController::class, 'store']);
+Route::delete('/delete-site-info', [SiteInfoController::class, 'deleteSiteInfo']);
 
 // Route pour afficher la page de newsletter avec les données
 Route::get('/newsletter', [NewsletterController::class, 'index'])->middleware(['auth', 'verified'])->name('newsletter');

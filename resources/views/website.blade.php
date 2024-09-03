@@ -37,6 +37,9 @@
                         <p x-text="siteInfo.type"></p>
                         <p x-text="siteInfo.theme"></p>
                         <p x-text="siteInfo.editor"></p>
+                        <button @click="deleteSite" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
+                            Supprimer
+                        </button>
                     </div>
                 </template>
             </div>
@@ -142,16 +145,40 @@
                             editor: data.siteEditor 
                         };
                         this.showModal = false;
-                        this.siteName = '';
-                        this.siteDescription = '';
-                        this.siteUrlName = '';
-                        this.siteListPlugins = '';
-                        this.siteType = '';
-                        this.siteTheme = '';
-                        this.siteEditor = '';
+                        this.clearForm();
                     }
                 });
+            },
+
+            deleteSite() {
+                fetch('/delete-site-info', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({
+                        siteName: this.siteInfo.name
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        this.siteInfo = null;
+                    }
+                });
+            },
+
+            clearForm() {
+                this.siteName = '';
+                this.siteDescription = '';
+                this.siteUrlName = '';
+                this.siteListPlugins = '';
+                this.siteType = '';
+                this.siteTheme = '';
+                this.siteEditor = '';
             }
         }
     }
+
 </script>

@@ -71,7 +71,7 @@
                         <div class="mb-4">
                             <label for="firstname" class="block text-sm font-medium text-gray-700">Prénom</label>
                             @if(auth()->user()) 
-                                <input type="text" id="first" name="firstname" value="{{ auth()->user()->firstname }}" required class="mt-1 block w-full p-2 border rounded">
+                                <input type="text" id="firstname" name="firstname" value="{{ auth()->user()->firstname }}" required class="mt-1 block w-full p-2 border rounded">
                             @else
                                 <input type="text" id="firstname" name="firstname" required class="mt-1 block w-full p-2 border rounded">
                             @endif
