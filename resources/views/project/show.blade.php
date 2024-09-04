@@ -39,7 +39,7 @@
                     </div>
                 </section>
             </div>
-            <a class="return-button" href="{{ route('projects.index') }}">Retour à la liste des projets</a>
+            <a class="return-button" href="{{ route('project.index') }}">Retour à la liste des projets</a>
         </div>
     </div>
 </body>

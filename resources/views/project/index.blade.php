@@ -19,20 +19,20 @@
                     </div>
                     
                     <div class="filter-buttons">
-                        <a href="{{ route('projects.index', ['category' => 'all']) }}" class="btn {{ $category === 'all' ? 'active' : '' }}">All</a>
-                        <a href="{{ route('projects.index', ['category' => 'maintenance']) }}" class="btn {{ $category === 'maintenance' ? 'active' : '' }}">Maintenance</a>
-                        <a href="{{ route('projects.index', ['category' => 'simulateur']) }}" class="btn {{ $category === 'simulateur' ? 'active' : '' }}">Simulateur</a>
-                        <a href="{{ route('projects.index', ['category' => 'react']) }}" class="btn {{ $category === 'react' ? 'active' : '' }}">React</a>
-                        <a href="{{ route('projects.index', ['category' => 'ecommerce']) }}" class="btn {{ $category === 'ecommerce' ? 'active' : '' }}">Ecommerce</a>
-                        <a href="{{ route('projects.index', ['category' => 'wordpress']) }}" class="btn {{ $category === 'wordpress' ? 'active' : '' }}">WordPress</a>
-                        <a href="{{ route('projects.index', ['category' => 'refonte']) }}" class="btn {{ $category === 'refonte' ? 'active' : '' }}">Refonte</a>
-                        <a href="{{ route('projects.index', ['category' => 'salesforce']) }}" class="btn {{ $category === 'salesforce' ? 'active' : '' }}">Salesforce</a>
+                        <a href="{{ route('project.index', ['category' => 'all']) }}" class="btn {{ $category === 'all' ? 'active' : '' }}">All</a>
+                        <a href="{{ route('project.index', ['category' => 'maintenance']) }}" class="btn {{ $category === 'maintenance' ? 'active' : '' }}">Maintenance</a>
+                        <a href="{{ route('project.index', ['category' => 'simulateur']) }}" class="btn {{ $category === 'simulateur' ? 'active' : '' }}">Simulateur</a>
+                        <a href="{{ route('project.index', ['category' => 'react']) }}" class="btn {{ $category === 'react' ? 'active' : '' }}">React</a>
+                        <a href="{{ route('project.index', ['category' => 'ecommerce']) }}" class="btn {{ $category === 'ecommerce' ? 'active' : '' }}">Ecommerce</a>
+                        <a href="{{ route('project.index', ['category' => 'wordpress']) }}" class="btn {{ $category === 'wordpress' ? 'active' : '' }}">WordPress</a>
+                        <a href="{{ route('project.index', ['category' => 'refonte']) }}" class="btn {{ $category === 'refonte' ? 'active' : '' }}">Refonte</a>
+                        <a href="{{ route('project.index', ['category' => 'salesforce']) }}" class="btn {{ $category === 'salesforce' ? 'active' : '' }}">Salesforce</a>
                     </div>
 
                     <div class="projects-grid">
                         @foreach ($projects as $slug => $project)
                             <div class="project-card">
-                                <a href="{{ route('projects.show', $slug) }}" class="project-link">
+                                <a href="{{ route('project.show', $slug) }}" class="project-link">
                                     <h2>{{ $project['title'] }}</h2>
                                     <p>{{ $project['description'] }}</p>
                                 </a>

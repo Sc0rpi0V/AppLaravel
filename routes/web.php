@@ -39,152 +39,123 @@ $request -> all() : renvoie toutes les données de la requête
 $request -> input() : renvoie la valeur d'un champ spécifique de la requête 
 */
 
-Route::group(['middleware' => ['auth', 'admin']], function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('/admin/team', function () {
-        return view('_team-admin');
-    })->name('admin.team');
-    Route::get('admin/messages', function () {
-        return view('_messages-admin');
-    })->name('admin.messages');
+// Admin routes
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::view('/team', '_team-admin')->name('team');
+    Route::view('/messages', '_messages-admin')->name('messages');
 });
 
-// Home route
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+// Public routes
+Route::view('/', 'welcome')->name('home');
 
-// Dashboard route
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Authenticated routes
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::view('/dashboard', 'dashboard')->name('dashboard');
+    Route::view('/formations', 'formations')->name('formations');
+    Route::view('/messages', 'messages')->name('messages');
+    Route::view('/website', 'website')->name('website');
+    Route::get('/newsletter', [NewsletterController::class, 'index'])->name('newsletter');
+    Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+    Route::view('/devis', 'quoteform')->name('quoteform');
+    Route::post('/devis', [QuoteController::class, 'submitQuote'])->name('submit.quote');
+});
 
-// Formations route
-Route::get('/formations', function () {
-    return view('formations');
-})->middleware(['auth', 'verified'])->name('formations');
-
-// Messages route
-Route::get('/messages', function () {
-    return view('messages');
-})->middleware(['auth', 'verified'])->name('messages');
-
-// WebSite route
-Route::get('/website', function () {
-    return view('website');
-})->middleware(['auth', 'verified'])->name('website');
+// Site Info routes
 Route::post('/add-site-info', [SiteInfoController::class, 'store']);
 Route::delete('/delete-site-info', [SiteInfoController::class, 'deleteSiteInfo']);
 
-// Route pour afficher la page de newsletter avec les données
-Route::get('/newsletter', [NewsletterController::class, 'index'])->middleware(['auth', 'verified'])->name('newsletter');
-
-// Route pour l'inscription à la newsletter
-Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
-
-// Devis route
-Route::get('/devis', function () {
-    return view('quoteform');
-})->middleware(['auth', 'verified'])->name('quoteform');
-
-// Validation formulaire devis
-Route::post('/devis', [QuoteController::class, 'submitQuote'])->name('submit.quote');
-
-// Authenticated routes group
-Route::middleware('auth')->group(function () {
-    // Profile routes
-    Route::prefix('profile')->name('profile.')->group(function () {
-        Route::get('/', [ProfileController::class, 'edit'])->name('edit');
-        Route::patch('/', [ProfileController::class, 'update'])->name('update');
-        Route::delete('/', [ProfileController::class, 'destroy'])->name('destroy');
-    });
-
-    // Address routes
-    Route::prefix('address')->name('address.')->group(function () {
-        Route::get('/', [AddressController::class, 'edit'])->name('edit');
-        Route::patch('/', [AddressController::class, 'update'])->name('update');
-    });
-
-    // Avatar routes
-    Route::prefix('avatar')->name('avatar.')->group(function () {
-        Route::get('/', [AvatarController::class, 'edit'])->name('edit');
-        Route::patch('/', [AvatarController::class, 'update'])->name('update');
-    });
-
-    // Phone routes
-    Route::prefix('phone')->name('phone.')->group(function () {
-        Route::get('/', [PhoneController::class, 'edit'])->name('edit');
-        Route::patch('/', [PhoneController::class, 'update'])->name('update');
-    });
-
-    // Gender routes
-    Route::prefix('gender')->name('gender.')->group(function () {
-        Route::get('/', [GenderController::class, 'edit'])->name('edit');
-        Route::patch('/', [GenderController::class, 'update'])->name('update');
-    });
+// Profile, Address, Avatar, Phone, and Gender routes
+Route::middleware('auth')->prefix('profile')->name('profile.')->group(function () {
+    Route::get('/', [ProfileController::class, 'edit'])->name('edit');
+    Route::patch('/', [ProfileController::class, 'update'])->name('update');
+    Route::delete('/', [ProfileController::class, 'destroy'])->name('destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::middleware('auth')->prefix('address')->name('address.')->group(function () {
+    Route::get('/', [AddressController::class, 'edit'])->name('edit');
+    Route::patch('/', [AddressController::class, 'update'])->name('update');
+});
+
+Route::middleware('auth')->prefix('avatar')->name('avatar.')->group(function () {
+    Route::get('/', [AvatarController::class, 'edit'])->name('edit');
+    Route::patch('/', [AvatarController::class, 'update'])->name('update');
+});
+
+Route::middleware('auth')->prefix('phone')->name('phone.')->group(function () {
+    Route::get('/', [PhoneController::class, 'edit'])->name('edit');
+    Route::patch('/', [PhoneController::class, 'update'])->name('update');
+});
+
+Route::middleware('auth')->prefix('gender')->name('gender.')->group(function () {
+    Route::get('/', [GenderController::class, 'edit'])->name('edit');
+    Route::patch('/', [GenderController::class, 'update'])->name('update');
+});
 
 // Blog routes
-Route::prefix('blog')->name('blog.')->controller(BlogController::class)->group(function() {
+Route::prefix('blog')->name('blog.')->controller(BlogController::class)->group(function () {
     Route::get('/', 'index')->name('index');
+    Route::get('{blogs}', 'show')->name('show');
 });
-Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
-Route::get('/blog/{blogs}', [BlogController::class, 'show'])->name('blog.show');
 
-//Article routes
+// Article routes
 Route::prefix('articles')->name('articles.')->controller(ArticleController::class)->group(function () {
     Route::get('/', 'index')->name('index');
+    Route::get('{article}', 'show')->name('show');
 });
-Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
 // About routes
-Route::prefix('about')->name('about.')->controller(AboutController::class)->group(function() {
+Route::prefix('about')->name('about.')->controller(AboutController::class)->group(function () {
     Route::get('/', 'index')->name('index');
 });
 
 // Creation routes
-Route::prefix('creation')->name('creation.')->controller(CreationController::class)->group(function() {
+Route::prefix('creation')->name('creation.')->controller(CreationController::class)->group(function () {
     Route::get('/', 'index')->name('index');
 });
 
 // Services routes
-Route::prefix('services')->name('services.')->controller(ServiceController::class)->group(function() {
+Route::prefix('services')->name('services.')->controller(ServiceController::class)->group(function () {
     Route::get('/', 'index')->name('index');
-    Route::get('/consultation', 'consultation')->name('consultation'); 
+    Route::get('/consultation', 'consultation')->name('consultation');
     Route::get('/support', 'support')->name('support');
     Route::get('/formation', 'formation')->name('formation');
-    Route::get('/developpement', 'developpement')->name('developpement'); 
+    Route::get('/developpement', 'developpement')->name('developpement');
     Route::get('/conception', 'conception')->name('conception');
-    Route::get('/hebergement', 'hebergement')->name('hebergement'); 
+    Route::get('/hebergement', 'hebergement')->name('hebergement');
 });
 
 // Cart Routes
-Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
-Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
-Route::post('/cart/updateQuantity', [CartController::class, 'updateQuantity'])->name('cart.updateQuantity');
+Route::prefix('cart')->name('cart.')->controller(CartController::class)->group(function () {
+    Route::post('/add', 'addToCart')->name('add');
+    Route::get('/', 'viewCart')->name('view');
+    Route::post('/updateQuantity', 'updateQuantity')->name('updateQuantity');
+});
 
 // Checkout Routes
-Route::get('/checkout', [CheckoutController::class, 'showForm'])->name('checkout');
-Route::post('/checkout/submit', [CheckoutController::class, 'handleForm'])->name('checkout.submit');
+Route::prefix('checkout')->name('checkout.')->controller(CheckoutController::class)->group(function () {
+    Route::get('/', 'showForm')->name('form');
+    Route::post('/submit', 'handleForm')->name('submit');
+    Route::get('/complete', 'orderComplete')->name('complete');
+});
 
 // Payment Routes
-Route::get('/paiement', [PaiementController::class, 'showForm'])->name('paiement.view');
-Route::post('/paiement/submit', [PaiementController::class, 'handleFormPaiement'])->name('paiement.submit');
-
-// Order completion route
-Route::get('/order/complete', [CheckoutController::class, 'orderComplete'])->name('checkout.complete');
-
-Route::prefix('contact')->name('contact.')->controller(ContactController::class)->group(function() {
-    Route::get('/', 'index')->name('index');
+Route::prefix('paiement')->name('paiement.')->controller(PaiementController::class)->group(function () {
+    Route::get('/', 'showForm')->name('view');
+    Route::post('/submit', 'handleFormPaiement')->name('submit');
 });
-Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
-Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+
+// Contact routes
+Route::prefix('contact')->name('contact.')->controller(ContactController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::post('/', 'submit')->name('submit');
+});
 
 // Projects routes
-Route::prefix('project')->name('project.')->controller(ProjectController::class)->group(function() {
+Route::prefix('project')->name('project.')->controller(ProjectController::class)->group(function () {
     Route::get('/', 'index')->name('index');
+    Route::get('{project}', 'show')->name('show');
 });
-Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
-Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
+
+// Load additional routes
+require __DIR__.'/auth.php';
