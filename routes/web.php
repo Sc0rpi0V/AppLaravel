@@ -19,6 +19,7 @@ use App\Http\Controllers\{
     GenderController,
     PhoneController,
     PaiementController,
+    AdminController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,10 @@ $request -> url() : renvoie l'URL complète actuelle
 $request -> all() : renvoie toutes les données de la requête     
 $request -> input() : renvoie la valeur d'un champ spécifique de la requête 
 */
+
+Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+});
 
 // Home route
 Route::get('/', function () {

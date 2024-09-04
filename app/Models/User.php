@@ -29,6 +29,7 @@ class User extends Authenticatable
         'postalcode',
         'country',
         'phone',
+        'role',
     ];
 
     /**
@@ -53,5 +54,15 @@ class User extends Authenticatable
     public function messages()
     {
         return $this->hasMany(Message::class);
+    }
+
+    public function getRoleAttribute()
+    {
+        return $this->attributes['role'];
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
     }
 }
