@@ -41,6 +41,12 @@ $request -> input() : renvoie la valeur d'un champ spécifique de la requête
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/team', function () {
+        return view('_team-admin');
+    })->name('admin.team');
+    Route::get('admin/messages', function () {
+        return view('_messages-admin');
+    })->name('admin.messages');
 });
 
 // Home route
