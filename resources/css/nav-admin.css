@@ -42,7 +42,7 @@ nav {
   position: sticky;
   top: 0;
   left: 0;
-  min-height: 53.75rem;
+  min-height: 44.75rem;
   height: 100%;
   border-radius: 1rem;
   width: 18rem;
@@ -316,4 +316,20 @@ body.collapsed .expand-btn img {
 
 .collapsed .tooltip:hover .tooltip__content {
   visibility: visible;
+}
+
+.logout-button {
+  display: inline-block;
+  margin-top: 20px; 
+  padding: 10px 20px; 
+  background-color: #6a0dad;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px; 
+  text-align: center;
+  transition: background-color 0.3s ease; 
+}
+
+.logout-button:hover {
+  background-color: #8a2be2;
 }

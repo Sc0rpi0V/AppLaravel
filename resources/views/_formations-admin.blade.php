@@ -1,4 +1,4 @@
-@vite('resources/css/messages-admin.css')
+@vite('resources/css/formations-admin.css')
 @vite('resources/css/nav-admin.css')
 
 @include('_head-admin')
@@ -7,21 +7,24 @@
 <div class="table-widget">
     <table>
         <caption>
-            Messages
+            Formations
             <span class="table-row-count"></span>
         </caption>
         <thead>
             <tr>
-                <th>Listing de vos messages</th>
+                <th>Nom Formation</th>
+                <th>Résumé</th>
+                <th>Catégorie</th>
+                <th>Prix</th>
             </tr>
         </thead>
         <tbody id="team-member-rows">
-            @foreach(auth()->user()->messages as $message)
-                <tr>
-                    <th>Message {{ $loop->iteration }}</th>
-                    <th>{{ $message->message }}</th>
-                </tr>
-            @endforeach
+            <tr>
+                <th>{{ auth()->user()->name}}</th>
+                <th>{{ auth()->user()->firstname}}</th>
+                <th>{{ auth()->user()->gender}}</th>
+                <th>{{ auth()->user()->email}}</th>
+            </tr>
         </tbody>
         <tfoot>
             <tr>

@@ -1,9 +1,13 @@
 @vite('resources/css/team-admin.css')
+@vite('resources/css/nav-admin.css')
+
+@include('_head-admin')
+@include('_nav-admin')
 
 <div class="table-widget">
     <table>
         <caption>
-            Team Members
+            Utilisateurs sur le site
             <span class="table-row-count"></span>
         </caption>
         <thead>

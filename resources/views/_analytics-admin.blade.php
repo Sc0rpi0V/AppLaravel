@@ -7,7 +7,7 @@
 <div class="table-widget">
     <table>
         <caption>
-            Messages
+            Analytics
             <span class="table-row-count"></span>
         </caption>
         <thead>

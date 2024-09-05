@@ -20,6 +20,7 @@ use App\Http\Controllers\{
     PhoneController,
     PaiementController,
     AdminController,
+    ReportingController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::view('/team', '_team-admin')->name('team');
     Route::view('/messages', '_messages-admin')->name('messages');
+    Route::view('/formations', '_formations-admin')->name('formations');
+    Route::view('/analytics', '_analytics-admin')->name('analytics');
+    Route::get('/reports', [ReportingController::class, 'index'])->name('reports');
 });
 
 // Public routes
