@@ -46,7 +46,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::view('/team', '_team-admin')->name('team');
     Route::view('/messages', '_messages-admin')->name('messages');
     Route::view('/formations', '_formations-admin')->name('formations');
-    Route::view('/analytics', '_analytics-admin')->name('analytics');
+    Route::get('/analytics', [AdminController::class, 'showAnalytics'])->name('analytics');
     Route::get('/reports', [ReportingController::class, 'index'])->name('reports');
 });
 

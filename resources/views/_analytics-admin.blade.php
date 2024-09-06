@@ -1,4 +1,4 @@
-@vite('resources/css/messages-admin.css')
+@vite('resources/css/analytics-admin.css')
 @vite('resources/css/nav-admin.css')
 
 @include('_head-admin')
@@ -12,22 +12,32 @@
         </caption>
         <thead>
             <tr>
-                <th>Listing de vos messages</th>
+                <th colspan="2">Statistiques Générales</th>
             </tr>
         </thead>
-        <tbody id="team-member-rows">
-            @foreach(auth()->user()->messages as $message)
+        <tbody id="analytics-rows">
+            <tr>
+                <th>Nombre total d'utilisateurs actifs (24h)</th>
+                <td>{{ $activeUsers }}</td>
+            </tr>
+            <tr>
+                <th>Nombre total de visiteurs uniques</th>
+                <td>{{ $uniqueVisitors }}</td>
+            </tr>
+            <tr>
+                <th colspan="2">Pages les plus visitées</th>
+            </tr>
+            @foreach($mostVisitedPages as $page)
                 <tr>
-                    <th>Message {{ $loop->iteration }}</th>
-                    <th>{{ $message->message }}</th>
+                    <th>Page : {{ $page->page }}</th>
+                    <td>{{ $page->visits }} visites</td>
                 </tr>
             @endforeach
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="4">
-                    <ul class="pagination">
-                    </ul>
+                <td colspan="2">
+                    <ul class="pagination"></ul>
                 </td>
             </tr>
         </tfoot>
