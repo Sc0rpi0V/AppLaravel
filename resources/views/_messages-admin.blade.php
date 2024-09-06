@@ -8,18 +8,23 @@
     <table>
         <caption>
             Messages
-            <span class="table-row-count"></span>
+            <span class="table-row-count">{{ $messages->count() }}</span>
         </caption>
         <thead>
             <tr>
-                <th>Listing de vos messages</th>
+                <th>#</th>
+                <th>Utilisateur</th>
+                <th>Email</th>
+                <th>Message</th>
             </tr>
         </thead>
         <tbody id="team-member-rows">
-            @foreach(auth()->user()->messages as $message)
+            @foreach($messages as $message)
                 <tr>
-                    <th>Message {{ $loop->iteration }}</th>
-                    <th>{{ $message->message }}</th>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $message->user->name }} {{ $message->user->firstname }}</td>
+                    <td>{{ $message->user->email }}</td>
+                    <td>{{ $message->message }}</td>
                 </tr>
             @endforeach
         </tbody>
@@ -27,6 +32,7 @@
             <tr>
                 <td colspan="4">
                     <ul class="pagination">
+                        {{ $messages->links() }}
                     </ul>
                 </td>
             </tr>

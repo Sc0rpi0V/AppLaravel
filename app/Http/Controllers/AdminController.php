@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Message;
 use App\Models\Visit;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -31,5 +32,21 @@ class AdminController extends Controller
             ->get();
 
         return view('_analytics-admin', compact('activeUsers', 'uniqueVisitors', 'mostVisitedPages'));
+    }
+
+    public function index()
+    {
+        // Récupère tous les utilisateurs
+        $users = User::all();
+
+        return view('_team-admin', compact('users'));
+    }
+
+    public function showMessage()
+    {
+        // Récupère tous les messages
+        $messages = Message::with('user')->paginate(10);
+
+        return view('_messages-admin', compact('messages'));
     }
 }

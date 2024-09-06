@@ -28,6 +28,8 @@ body {
      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     text-align: left;
     overflow-x: auto;
+    width: 100%;
+    margin-left: 50px;
 }
 
 .table-widget table {

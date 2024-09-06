@@ -8,7 +8,7 @@
     <table>
         <caption>
             Utilisateurs sur le site
-            <span class="table-row-count"></span>
+            <span class="table-row-count">{{ $users->count() }}</span>
         </caption>
         <thead>
             <tr>
@@ -23,28 +23,30 @@
             </tr>
         </thead>
         <tbody id="team-member-rows">
-            <tr>
-                <th>
-                    @if(Auth::user()->avatar)
-                        <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="User Avatar" style="width: 100px;">
-                    @else
-                        <img src="{{ asset('images/default-avatar.png') }}" alt="Default Avatar">
-                    @endif
-                </th>
-                <th>{{ auth()->user()->name}}</th>
-                <th>{{ auth()->user()->firstname}}</th>
-                <th>{{ auth()->user()->gender}}</th>
-                <th>{{ auth()->user()->email}}</th>
-                <th>{{ auth()->user()->phone}}</th>
-                <th>
-                    {{ auth()->user()->address}}
-                    {{ auth()->user()->address2}}
-                    {{ auth()->user()->city}}
-                    {{ auth()->user()->postalcode}}
-                    {{ auth()->user()->country}}
-                </th>
-                <th>{{ auth()->user()->created_at}}</th>
-            </tr>
+            @foreach($users as $user)
+                <tr>
+                    <td>
+                        @if($user->avatar)
+                            <img src="{{ asset('storage/' . $user->avatar) }}" alt="User Avatar" style="width: 100px;">
+                        @else
+                            <img src="{{ asset('images/default-avatar.png') }}" alt="Default Avatar">
+                        @endif
+                    </td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->firstname }}</td>
+                    <td>{{ $user->gender }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->phone }}</td>
+                    <td>
+                        {{ $user->address }}<br>
+                        {{ $user->address2 }}<br>
+                        {{ $user->city }}<br>
+                        {{ $user->postalcode }}<br>
+                        {{ $user->country }}
+                    </td>
+                    <td>{{ $user->created_at }}</td>
+                </tr>
+            @endforeach
         </tbody>
         <tfoot>
             <tr>

@@ -43,8 +43,8 @@ $request -> input() : renvoie la valeur d'un champ spécifique de la requête
 // Admin routes
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-    Route::view('/team', '_team-admin')->name('team');
-    Route::view('/messages', '_messages-admin')->name('messages');
+    Route::get('/team', [AdminController::class, 'index'])->name('team');
+    Route::get('/messages', [AdminController::class, 'showMessage'])->name('messages');
     Route::view('/formations', '_formations-admin')->name('formations');
     Route::get('/analytics', [AdminController::class, 'showAnalytics'])->name('analytics');
     Route::get('/reports', [ReportingController::class, 'index'])->name('reports');
