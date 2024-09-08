@@ -1,5 +1,6 @@
 @include('_nav')
 @vite('resources/css/app.css')
+@include('_head')
 
 <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg" style="margin-top: 120px; margin-bottom: 90px;">
     <h1 class="text-3xl font-bold mb-6 text-center">Demande de devis pour votre site WordPress</h1>
@@ -13,7 +14,7 @@
             <input type="text" class="block w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200" id="project_name" name="project_name" placeholder="Nom du site" required>
         </div>
 
-        <!-- Nom du projet -->
+        <!-- Url du projet -->
         <div class="mb-4">
             <label for="project_url" class="block text-gray-700 font-medium mb-2">Quel est l'url de votre site ?</label>
             <input type="text" class="block w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200" id="project_url" name="project_url" placeholder="Url du site" required>

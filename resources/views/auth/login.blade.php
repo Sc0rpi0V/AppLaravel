@@ -1,5 +1,6 @@
 @vite('resources/css/login.css')
 @vite('resources/css/app.css')
+@include('_head-connect')
 
 @include('_nav')
 <div class="container">

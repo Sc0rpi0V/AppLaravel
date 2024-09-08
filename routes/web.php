@@ -8,7 +8,6 @@ use App\Http\Controllers\{
     ArticleController,
     AvatarController,
     ContactController,
-    CreationController,
     ProjectController,
     ServiceController,
     QuoteController,
@@ -110,11 +109,6 @@ Route::prefix('articles')->name('articles.')->controller(ArticleController::clas
 
 // About routes
 Route::prefix('about')->name('about.')->controller(AboutController::class)->group(function () {
-    Route::get('/', 'index')->name('index');
-});
-
-// Creation routes
-Route::prefix('creation')->name('creation.')->controller(CreationController::class)->group(function () {
     Route::get('/', 'index')->name('index');
 });
 
