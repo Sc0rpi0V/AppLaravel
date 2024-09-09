@@ -214,7 +214,7 @@ class BlogController extends Controller
                     ],
                 ],
                 'category' => 'seo',
-                'image' => asset('img/ifs.jpeg'),
+                'image' => asset('img/yoast_seo.webp'),
             ],  
             'acf' => [
                 'name' => 'Advanced Custom Fields (ACF)',
@@ -327,7 +327,7 @@ class BlogController extends Controller
                     ],
                 ],
                 'category' => 'custom-fields',
-                'image' => asset('img/acf.jpeg'),
+                'image' => asset('img/acf.png'),
             ],
             'wp-rollback' => [
                 'name' => 'WP Rollback',
@@ -413,7 +413,7 @@ class BlogController extends Controller
                     ],
                 ],
                 'category' => 'backup',
-                'image' => asset('img/wp-rollback.jpeg'),
+                'image' => asset('img/wp-rollback.png'),
             ],
             'imagify' => [
                 'name' => 'Imagify',
@@ -506,7 +506,7 @@ class BlogController extends Controller
                     ],
                 ],
                 'category' => 'optimization',
-                'image' => asset('img/imagify.jpeg'),
+                'image' => asset('img/imagify.png'),
             ],
             'redirection' => [
                 'name' => 'Redirection',
@@ -699,7 +699,7 @@ class BlogController extends Controller
                     ],
                 ],
                 'category' => 'security',
-                'image' => asset('img/ithemes-security.jpeg'),
+                'image' => asset('img/ithemes-security.jpg'),
             ],
             'updraftplus' => [
                 'name' => 'UpdraftPlus',
@@ -799,7 +799,7 @@ class BlogController extends Controller
                     ],
                 ],
                 'category' => 'backup',
-                'image' => asset('img/updraftplus.jpeg'),
+                'image' => asset('img/updraft-plus.webp'),
             ],
             'wp-umbrella' => [
                 'name' => 'WP Umbrella',
@@ -899,7 +899,7 @@ class BlogController extends Controller
                     ],
                 ],
                 'category' => 'management',
-                'image' => asset('img/wp-umbrella.jpeg'),
+                'image' => asset('img/umbrella.png'),
             ],
             
         ];
