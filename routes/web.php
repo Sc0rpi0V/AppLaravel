@@ -20,6 +20,7 @@ use App\Http\Controllers\{
     PaiementController,
     AdminController,
     ReportingController,
+    FormationsController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -117,7 +118,7 @@ Route::prefix('services')->name('services.')->controller(ServiceController::clas
     Route::get('/', 'index')->name('index');
     Route::get('/consultation', 'consultation')->name('consultation');
     Route::get('/support', 'support')->name('support');
-    Route::get('/formation', 'formation')->name('formation');
+    Route::get('/formation', [FormationsController::class, 'formation'])->name('formation');
     Route::get('/developpement', 'developpement')->name('developpement');
     Route::get('/conception', 'conception')->name('conception');
     Route::get('/hebergement', 'hebergement')->name('hebergement');

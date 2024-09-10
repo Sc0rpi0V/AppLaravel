@@ -58,7 +58,7 @@
                 </table>
 
                 <div class="mt-8 text-center">
-                    <a href="{{ route('checkout') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <a href="{{ route('checkout.form') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Valider ma commande
                     </a>
                 </div>
