@@ -27,6 +27,9 @@
                     <x-nav-link :href="route('newsletter')" :active="request()->routeIs('newsletter')">
                         {{ __('Newsletter') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('paiement-methods')" :active="request()->routeIs('paiement-methods')">
+                        {{ __('Paiement Methods') }}
+                    </x-nav-link>
                 </div>
             </div>
 

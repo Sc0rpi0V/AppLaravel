@@ -59,6 +59,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('/formations', 'formations')->name('formations');
     Route::view('/messages', 'messages')->name('messages');
     Route::view('/website', 'website')->name('website');
+    Route::view('/paiement-methods', 'paiement-methods')->name('paiement-methods');
     Route::get('/newsletter', [NewsletterController::class, 'index'])->name('newsletter');
     Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
     Route::view('/devis', 'quoteform')->name('quoteform');
@@ -68,6 +69,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 // Site Info routes
 Route::post('/add-site-info', [SiteInfoController::class, 'store']);
 Route::delete('/delete-site-info', [SiteInfoController::class, 'deleteSiteInfo']);
+
+// Paiement Info routes
+Route::post('/add-paiement-info', [PaiementController::class, 'store']);
+Route::delete('/delete-paiement-info', [PaiementController::class, 'deletePaiementInfo']);
 
 // Profile, Address, Avatar, Phone, and Gender routes
 Route::middleware('auth')->prefix('profile')->name('profile.')->group(function () {

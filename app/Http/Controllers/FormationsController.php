@@ -73,6 +73,94 @@ class FormationsController extends Controller
             ],
             'category' => 'analytics',
         ],
+        'seo-wordpress' => [
+            'title' => 'Formation SEO pour WordPress',
+            'price' => '229€',
+            'excerpt' => 'Améliorez la visibilité de votre site WordPress dans les moteurs de recherche grâce à des techniques SEO efficaces.',
+            'description' => [
+                'Optimisation des titres, descriptions, et balises pour le SEO.',
+                'Utilisation des plugins SEO pour gérer vos métadonnées.',
+                'Analyse des performances SEO et amélioration continue.',
+            ],
+            'category' => 'seo',
+        ],
+        'performance-wordpress' => [
+            'title' => 'Formation sur la Performance de WordPress',
+            'price' => '239€',
+            'excerpt' => 'Découvrez les meilleures pratiques pour améliorer la vitesse et la performance de votre site WordPress.',
+            'description' => [
+                'Techniques d’optimisation des temps de chargement.',
+                'Configuration de CDN et optimisation des ressources.',
+                'Analyse des performances et gestion des goulets d’étranglement.',
+            ],
+            'category' => 'performance',
+        ],
+        'theme-development-wordpress' => [
+            'title' => 'Formation sur le Développement de Thèmes WordPress',
+            'price' => '299€',
+            'excerpt' => 'Apprenez à créer des thèmes WordPress personnalisés de A à Z pour un design unique et adapté à vos besoins.',
+            'description' => [
+                'Structure de base d’un thème WordPress.',
+                'Utilisation de PHP et CSS pour personnaliser le design.',
+                'Création de modèles de page et gestion des options de thème.',
+            ],
+            'category' => 'development',
+        ],
+        'plugin-development-wordpress' => [
+            'title' => 'Formation sur le Développement de Plugins WordPress',
+            'price' => '299€',
+            'excerpt' => 'Développez vos propres plugins WordPress pour ajouter des fonctionnalités spécifiques à votre site.',
+            'description' => [
+                'Introduction à la création de plugins WordPress.',
+                'Développement de fonctionnalités et utilisation des hooks.',
+                'Test et déploiement de plugins sur WordPress.',
+            ],
+            'category' => 'development',
+        ],
+        'multilingual-wordpress' => [
+            'title' => 'Formation sur WordPress Multilingue',
+            'price' => '199€',
+            'excerpt' => 'Apprenez à créer et gérer un site WordPress multilingue pour atteindre un public international.',
+            'description' => [
+                'Configuration de plugins pour la gestion des langues.',
+                'Traduction des contenus et gestion des versions multilingues.',
+                'Optimisation du SEO pour les sites multilingues.',
+            ],
+            'category' => 'multilingual',
+        ],
+        'media-management-wordpress' => [
+            'title' => 'Formation sur la Gestion des Médias WordPress',
+            'price' => '179€',
+            'excerpt' => 'Optimisez la gestion et l’utilisation des médias (images, vidéos) sur votre site WordPress.',
+            'description' => [
+                'Organisation et gestion des bibliothèques de médias.',
+                'Optimisation des images pour le web.',
+                'Intégration et gestion des vidéos et autres médias.',
+            ],
+            'category' => 'media',
+        ],
+        'ecommerce-wordpress' => [
+            'title' => 'Formation sur le Commerce Électronique avec WordPress',
+            'price' => '249€',
+            'excerpt' => 'Transformez votre site WordPress en une plateforme de commerce électronique efficace et professionnelle.',
+            'description' => [
+                'Installation et configuration de WooCommerce.',
+                'Gestion des produits, commandes et clients.',
+                'Personnalisation de l’apparence de votre boutique en ligne.',
+            ],
+            'category' => 'ecommerce',
+        ],
+        'user-management-wordpress' => [
+            'title' => 'Formation sur la Gestion des Utilisateurs WordPress',
+            'price' => '179€',
+            'excerpt' => 'Maîtrisez les techniques pour gérer efficacement les utilisateurs et les rôles sur votre site WordPress.',
+            'description' => [
+                'Configuration des rôles et permissions des utilisateurs.',
+                'Gestion des inscriptions et des profils utilisateurs.',
+                'Création et gestion des groupes d’utilisateurs.',
+            ],
+            'category' => 'user-management',
+        ],
     ];
 
     public function index(Request $request)
