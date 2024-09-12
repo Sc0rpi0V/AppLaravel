@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div class="p-6" x-data="paiementData()">
+    <div class="p-6" x-data="paiementData()" x-init="init()">
         <button @click="showModalPaiement = true" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
             Ajouter un mode de paiement
         </button>
@@ -33,7 +33,9 @@
                         <p><strong x-text="paiementInfo.iban"></strong></p>
                         <p x-text="paiementInfo.bic"></p>
                         <p x-text="paiementInfo.bankName"></p>
-                        <button @click="deletePaiement" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
+                        <p x-text="paiementInfo.firstname"></p>
+                        <p x-text="paiementInfo.lastname"></p>
+                        <button @click="deletePaiementInfo" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
                             Supprimer
                         </button>
                     </div>
@@ -54,7 +56,17 @@
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Ajouter des informations de paiement</h3>
                         <form id="addInfoFormPaiement">
-                            <!-- RIB Information -->
+                            <!-- RIB Information --> 
+                            <div>
+                                <label for="firstname" class="block text-sm font-medium text-gray-700">Nom Titulaire</label>
+                                <input type="text" id="firstname" name="firstname" x-model="firstname" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="DOE">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="lastname" class="block text-sm font-medium text-gray-700">Prénom Titulaire</label>
+                                <input type="text" id="lastname" name="lastname" x-model="lastname" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="John">
+                            </div>
+                            <br>
                             <div>
                                 <label for="iban" class="block text-sm font-medium text-gray-700">Numéro IBAN</label>
                                 <input type="text" id="iban" name="iban" x-model="iban" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="FR76 30003 03620 00020216907 50">
@@ -82,13 +94,41 @@
 </x-app-layout>
 
 <script>
-    function paiementData(data) {
+    function paiementData() {
         return {
             showModalPaiement: false,
+            firstname: '',
+            lastname: '',
             iban: '',
             bic: '',
             bankName: '',
             paiementInfo: null,
+
+            init() {
+                this.fetchPaiementInfo();
+            },
+
+            fetchPaiementInfo() {
+                fetch('/get-paiement-info', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success && data.paiementInfo) {
+                        this.paiementInfo = {
+                            firstname: data.paiementInfo.firstname,
+                            lastname: data.paiementInfo.lastname,
+                            iban: data.paiementInfo.iban,
+                            bic: data.paiementInfo.bic,
+                            bankName: data.paiementInfo.bankName
+                        };
+                    }
+                });
+            },
 
             saveInfoPaiement() {
                 fetch('/add-paiement-info', {
@@ -98,6 +138,8 @@
                         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                     },
                     body: JSON.stringify({
+                        firstname: this.firstname,
+                        lastname: this.lastname,
                         iban: this.iban,
                         bic: this.bic,
                         bankName: this.bankName,
@@ -107,6 +149,8 @@
                 .then(data => {
                     if (data.success) {
                         this.paiementInfo = {
+                            firstname: data.firstname,
+                            lastname: data.lastname,
                             iban: data.iban,
                             bic: data.bic,
                             bankName: data.bankName,
@@ -125,7 +169,7 @@
                         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                     },
                     body: JSON.stringify({
-                        bic: this.bic.name
+                        iban: this.paiementInfo.iban
                     })
                 })
                 .then(response => response.json())
@@ -136,8 +180,9 @@
                 });
             },
 
-
             clearForm() {
+                this.firstname = '';
+                this.lastname = '';
                 this.iban = '';
                 this.bic = '';
                 this.bankName = '';

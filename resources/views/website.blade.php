@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div class="p-6" x-data="siteData()">
+    <div class="p-6" x-data="siteData()" x-init="init()">
         <button @click="showModal = true" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
             Ajouter des informations
         </button>
@@ -30,13 +30,13 @@
             <div class="border-t border-gray-200 p-4">
                 <template x-if="siteInfo">
                     <div>
-                        <p><strong x-text="siteInfo.name"></strong></p>
-                        <p x-text="siteInfo.description"></p>
-                        <p x-text="siteInfo.url"></p>
-                        <p x-text="siteInfo.plugins"></p>
-                        <p x-text="siteInfo.type"></p>
-                        <p x-text="siteInfo.theme"></p>
-                        <p x-text="siteInfo.editor"></p>
+                        <p><strong x-text="siteInfo.siteName"></strong></p>
+                        <p x-text="siteInfo.siteDescription"></p>
+                        <p x-text="siteInfo.siteUrlName"></p>
+                        <p x-text="siteInfo.siteListPlugins"></p>
+                        <p x-text="siteInfo.siteType"></p>
+                        <p x-text="siteInfo.siteTheme"></p>
+                        <p x-text="siteInfo.siteEditor"></p>
                         <button @click="deleteSite" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
                             Supprimer
                         </button>
@@ -115,6 +115,34 @@
             siteEditor: '',
             siteInfo: null,
 
+            init() {
+                this.fetchSiteInfo();
+            },
+
+            fetchSiteInfo() {
+                fetch('/get-site-info', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.success && data.siteInfo) {
+                        this.siteInfo = {
+                            siteName: data.siteInfo.siteName,
+                            siteUrlName: data.siteInfo.siteUrlName,
+                            siteDescription: data.siteInfo.siteDescription,
+                            siteListPlugins: data.siteInfo.siteListPlugins,
+                            siteType: data.siteInfo.siteType,
+                            siteTheme: data.siteInfo.siteTheme,
+                            siteEditor: data.siteInfo.siteEditor,
+                        };
+                    }
+                });
+            },
+
             saveInfo() {
                 fetch('/add-site-info', {
                     method: 'POST',
@@ -158,7 +186,7 @@
                         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                     },
                     body: JSON.stringify({
-                        siteName: this.siteInfo.name
+                        siteName: this.siteInfo.siteName
                     })
                 })
                 .then(response => response.json())

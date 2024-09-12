@@ -45,8 +45,17 @@ class SiteInfoController extends Controller
     {
         $siteName = $request->input('siteName');
         
-        SiteInfo::where('name', $siteName)->delete();
+        SiteInfo::where('siteName', $siteName)->delete();
 
         return response()->json(['success' => true]);
+    }
+    
+    public function getSiteInfo() {
+        $siteInfo = SiteInfo::first();
+
+        return response()->json([
+            'success' => true,
+            'siteInfo' => $siteInfo
+        ]);
     }
 }

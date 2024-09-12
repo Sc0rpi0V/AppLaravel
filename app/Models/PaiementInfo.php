@@ -13,6 +13,8 @@ class PaiementInfo extends Model
         'iban',
         'bic',
         'bankName',
+        'firstname',
+        'lastname',
     ];
 
 }

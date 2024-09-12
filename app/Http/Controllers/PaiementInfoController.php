@@ -10,6 +10,8 @@ class PaiementInfoController extends Controller
     public function store(Request $request) 
     {
         $paiementData = $request->validate([
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
             'iban' => 'required|string|max:24',
             'bic' => 'required|string|max:11',
             'bankName' => 'required|string|max:255',
@@ -20,8 +22,10 @@ class PaiementInfoController extends Controller
 
             return response()->json([
                 'success' => true,
+                'firstname' => $paiementData['firstname'],
+                'lastname' => $paiementData['lastname'],
                 'iban' => $paiementData['iban'],
-                'bankName' => $paiementData['bank'],
+                'bankName' => $paiementData['bankName'],
                 'bic' => $paiementData['bic'],
             ]);
         } catch (\Exception $e) {
@@ -40,4 +44,13 @@ class PaiementInfoController extends Controller
 
         return response()->json(['success' => true]);
     }
+
+    public function getPaiementInfo() {
+        $paiementInfo = PaiementInfo::first(); 
+    
+        return response()->json([
+            'success' => true,
+            'paiementInfo' => $paiementInfo
+        ]);
+    }   
 }

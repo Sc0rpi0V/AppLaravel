@@ -21,6 +21,7 @@ use App\Http\Controllers\{
     AdminController,
     ReportingController,
     FormationsController,
+    PaiementInfoController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -68,11 +69,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 // Site Info routes
 Route::post('/add-site-info', [SiteInfoController::class, 'store']);
+Route::get('/get-site-info', [SiteInfoController::class, 'getSiteInfo']);
 Route::delete('/delete-site-info', [SiteInfoController::class, 'deleteSiteInfo']);
 
 // Paiement Info routes
-Route::post('/add-paiement-info', [PaiementController::class, 'store']);
-Route::delete('/delete-paiement-info', [PaiementController::class, 'deletePaiementInfo']);
+Route::post('/add-paiement-info', [PaiementInfoController::class, 'store']);
+Route::get('/get-paiement-info', [PaiementInfoController::class, 'getPaiementInfo']);
+Route::delete('/delete-paiement-info', [PaiementInfoController::class, 'deletePaiementInfo']);
 
 // Profile, Address, Avatar, Phone, and Gender routes
 Route::middleware('auth')->prefix('profile')->name('profile.')->group(function () {
