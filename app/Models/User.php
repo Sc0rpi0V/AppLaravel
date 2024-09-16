@@ -65,4 +65,14 @@ class User extends Authenticatable
     {
         return $this->role === 'admin';
     }
+
+    public function paiementInfo()
+    {
+        return $this->hasOne(PaiementInfo::class, 'user_id');  
+    }
+
+    public function formations()
+    {
+        return $this->belongsToMany(Formations::class, 'user_formations', 'user_id', 'formation_id');
+    }    
 }

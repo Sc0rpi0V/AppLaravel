@@ -35,6 +35,7 @@
                         <p x-text="paiementInfo.bankName"></p>
                         <p x-text="paiementInfo.firstname"></p>
                         <p x-text="paiementInfo.lastname"></p>
+                        <p x-text="paiementInfo.addressBank"></p>
                         <button @click="deletePaiementInfo" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
                             Supprimer
                         </button>
@@ -58,16 +59,6 @@
                         <form id="addInfoFormPaiement">
                             <!-- RIB Information --> 
                             <div>
-                                <label for="firstname" class="block text-sm font-medium text-gray-700">Nom Titulaire</label>
-                                <input type="text" id="firstname" name="firstname" x-model="firstname" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="DOE">
-                            </div>
-                            <br>
-                            <div>
-                                <label for="lastname" class="block text-sm font-medium text-gray-700">Prénom Titulaire</label>
-                                <input type="text" id="lastname" name="lastname" x-model="lastname" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="John">
-                            </div>
-                            <br>
-                            <div>
                                 <label for="iban" class="block text-sm font-medium text-gray-700">Numéro IBAN</label>
                                 <input type="text" id="iban" name="iban" x-model="iban" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="FR76 30003 03620 00020216907 50">
                             </div>
@@ -80,6 +71,11 @@
                             <div>
                                 <label for="bankName" class="block text-sm font-medium text-gray-700">Nom de la banque</label>
                                 <input type="text" id="bankName" name="bankName" x-model="bankName" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Votre banque">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="addressBank" class="block text-sm font-medium text-gray-700">Adresse de la banque</label>
+                                <input type="text" id="addressBank" name="addressBank" x-model="addressBank" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Adresse banque">
                             </div>
                         </form>
                     </div>
@@ -97,11 +93,10 @@
     function paiementData() {
         return {
             showModalPaiement: false,
-            firstname: '',
-            lastname: '',
             iban: '',
             bic: '',
             bankName: '',
+            addressBank: '',
             paiementInfo: null,
 
             init() {
@@ -120,11 +115,10 @@
                 .then(data => {
                     if (data.success && data.paiementInfo) {
                         this.paiementInfo = {
-                            firstname: data.paiementInfo.firstname,
-                            lastname: data.paiementInfo.lastname,
                             iban: data.paiementInfo.iban,
                             bic: data.paiementInfo.bic,
-                            bankName: data.paiementInfo.bankName
+                            bankName: data.paiementInfo.bankName,
+                            addressBank: data.paiementInfo.addressBank,
                         };
                     }
                 });
@@ -138,22 +132,20 @@
                         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                     },
                     body: JSON.stringify({
-                        firstname: this.firstname,
-                        lastname: this.lastname,
                         iban: this.iban,
                         bic: this.bic,
                         bankName: this.bankName,
+                        addressBank: this.addressBank,
                     })
                 })
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
                         this.paiementInfo = {
-                            firstname: data.firstname,
-                            lastname: data.lastname,
                             iban: data.iban,
                             bic: data.bic,
                             bankName: data.bankName,
+                            addressBank: data.addressBank,
                         };
                         this.showModalPaiement = false;
                         this.clearForm();
@@ -181,11 +173,10 @@
             },
 
             clearForm() {
-                this.firstname = '';
-                this.lastname = '';
                 this.iban = '';
                 this.bic = '';
                 this.bankName = '';
+                this.addressBank = '';
             }
         }
     }

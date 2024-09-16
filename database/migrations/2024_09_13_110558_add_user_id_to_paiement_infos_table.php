@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_formations', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('paiement_infos', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_formations');
+        Schema::table('paiement_infos', function (Blueprint $table) {
+            $table->dropColumn('user_id');
+        });
     }
 };

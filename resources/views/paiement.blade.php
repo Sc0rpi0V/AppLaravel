@@ -61,24 +61,44 @@
                         <!-- Formulaire RIB -->
                         <div id="rib_form" class="payment-form">
                             <div class="mb-4">
-                                <label for="titulaire" class="block text-sm font-medium text-gray-700">Titulaire</label>
-                                <input type="text" id="titulaire" name="titulaire" class="mt-1 block w-full p-2 border rounded">
+                                <label for="titulaire" class="block text-sm font-medium text-gray-700">Titulaire (Nom et prénom)</label>
+                                @if(auth()->user())
+                                    <input type="text" id="titulaire" name="titulaire" placeholder="{{ auth()->user()->firstname . ' ' . auth()->user()->name }}" class="mt-1 block w-full p-2 border rounded">
+                                @else
+                                    <input type="text" id="titulaire" name="titulaire" class="mt-1 block w-full p-2 border rounded">
+                                @endif
                             </div>
                             <div class="mb-4">
-                                <label for="nameBank" class="block text-sm font-medium text-gray-700">Nom</label>
-                                <input type="text" id="nameBank" name="nameBank" class="mt-1 block w-full p-2 border rounded">
+                                <label for="nameBank" class="block text-sm font-medium text-gray-700">Nom de la Banque</label>
+                                @if(auth()->user() && auth()->user()->paiementInfo)
+                                    <input type="text" id="nameBank" name="nameBank" placeholder="{{ auth()->user()->paiementInfo->bankName }}" class="mt-1 block w-full p-2 border rounded">
+                                @else
+                                    <input type="text" id="nameBank" name="nameBank" class="mt-1 block w-full p-2 border rounded">
+                                @endif
                             </div>
                             <div class="mb-4">
-                                <label for="addressBank" class="block text-sm font-medium text-gray-700">Adresse</label>
-                                <input type="text" id="addressBank" name="addressBank" class="mt-1 block w-full p-2 border rounded">
+                                <label for="addressBank" class="block text-sm font-medium text-gray-700">Adresse (Banque)</label>
+                                @if(auth()->user() && auth()->user()->paiementInfo)
+                                    <input type="text" id="addressBank" name="addressBank" placeholder="{{ auth()->user()->paiementInfo->addressBank }}" class="mt-1 block w-full p-2 border rounded">
+                                @else
+                                    <input type="text" id="addressBank" name="addressBank" class="mt-1 block w-full p-2 border rounded">
+                                @endif
                             </div>
                             <div class="mb-4">
                                 <label for="iban" class="block text-sm font-medium text-gray-700">IBAN</label>
-                                <input type="text" id="iban" name="iban" class="mt-1 block w-full p-2 border rounded">
+                                @if(auth()->user() && auth()->user()->paiementInfo)
+                                    <input type="text" id="iban" name="iban" placeholder="{{ auth()->user()->paiementInfo->iban }}" class="mt-1 block w-full p-2 border rounded">
+                                @else
+                                    <input type="text" id="iban" name="iban" class="mt-1 block w-full p-2 border rounded">
+                                @endif
                             </div>
                             <div class="mb-4">
                                 <label for="bic" class="block text-sm font-medium text-gray-700">BIC</label>
-                                <input type="text" id="bic" name="bic" class="mt-1 block w-full p-2 border rounded">
+                                @if(auth()->user() && auth()->user()->paiementInfo)
+                                    <input type="text" id="bic" name="bic" placeholder="{{ auth()->user()->paiementInfo->bic }}" class="mt-1 block w-full p-2 border rounded">
+                                @else
+                                    <input type="text" id="bic" name="bic" class="mt-1 block w-full p-2 border rounded">
+                                @endif
                             </div>
                         </div>
 

@@ -49,4 +49,14 @@ class AdminController extends Controller
 
         return view('_messages-admin', compact('messages'));
     }
+
+    public function dashboardFormations()
+    {
+        $user = auth()->user();
+        $formations = $user->formations;
+
+        return view('_formations-admin', [
+            'formations' => $formations
+        ]);
+    }
 }

@@ -190,4 +190,15 @@ class FormationsController extends Controller
             'formations' => $this->formations
         ]);
     }    
+
+    public function dashboardUser()
+    {
+        $user = auth()->user();
+        $formations = $user->formations;
+
+        return view('formations', [
+            'formations' => $formations
+        ]);
+    }
+
 }

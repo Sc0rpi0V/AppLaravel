@@ -18,14 +18,22 @@
                 <th>Prix</th>
             </tr>
         </thead>
-        <tbody id="team-member-rows">
+        @if(isset($formations) && count($formations) > 0)
+            <tbody>
+                @foreach($formations as $formation)
+                <tr>
+                    <th>{{ $formation->title }}</th>
+                    <th>{{ $formation->excerpt }}</th>
+                    <th>{{ $formation->category }}</th>
+                    <th>{{ $formation->price }}</th>
+                </tr>
+                @endforeach
+            </tbody>
+        @else
             <tr>
-                <th>{{ auth()->user()->name}}</th>
-                <th>{{ auth()->user()->firstname}}</th>
-                <th>{{ auth()->user()->gender}}</th>
-                <th>{{ auth()->user()->email}}</th>
+                <td colspan="4">Aucune formation trouvée</td>
             </tr>
-        </tbody>
+        @endif
         <tfoot>
             <tr>
                 <td colspan="4">

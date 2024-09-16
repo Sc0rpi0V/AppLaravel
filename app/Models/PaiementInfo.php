@@ -9,12 +9,10 @@ class PaiementInfo extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'iban',
-        'bic',
-        'bankName',
-        'firstname',
-        'lastname',
-    ];
+    protected $fillable = ['iban', 'bic', 'bankName', 'addressBank', 'user_id'];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

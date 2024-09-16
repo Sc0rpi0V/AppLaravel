@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_formations', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('paiement_infos', function (Blueprint $table) {
+            $table->string('addressBank')->nullable()->after('bankName');
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_formations');
+        Schema::table('paiement_infos', function (Blueprint $table) {
+            //
+        });
     }
 };

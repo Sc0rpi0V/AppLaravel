@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('addressBank')->nullable()->change();
             $table->string('bic')->nullable()->change();
             $table->string('iban')->nullable()->change();
+            $table->string('firstname')->nullable->change();
+            $table->string('lastname')->nullable->change();
         });
     }
 
@@ -31,6 +33,8 @@ return new class extends Migration
             $table->string('addressBank')->nullable(false)->change();
             $table->string('bic')->nullable(false)->change();
             $table->string('iban')->nullable(false)->change();
+            $table->string('firstname')->nullable(false)->change();
+            $table->string('lastname')->nullable(false)->change();
         });
     }
 };

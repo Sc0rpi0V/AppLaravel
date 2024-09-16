@@ -46,7 +46,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/team', [AdminController::class, 'index'])->name('team');
     Route::get('/messages', [AdminController::class, 'showMessage'])->name('messages');
-    Route::view('/formations', '_formations-admin')->name('formations');
+    Route::get('/formations', [AdminController::class, 'dashboardFormations'])->name('formations');
     Route::get('/analytics', [AdminController::class, 'showAnalytics'])->name('analytics');
     Route::get('/reports', [ReportingController::class, 'index'])->name('reports');
 });
@@ -57,7 +57,7 @@ Route::view('/', 'welcome')->name('home');
 // Authenticated routes
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('/dashboard', 'dashboard')->name('dashboard');
-    Route::view('/formations', 'formations')->name('formations');
+    Route::get('/formations', [FormationsController::class, 'dashboardUser'])->name('formations');
     Route::view('/messages', 'messages')->name('messages');
     Route::view('/website', 'website')->name('website');
     Route::view('/paiement-methods', 'paiement-methods')->name('paiement-methods');
