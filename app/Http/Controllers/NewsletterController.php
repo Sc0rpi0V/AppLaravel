@@ -397,4 +397,23 @@ class NewsletterController extends Controller
             'firstNewsletter' => $firstNewsletter,
         ]);
     }
+
+    public function getLatestNewsletterSubmission()
+    {
+        return NewsletterSubmission::latest('submitted_at')->first();
+    }
+
+    public function dashboard()
+    {
+        $latestSubmission = app(NewsletterController::class)->getLatestNewsletterSubmission();
+
+        if ($latestSubmission && !$latestSubmission->submitted_at instanceof \Carbon\Carbon) {
+            $latestSubmission->submitted_at = \Carbon\Carbon::parse($latestSubmission->submitted_at);
+        }
+
+        $firstNewsletter = collect($this->newsletters)->first();
+
+        return view('dashboard', ['latestSubmission' => $latestSubmission]);
+    }
+
 }

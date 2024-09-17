@@ -56,7 +56,7 @@ Route::view('/', 'welcome')->name('home');
 
 // Authenticated routes
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('/dashboard', 'dashboard')->name('dashboard');
+    Route::get('/dashboard', [NewsletterController::class, 'dashboard'])->name('dashboard');
     Route::get('/formations', [FormationsController::class, 'dashboardUser'])->name('formations');
     Route::view('/messages', 'messages')->name('messages');
     Route::view('/website', 'website')->name('website');

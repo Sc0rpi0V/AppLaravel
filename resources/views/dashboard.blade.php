@@ -121,10 +121,18 @@
                 <dl>
                     <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500">Acceptation Newsletter</dt>
+                        <dd class="mt-1 text-sm text-gray-900">
+                            @if($latestSubmission)
+                                Dernière soumission le : {{ $latestSubmission && $latestSubmission->submitted_at ? $latestSubmission->submitted_at->format('d/m/Y H:i') : 'Aucune soumission' }}
+                            @else
+                                Aucune soumission
+                            @endif
+                        </dd>
                     </div>
                 </dl>
             </div>
         </div>
     </div>
+
 </x-app-layout>
 @include('_footer')
