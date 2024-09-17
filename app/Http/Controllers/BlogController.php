@@ -26,7 +26,7 @@ class BlogController extends Controller
         'imagify' => [
             'title' => 'Guide complet sur l\'utilisation du plugin Imagify',
             'description' => 'Optimisez vos images pour une performance maximale',
-            'category' => 'optimisation'
+            'category' => 'optimization'
         ],
         'redirection' => [
             'title' => 'Guide complet sur l\'utilisation du plugin Redirection',
@@ -71,7 +71,7 @@ class BlogController extends Controller
         'wp-super-cache' => [
             'title' => 'Guide complet sur l\'utilisation du plugin WP Super Cache',
             'description' => 'Améliorez les performances de votre site avec le caching',
-            'category' => 'performance'
+            'category' => 'optimization'
         ],
         'wordfence' => [
             'title' => 'Guide complet sur l\'utilisation du plugin Wordfence',
@@ -86,7 +86,7 @@ class BlogController extends Controller
         'memberpress' => [
             'title' => 'Guide complet sur l\'utilisation du plugin MemberPress',
             'description' => 'Créez et gérez des sites d\'adhésion avec MemberPress',
-            'category' => 'membership'
+            'category' => 'management'
         ],
     ];
 
@@ -1009,7 +1009,6 @@ class BlogController extends Controller
                 'category' => 'ecommerce',
                 'image' => asset('img/woocommerce.png'),
             ],
-    
             'wpml' => [
                 'name' => 'WPML',
                 'subtitle' => 'Guide complet sur l\'utilisation du plugin WPML',
@@ -1080,7 +1079,6 @@ class BlogController extends Controller
                 'category' => 'multilingual',
                 'image' => asset('img/wpml.png'),
             ],
-    
             'elementor' => [
                 'name' => 'Elementor',
                 'subtitle' => 'Guide complet sur l\'utilisation du plugin Elementor',
@@ -1149,7 +1147,6 @@ class BlogController extends Controller
                 'category' => 'page-builder',
                 'image' => asset('img/elementor.png'),
             ],
-    
             'contact-form-7' => [
                 'name' => 'Contact Form 7',
                 'subtitle' => 'Guide complet sur l\'utilisation du plugin Contact Form 7',
@@ -1222,7 +1219,6 @@ class BlogController extends Controller
                 'category' => 'forms',
                 'image' => asset('img/contact-form-7.png'),
             ],
-    
             'wp-super-cache' => [
                 'name' => 'WP Super Cache',
                 'subtitle' => 'Guide complet sur l\'utilisation du plugin WP Super Cache',
@@ -1287,10 +1283,9 @@ class BlogController extends Controller
                                    En configurant correctement le plugin et en suivant les meilleures pratiques, vous pouvez réduire les temps de chargement et offrir une meilleure expérience utilisateur.',
                     ],
                 ],
-                'category' => 'performance',
+                'category' => 'optimization',
                 'image' => asset('img/wp-super-cache.png'),
             ],
-    
             'wordfence' => [
                 'name' => 'Wordfence',
                 'subtitle' => 'Guide complet sur l\'utilisation du plugin Wordfence',
@@ -1359,7 +1354,6 @@ class BlogController extends Controller
                 'category' => 'security',
                 'image' => asset('img/wordfence.png'),
             ],
-    
             'backupbuddy' => [
                 'name' => 'BackupBuddy',
                 'subtitle' => 'Guide complet sur l\'utilisation du plugin BackupBuddy',
@@ -1427,6 +1421,75 @@ class BlogController extends Controller
                 'category' => 'backup',
                 'image' => asset('img/backupbuddy.png'),
             ],
+            'memberpress' => [
+                'name' => 'MemberPress',
+                'subtitle' => 'Guide complet sur l\'utilisation du plugin MemberPress',
+                'description' => 'Créez et gérez des sites d\'adhésion avec MemberPress',
+                'desc-list' => [
+                    'MemberPress est un plugin de gestion des adhésions pour WordPress. 
+                    Ce guide vous expliquera comment utiliser MemberPress pour créer des sites d\'adhésion robustes, configurer des niveaux d\'abonnement, gérer les paiements et les accès, et bien plus encore.',
+                ],
+                'content' => [
+                    [
+                        'title' => 'Qu\'est-ce que MemberPress et pourquoi l\'utiliser ?',
+                        'text' => 'MemberPress est un plugin WordPress qui vous permet de créer des sites d\'adhésion. 
+                                  Il offre des outils puissants pour restreindre l\'accès à votre contenu, gérer les abonnements et monétiser votre site web grâce à des modèles d\'adhésion. 
+                                  MemberPress s\'intègre facilement aux principales passerelles de paiement pour une gestion fluide des transactions.',
+                    ],
+                    [
+                        'title' => 'Comment installer MemberPress sur votre site WordPress ?',
+                        'text' => [
+                            'subtitle' => 'Étape 1 : Installation du Plugin',
+                            'text' => 'Pour installer MemberPress, suivez ces étapes :
+                                       1. Connectez-vous à votre tableau de bord WordPress.
+                                       2. Allez dans **Extensions > Ajouter**.
+                                       3. Recherchez **MemberPress** dans la barre de recherche.
+                                       4. Cliquez sur **Installer maintenant**, puis sur **Activer**.',
+                        ],
+                        'text' => [
+                            'subtitle' => 'Étape 2 : Configuration de MemberPress',
+                            'text' => 'Après activation, un nouvel onglet **MemberPress** apparaîtra dans votre tableau de bord WordPress.
+                                       - **Créer un Abonnement** : Créez des niveaux d\'abonnement avec des tarifs personnalisés.
+                                       - **Configurer les Paiements** : Connectez MemberPress à des passerelles de paiement comme Stripe, PayPal, etc.
+                                       - **Restreindre l\'Accès** : Utilisez les règles pour restreindre l\'accès au contenu en fonction de l\'abonnement de l\'utilisateur.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Fonctionnalités principales de MemberPress',
+                        'text' => [
+                            'subtitle' => 'Gestion des Abonnements',
+                            'text' => 'MemberPress vous permet de créer des niveaux d\'abonnement avec différentes options de tarification, renouvellements et périodes d\'essai.',
+                        ],
+                        'text' => [
+                            'subtitle' => 'Restreindre l\'Accès au Contenu',
+                            'text' => 'Le plugin vous donne la possibilité de restreindre facilement l\'accès à des pages, articles, ou catégories spécifiques en fonction de l\'abonnement des utilisateurs.',
+                        ],
+                        'text' => [
+                            'subtitle' => 'Intégration avec les Passerelles de Paiement',
+                            'text' => 'MemberPress s\'intègre avec des passerelles de paiement populaires comme Stripe et PayPal pour gérer les paiements d\'abonnement.',
+                        ],
+                    ],
+                    [
+                        'title' => 'Optimisation de la Gestion d\'Abonnements avec MemberPress',
+                        'text' => 'Pour optimiser la gestion des abonnements avec MemberPress :
+                                   - Configurez des niveaux d\'abonnement clairs et différenciés pour attirer une variété de membres.
+                                   - Utilisez des emails automatisés pour rappeler aux utilisateurs de renouveler leurs abonnements.',
+                    ],
+                    [
+                        'title' => 'Meilleures Pratiques pour l\'Utilisation de MemberPress',
+                        'text' => 'Pour tirer le meilleur parti de MemberPress :
+                                   - Assurez-vous que vos passerelles de paiement sont correctement configurées et testées pour éviter les problèmes lors des transactions.
+                                   - Utilisez les rapports et analyses fournis par MemberPress pour suivre les performances de vos abonnements et ajuster vos offres en conséquence.',
+                    ],
+                    [
+                        'title' => 'Conclusion',
+                        'text' => 'MemberPress est un outil puissant pour créer des sites d\'adhésion et monétiser votre contenu. 
+                                   En exploitant ses nombreuses fonctionnalités, vous pouvez gérer efficacement vos abonnés, offrir un contenu exclusif, et développer une source de revenus récurrente.',
+                    ],
+                ],
+                'category' => 'management',
+                'image' => asset('img/memberpress.webp'),
+            ],            
         ];
 
         if (!array_key_exists($blog, $blogs)) {

@@ -355,7 +355,7 @@ class ArticleController extends Controller
                     ],
                 ],
                 'category' => 'plugins',
-                'image' => asset('img/securite_donnees_plugins.jpeg'),
+                'image' => asset('img/security_plugins.png'),
             ],            
             'security' => [
                 'name' => 'Sécuriser son site WordPress',
@@ -386,7 +386,7 @@ class ArticleController extends Controller
                     ],
                 ],
                 'category' => 'security',
-                'image' => asset('img/security.jpeg'),
+                'image' => asset('img/security.webp'),
             ],
             'protection_spam' => [
                 'name' => 'Protection contre le spam sur WordPress',
@@ -479,7 +479,7 @@ class ArticleController extends Controller
                     ],
                 ],
                 'category' => 'backup',
-                'image' => asset('img/backup_cloud.jpeg'),
+                'image' => asset('img/backup_cloud.png'),
             ],            
             'performance' => [
                 'name' => 'Améliorer la performance de votre site WordPress',
@@ -510,7 +510,7 @@ class ArticleController extends Controller
                     ],
                 ],
                 'category' => 'performance',
-                'image' => asset('img/performance.jpeg'),
+                'image' => asset('img/performance.webp'),
             ],
             'optimisation_bdd' => [
                 'name' => 'Optimisation de la base de données WordPress',
@@ -603,7 +603,7 @@ class ArticleController extends Controller
                     ],
                 ],
                 'category' => 'ecommerce',
-                'image' => asset('img/produits_numeriques.jpeg'),
+                'image' => asset('img/produits_numeriques.png'),
             ],            
         ];
 

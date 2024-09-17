@@ -18,12 +18,13 @@
                     </div>
 
                     <div class="filter-buttons">
-                        <a href="{{ route('blog.index', ['category' => 'all']) }}" class="btn {{ $category === 'all' ? 'active' : '' }}">All</a>
+                        <a href= "{{ route('blog.index', ['category' => 'all']) }}" class="btn {{ $category === 'all' ? 'active' : '' }}">All</a>
                         <a href= "{{ route('blog.index', ['category' => 'seo'])}}" class="btn {{ $category === 'seo' ? 'active' : '' }}">SEO</a>
                         <a href= "{{ route('blog.index', ['category' => 'backup'])}}" class="btn {{ $category === 'backup' ? 'active' : '' }}">Sauvegarde</a>
                         <a href= "{{ route('blog.index', ['category' => 'custom-fields'])}}" class="btn {{ $category === 'custom-fields' ? 'active' : '' }}">Custom Fields</a>
-                        <a href= "{{ route('blog.index', ['category' => 'optimisation'])}}" class="btn {{ $category === 'optimisation' ? 'active' : '' }}">Optimisation</a>
+                        <a href= "{{ route('blog.index', ['category' => 'optimization'])}}" class="btn {{ $category === 'optimization' ? 'active' : '' }}">Optimisation</a>
                         <a href= "{{ route('blog.index', ['category' => 'management'])}}" class="btn {{ $category === 'management' ? 'active' : '' }}">Management</a>
+                        <a href= "{{ route('blog.index', ['category' => 'ecommerce'])}}" class="btn {{ $category === 'ecommerce' ? 'active' : '' }}">Ecommerce</a>
                     </div>
 
                     <div class="projects-grid">

@@ -26,9 +26,9 @@
                             dernières mises à jour technologiques. Grâce à mon esprit rapide et ma facilité de compréhension, je suis capable d'interpréter rapidement les besoins de mes clients 
                             et de mettre en place des solutions innovantes. Mon objectif est de rester à la pointe de la technologie et de fournir des solutions efficaces, tout en continuant à 
                             élargir mes connaissances pour répondre aux défis de demain.</p>
-                            <p class="mt-4">Je réalise quelque sites ou quelques codes afin de pouvoir garder la main sur certains langages de programmation (HTML, Javascript, PHP, CSS, REACT JS), afin de 
-                            ne pas être en retard sur les dernières technologies et dernières mises à jour. Ayant un esprit rapide et une facilité de compréhension, cela me permet de pouvoir 
-                            interpréter et mettre en place assez facilement et rapidement ce que l'on me demande.</p>
+                            <p class="mt-4">Je réalise quelque sites ou quelques codes afin de pouvoir garder la main sur certains langages de programmation (HTML, Javascript, PHP, CSS, REACT JS, Laravel, 
+                            TailwindCSS), afin de ne pas être en retard sur les dernières technologies et dernières mises à jour. Ayant un esprit rapide et une facilité de compréhension, cela me permet de 
+                            pouvoir interpréter et mettre en place assez facilement et rapidement ce que l'on me demande.</p>
                         </div>
                     </div>
                     <h4 class="technology mt-6 text-lg font-bold">Technologies</h4>
@@ -41,7 +41,10 @@
                         <a href="#" class="home-btn home-btn6 bg-blue-500 text-white px-4 py-2 rounded">HTML</a>
                         <a href="#" class="home-btn home-btn7 bg-blue-500 text-white px-4 py-2 rounded">PYTHON</a>
                         <a href="#" class="home-btn home-btn8 bg-blue-500 text-white px-4 py-2 rounded">CSS</a>
-                        <a href="#" class="home-btn home-btn9 bg-blue-500 text-white px-4 py-2 rounded">React JS</a>
+                        <a href="#" class="home-btn home-btn9 bg-blue-500 text-white px-4 py-2 rounded">ReactJS</a>
+                        <a href="#" class="home-btn home-btn10 bg-blue-500 text-white px-4 py-2 rounded">Laravel</a>
+                        <a href="#" class="home-btn home-btn11 bg-blue-500 text-white px-4 py-2 rounded">TailWindCSS</a>
+                        <a href="#" class="home-btn home-btn12 bg-blue-500 text-white px-4 py-2 rounded">VueJS</a>
                     </div>
                 </section>
 
@@ -74,6 +77,17 @@
                                 modifications. Grâce à ma maîtrise de Docker, je suis en mesure de créer, déployer et gérer des environnements d'application isolés, assurant ainsi une portabilité 
                                 et une stabilité optimales lors du déploiement sur différentes plateformes. Mon expérience dans l'utilisation de Docker me permet d'orchestrer des processus complexes 
                                 tout en simplifiant la gestion des infrastructures.</p>
+                            </div>
+                            <div class="fourth p-4 border rounded shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="width:30px;"><path d="M288 0C129 0 0 129 0 288s129 288 288 288 288-129 288-288S447 0 288 0zm144 352h-32v32c0 8.8-7.2 16-16 16h-192c-8.8 0-16-7.2-16-16v-32h-32c-8.8 0-16-7.2-16-16v-192c0-8.8 7.2-16 16-16h32v-32c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16v32h32c8.8 0 16 7.2 16 16v192c0 8.8-7.2 16-16 16zm-64-112v-32h-128v32h128z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:30px;"><path d="M448 32H64C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm-32 352H96V128h320v256z"/></svg>
+                                <h2 class="text-lg font-semibold">Code Propre et Architecture Clean</h2>
+                                <p class="mt-2">
+                                    Je propose une structure de code qui respecte les principes du <strong>Clean Code</strong> et de l'<strong>Architecture Clean</strong>. 
+                                    Cela inclut l'utilisation de commentaires clairs pour expliquer la logique complexe, une nomenclature bien définie pour les classes et les méthodes, ainsi qu'une gestion rigoureuse des variables. 
+                                    Chaque fonction a une responsabilité précise, respectant les principes du SOLID pour garantir un code maintenable et évolutif. Grâce à ces bonnes pratiques, 
+                                    mon code est facilement compréhensible et modifiable, facilitant ainsi le travail collaboratif et les mises à jour futures.
+                                </p>
                             </div>
                         </div>
                     </div>

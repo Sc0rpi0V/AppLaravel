@@ -11,7 +11,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     Vous êtes sur votre Dashboard.
-                    Vous allez pouvoir retrouver les formations que vous avez sélectionnées.
+                    Vous allez pouvoir retrouver les différentes newsletter que vous avez obtenues.
                 </div>
             </div>
         </div>
