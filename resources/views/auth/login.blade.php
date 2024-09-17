@@ -31,7 +31,7 @@
                     <a href="#" class="social-login__icon fab fa-twitter"></a>
                 </div>
             </div>
-            <a href="{{ url('/register') }}">
+            <a href="{{ route('register') }}">
                 <span class="button__create">Créez votre Compte</span>
             </a>
         </div>

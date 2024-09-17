@@ -411,8 +411,6 @@ class NewsletterController extends Controller
             $latestSubmission->submitted_at = \Carbon\Carbon::parse($latestSubmission->submitted_at);
         }
 
-        $firstNewsletter = collect($this->newsletters)->first();
-
         return view('dashboard', ['latestSubmission' => $latestSubmission]);
     }
 

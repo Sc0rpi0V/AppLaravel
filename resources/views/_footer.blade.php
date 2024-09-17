@@ -9,11 +9,11 @@
         <div class="mb-6">
             <h4 class="font-semibold text-lg mb-2">Liens rapides</h4>
             <ul class="list-none p-0">
-                <li><a href="{{ url('/about') }}" class="text-gray-600 hover:text-gray-900">À propos</a></li>
-                <li><a href="{{ url('/services') }}" class="text-gray-600 hover:text-gray-900">Services</a></li>
-                <li><a href="{{ url('/project') }}" class="text-gray-600 hover:text-gray-900">Portfolio</a></li>
-                <li><a href="{{ url('/blog') }}" class="text-gray-600 hover:text-gray-900">Blog</a></li>
-                <li><a href="{{ url('/contact') }}" class="text-gray-600 hover:text-gray-900">Contact</a></li>
+                <li><a href="{{ route('about.index') }}" class="text-gray-600 hover:text-gray-900">À propos</a></li>
+                <li><a href="{{ route('services.index') }}" class="text-gray-600 hover:text-gray-900">Services</a></li>
+                <li><a href="{{ route('project.index') }}" class="text-gray-600 hover:text-gray-900">Portfolio</a></li>
+                <li><a href="{{ route('blog.index') }}" class="text-gray-600 hover:text-gray-900">Blog</a></li>
+                <li><a href="{{ route('contact.index') }}" class="text-gray-600 hover:text-gray-900">Contact</a></li>
             </ul>
         </div>
 
@@ -21,11 +21,11 @@
         <div class="mb-6">
             <h4 class="font-semibold text-lg mb-2">Services</h4>
             <ul class="list-none p-0">
-                <li><a href="{{ url('/services/consultation') }}" class="text-gray-600 hover:text-gray-900">Consultation</a></li>
-                <li><a href="{{ url('/services/support') }}" class="text-gray-600 hover:text-gray-900">Support</a></li>
-                <li><a href="{{ url('/services/formation') }}" class="text-gray-600 hover:text-gray-900">Formation</a></li>
-                <li><a href="{{ url('/services/developpement') }}" class="text-gray-600 hover:text-gray-900">Développement</a></li>
-                <li><a href="{{ url('/services/conception') }}" class="text-gray-600 hover:text-gray-900">Conception</a></li>
+                <li><a href="{{ route('services.consultation') }}" class="text-gray-600 hover:text-gray-900">Consultation</a></li>
+                <li><a href="{{ route('services.support') }}" class="text-gray-600 hover:text-gray-900">Support</a></li>
+                <li><a href="{{ route('services.formation') }}" class="text-gray-600 hover:text-gray-900">Formation</a></li>
+                <li><a href="{{ route('services.developpement') }}" class="text-gray-600 hover:text-gray-900">Développement</a></li>
+                <li><a href="{{ route('services.conception') }}" class="text-gray-600 hover:text-gray-900">Conception</a></li>
             </ul>
         </div>
 
