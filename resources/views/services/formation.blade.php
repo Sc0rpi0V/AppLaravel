@@ -13,7 +13,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                     @foreach($formations as $slug => $formation)
-                        <section class="bg-white p-6 rounded-lg shadow-lg">
+                        <section class="bg-white p-6 rounded-lg shadow-lg" id="{{ $formation['id']}}">
                             <h2 class="text-2xl font-semibold text-gray-800">{{ $formation['title'] }}</h2>
                             <p class="text-lg text-green-600 mt-2"><strong>Prix :</strong> {{ $formation['price'] }}</p>
                             <div class="mt-4">
@@ -27,6 +27,7 @@
                                 </ul>
                                 <form action="{{ route('cart.add') }}" method="POST">
                                     @csrf
+                                    <input type="hidden" name="formation_id" value="{{ $formation['id'] }}">
                                     <input type="hidden" name="formation" value="{{ $formation['title'] }}">
                                     <input type="hidden" name="price" value="{{ str_replace('€', '', $formation['price']) }}">
                                     <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">

@@ -11,6 +11,7 @@ class Formations extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_formations', 'formation_id', 'user_id');
+        return $this->belongsToMany(User::class, 'user_formations', 'formation_id', 'user_id')
+            ->withTimestamps();
     }    
 }

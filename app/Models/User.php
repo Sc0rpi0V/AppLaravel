@@ -73,6 +73,7 @@ class User extends Authenticatable
 
     public function formations()
     {
-        return $this->belongsToMany(Formations::class, 'user_formations', 'user_id', 'formation_id');
+        return $this->belongsToMany(Formations::class, 'user_formations', 'user_id', 'formation_id')
+            ->withTimestamps();
     }    
 }

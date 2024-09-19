@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FormationsController extends Controller
 {
@@ -17,6 +18,7 @@ class FormationsController extends Controller
                 'Choix et installation de thèmes, gestion des menus.'
             ],
             'category' => 'install',
+            'id' => '1',
         ],
         'advanced-wordpress' => [
             'title' => 'Formation Avancée sur WordPress',
@@ -28,6 +30,7 @@ class FormationsController extends Controller
                 'Techniques avancées pour améliorer le référencement de votre site.',
             ],
             'category' => 'install',
+            'id' => '2',
         ],
         'gutenberg-wordpress' => [
             'title' => 'Formation sur Gutenberg',
@@ -39,6 +42,7 @@ class FormationsController extends Controller
                 'Explorez les plugins qui étendent les capacités de Gutenberg.',
             ],
             'category' => 'gutenberg',
+            'id' => '3',
         ],
         'woocommerce-wordpress' => [
             'title' => 'Formation sur WooCommerce',
@@ -50,6 +54,7 @@ class FormationsController extends Controller
                 'Utilisation des thèmes et plugins pour un e-commerce sur mesure.',
             ],
             'category' => 'woocommerce',
+            'id' => '4',
         ],
         'security-wordpress' => [
             'title' => 'Formation sur la Sécurité WordPress',
@@ -61,6 +66,7 @@ class FormationsController extends Controller
                 'Comment répondre efficacement aux attaques et autres incidents de sécurité.',
             ],
             'category' => 'security',
+            'id' => '5',
         ],
         'analytics-wordpress' => [
             'title' => 'Formation sur la Performance WordPress',
@@ -72,6 +78,7 @@ class FormationsController extends Controller
                 'Outils et techniques pour surveiller et améliorer les performances.',
             ],
             'category' => 'analytics',
+            'id' => '6',
         ],
         'seo-wordpress' => [
             'title' => 'Formation SEO pour WordPress',
@@ -83,6 +90,7 @@ class FormationsController extends Controller
                 'Analyse des performances SEO et amélioration continue.',
             ],
             'category' => 'seo',
+            'id' => '7',
         ],
         'performance-wordpress' => [
             'title' => 'Formation sur la Performance de WordPress',
@@ -94,6 +102,7 @@ class FormationsController extends Controller
                 'Analyse des performances et gestion des goulets d’étranglement.',
             ],
             'category' => 'performance',
+            'id' => '8',
         ],
         'theme-development-wordpress' => [
             'title' => 'Formation sur le Développement de Thèmes WordPress',
@@ -105,6 +114,7 @@ class FormationsController extends Controller
                 'Création de modèles de page et gestion des options de thème.',
             ],
             'category' => 'development',
+            'id' => '9',
         ],
         'plugin-development-wordpress' => [
             'title' => 'Formation sur le Développement de Plugins WordPress',
@@ -116,6 +126,7 @@ class FormationsController extends Controller
                 'Test et déploiement de plugins sur WordPress.',
             ],
             'category' => 'development',
+            'id' => '10',
         ],
         'multilingual-wordpress' => [
             'title' => 'Formation sur WordPress Multilingue',
@@ -127,6 +138,7 @@ class FormationsController extends Controller
                 'Optimisation du SEO pour les sites multilingues.',
             ],
             'category' => 'multilingual',
+            'id' => '11',
         ],
         'media-management-wordpress' => [
             'title' => 'Formation sur la Gestion des Médias WordPress',
@@ -138,6 +150,7 @@ class FormationsController extends Controller
                 'Intégration et gestion des vidéos et autres médias.',
             ],
             'category' => 'media',
+            'id' => '12',
         ],
         'ecommerce-wordpress' => [
             'title' => 'Formation sur le Commerce Électronique avec WordPress',
@@ -149,6 +162,7 @@ class FormationsController extends Controller
                 'Personnalisation de l’apparence de votre boutique en ligne.',
             ],
             'category' => 'ecommerce',
+            'id' => '13',
         ],
         'user-management-wordpress' => [
             'title' => 'Formation sur la Gestion des Utilisateurs WordPress',
@@ -160,6 +174,7 @@ class FormationsController extends Controller
                 'Création et gestion des groupes d’utilisateurs.',
             ],
             'category' => 'user-management',
+            'id' => '14',
         ],
     ];
 
@@ -193,12 +208,9 @@ class FormationsController extends Controller
 
     public function dashboardUser()
     {
-        $user = auth()->user();
+        $user = Auth::user();
         $formations = $user->formations;
-
-        return view('formations', [
-            'formations' => $formations
-        ]);
-    }
-
+    
+        return view('user.dashboard', compact('formations'));
+    }    
 }

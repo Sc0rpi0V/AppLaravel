@@ -6,6 +6,8 @@ use App\Models\Paiement;
 use Illuminate\Http\Request;
 use App\Rules\ValidIban;
 use App\Rules\ValidBic;
+use App\Models\Formations;
+use Illuminate\Support\Facades\Auth;
 
 class PaiementController extends Controller
 {
@@ -51,6 +53,19 @@ class PaiementController extends Controller
         // Enregistrement des informations de la commande
         Paiement::createPaiement($paiementData);
     
+        // Sauvegarde des informations des formations dans `user_formations`
+        $user = Auth::user(); 
+        foreach ($cart as $item) {
+            $formation = Formations::where('name', $item['name'])->first();
+
+            if ($formation) {
+                Formations::create([
+                    'user_id' => $user->id,
+                    'formation_id' => $formation->id,
+                ]);
+            }
+        }
+
         // Vide le panier après la commande
         session()->forget('cart');
     
